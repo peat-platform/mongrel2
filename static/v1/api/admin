@@ -14,7 +14,6 @@
                "method"     : "DELETE",
                "summary"    : "DELETE Cloudlet user by user name",
                "notes"      : "",
-               "type"       : "Cloudlet",
                "nickname"   : "deleteById",
                "parameters" : [
                   {
