@@ -8,7 +8,7 @@
    ],
    "apis": [
       {
-         "path": "/v1/{cloudletId}/data",
+         "path": "/{cloudletId}/data",
          "operations": [
             {
                "method"     : "POST",
@@ -23,6 +23,13 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "object",
+                     "description" : "Object to be Created",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
                   }
                ],
                "responseMessages": [
@@ -32,10 +39,6 @@
                   },
                   {
                      "code": 400,
-                     "message": ""
-                  },
-                  {
-                     "code": 404,
                      "message": ""
                   }
                ]
@@ -82,6 +85,13 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "object Array",
+                     "description" : "Objects to be Created",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
                   }
                ],
                "responseMessages": [
@@ -123,13 +133,12 @@
          ]
       },
       {
-         "path": "/v1/{cloudletId}/data/{objectId}",
+         "path": "/{cloudletId}/data/{objectId}",
          "operations": [
             {
                "method"     : "POST",
-               "summary"    : "POST Object to Cloudlet",
+               "summary"    : "Error",
                "notes"      : "",
-               "type"       : "Cloudlet",
                "nickname"   : "postObjToCloudlet",
                "parameters" : [
                   {
@@ -145,24 +154,27 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
                   }
                ],
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 403,
+                     "message": "Forbidden"
                   }
                ]
             },
             {
                "method"     : "GET",
-               "summary"    : "GET Object from Cloutlet",
+               "summary"    : "get object properties exposed under type",
                "notes"      : "",
-               "type"       : "Cloudlet",
+               "type"       : "Object",
                "nickname"   : "getObjectByID",
                "parameters" : [
                   {
@@ -182,6 +194,10 @@
                ],
                "responseMessages": [
                   {
+                     "code": 200,
+                     "message": "Ok"
+                  },
+                  {
                      "code": 400,
                      "message": "Invalid CloudletID supplied"
                   },
@@ -193,10 +209,9 @@
             },
             {
                "method"     : "PUT",
-               "summary"    : "PUT",
+               "summary"    : "set object properties exposed under type",
                "notes"      : "",
-               "type"       : "Cloudlet",
-               "nickname"   : "deleteById",
+               "nickname"   : "setById",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
@@ -204,9 +219,27 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : "Array of object properties",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
                   }
                ],
                "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
                   {
                      "code": 400,
                      "message": "Invalid CloudletID supplied"
@@ -219,7 +252,7 @@
             },
             {
                "method"     : "DELETE",
-               "summary"    : "DELETE Cloudlet user by user name",
+               "summary"    : "delete object (Error, never do?)",
                "notes"      : "",
                "type"       : "Cloudlet",
                "nickname"   : "deleteById",
@@ -230,9 +263,20 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
                   }
                ],
                "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
                   {
                      "code": 400,
                      "message": "Invalid CloudletID supplied"
@@ -246,13 +290,14 @@
          ]
       },
       {
-         "path": "/v1/{cloudletId}/data/{objectId}?type={typeId}",
+         "path": "/{cloudletId}/data/{objectId}",
          "operations": [
             {
-               "method": "POST",
-               "summary": "Creates Cloudlet on the Platform for the first time",
-               "notes": "",
-               "nickname": "createCloudlet",
+               "method"     : "POST",
+               "summary"    : "see object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "createCloudlet",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
@@ -273,14 +318,656 @@
                      "description" : "",
                      "required"    : true,
                      "dataType"    : "string",
-                     "paramType"   : "path"
+                     "paramType"   : "query"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
                   }
                ],
                "responseClass": "ok",
                "responseMessages": [
                   {
-                     "code": 403,
-                     "message": "Forbidden"
+                     "code": 200,
+                     "message": "Ok"
+                  }
+               ]
+            },
+            {
+               "method"     : "GET",
+               "summary"    : "list / search types of object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "getObjectByID",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "query"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "PATCH",
+               "summary"    : "PATCH",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "query"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : "Array of Objects",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "DELETE",
+               "summary"    : "see object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "query"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Deleted"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "path": "/{cloudletId}/data/{objectId}/types",
+         "operations": [
+            {
+               "method"     : "POST",
+               "summary"    : "add type to object",
+               "notes"      : "",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseClass": "ok",
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  }
+               ]
+            },
+            {
+               "method"     : "GET",
+               "summary"    : "list / search types of object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "PATCH",
+               "summary"    : "bulk add objects (?)",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : "Array of Objects",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "DELETE",
+               "summary"    : "delete type from object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Deleted"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "path": "/{cloudletId}/data/{objectId}/{link}",
+         "operations": [
+            {
+               "method"     : "POST",
+               "summary"    : "add type to object",
+               "notes"      : "",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "link",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseClass": "ok",
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  }
+               ]
+            },
+            {
+               "method"     : "GET",
+               "summary"    : "list / search types of object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "link",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "PUT",
+               "summary"    : "bulk add objects (?)",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "link",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : "Array of Objects",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "DELETE",
+               "summary"    : "delete type from object",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "objectId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "link",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Deleted"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "path": "/{cloudletId}/data/{typeId}",
+         "operations": [
+            {
+               "method"     : "POST",
+               "summary"    : "Add objects to type",
+               "notes"      : "",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseClass": "ok",
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  }
+               ]
+            },
+            {
+               "method"     : "GET",
+               "summary"    : "list / search objects of type",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "rql",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "query"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "PATCH",
+               "summary"    : "bulk add objects (?)",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : "Array of Objects",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
+                  }
+               ]
+            },
+            {
+               "method"     : "DELETE",
+               "summary"    : "delete objects from type",
+               "notes"      : "",
+               "type"       : "Object",
+               "nickname"   : "",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "typeId",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Deleted"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Invalid CloudletID supplied"
+                  },
+                  {
+                     "code": 404,
+                     "message": "Cloudlet not found"
                   }
                ]
             }
