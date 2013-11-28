@@ -85,7 +85,7 @@
          ]
       },
       {
-         "path": "/types?ids=[{typeIds}]&exists=true",
+         "path": "/types",
          "operations": [
             {
                "method": "GET",
@@ -99,7 +99,14 @@
                      "description"  : "A string representation of comma seperated type IDs to check.",
                      "required"     : true,
                      "dataType"     : "string",
-                     "paramType"    : "path"
+                     "paramType"    : "query"
+                  },
+                  {
+                     "name"         : "exists",
+                     "description"  : "A boolean operator which represents the desired state of the types being check (true means they should exist).",
+                     "required"     : true,
+                     "dataType"     : "string",
+                     "paramType"    : "query"
                   }
                ],
                "responseMessages": [
