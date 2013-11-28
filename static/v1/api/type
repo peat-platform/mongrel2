@@ -17,6 +17,13 @@
                "type"       : "Type",
                "nickname"   : "createType",
                "parameters" : [
+                  {
+                     "name"         : "body",
+                     "description"  : "The body should contain a JSON object representation of a type to create.",
+                     "required"     : true,
+                     "type"         : "string",
+                     "paramType"    : "body"
+                  }
                ],
                "responseMessages": [
                ]
@@ -33,6 +40,13 @@
                "type": "Type",
                "nickname": "createTypes",
                "parameters": [
+                  {
+                     "name"         : "body",
+                     "description"  : "The body should contain a JSON array representation of the types to add.",
+                     "required"     : true,
+                     "type"         : "string",
+                     "paramType"    : "body"
+                  }
                ],
                "responseMessages": [
                ]
@@ -40,7 +54,7 @@
          ]
       },
       {
-         "path": "/types?{rql}",
+         "path": "/types",
          "operations": [
             {
                "method": "GET",
@@ -51,10 +65,10 @@
                "parameters": [
                   {
                      "name"         : "rql",
-                     "description"  : "RQL query parameter (click <a href=\"http://docs.oracle.com/cd/E26180_01/Platform.94/RepositoryGuide/html/s0305rqloverview01.html\">here</a> for more details).",
+                     "description"  : "RQL query parameter (click <a href=\"https://github.com/persvr/rql\">here</a> for more details).",
                      "required"     : true,
                      "dataType"     : "string",
-                     "paramType"    : "path"
+                     "paramType"    : "query"
                   }
                ],
                "responseMessages": [
