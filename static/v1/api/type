@@ -26,6 +26,10 @@
                   }
                ],
                "responseMessages": [
+                  {
+                     "code": 501,
+                     "message": "Not yet Implemented"
+                  }
                ]
             }
          ]
@@ -49,6 +53,10 @@
                   }
                ],
                "responseMessages": [
+                  {
+                     "code": 501,
+                     "message": "Not yet Implemented"
+                  }
                ]
             }
          ]
@@ -73,12 +81,8 @@
                ],
                "responseMessages": [
                   {
-                     "code"   : 400,
-                     "message": "Invalid RQL query supplied"
-                  },
-                  {
-                     "code"   : 404,
-                     "message": "Type not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }
@@ -114,12 +118,8 @@
                ],
                "responseMessages": [
                   {
-                     "code"   : 400,
-                     "message": "Invalid string supplied"
-                  },
-                  {
-                     "code"   : 404,
-                     "message": "All types not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }

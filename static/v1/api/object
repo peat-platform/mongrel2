@@ -34,12 +34,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 201,
-                     "message": "Success, Object Created"
-                  },
-                  {
-                     "code": 400,
-                     "message": ""
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -60,16 +56,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Success, Object Fetched"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -96,16 +84,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Success, Object Created"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -126,7 +106,7 @@
                "responseMessages": [
                   {
                      "code": 501,
-                     "message": "Delete Not Supported"
+                     "message": "Not yet Implemented"
                   }
                ]
             }
@@ -174,8 +154,8 @@
                "responseClass": "ok",
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -209,16 +189,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -259,12 +231,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -298,16 +266,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Deleted"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }
@@ -347,8 +307,8 @@
                "responseClass": "ok",
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -376,16 +336,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -420,12 +372,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -453,16 +401,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Deleted"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }
@@ -509,8 +449,8 @@
                "responseClass": "ok",
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -545,16 +485,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -596,12 +528,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -636,16 +564,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Deleted"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }
@@ -685,8 +605,8 @@
                "responseClass": "ok",
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -721,16 +641,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Ok"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -765,12 +677,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             },
@@ -798,16 +706,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 200,
-                     "message": "Deleted"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }

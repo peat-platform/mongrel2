@@ -26,12 +26,8 @@
                ],
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid CloudletID supplied"
-                  },
-                  {
-                     "code": 404,
-                     "message": "Cloudlet not found"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }
@@ -67,8 +63,8 @@
                "responseClass": "ok",
                "responseMessages": [
                   {
-                     "code": 400,
-                     "message": "Invalid username"
+                     "code": 501,
+                     "message": "Not yet Implemented"
                   }
                ]
             }
