@@ -8,7 +8,7 @@
    ],
    "apis": [
       {
-         "path": "/types",
+         "path": "/create",
          "operations": [
             {
                "method"     : "POST",
@@ -35,7 +35,7 @@
          ]
       },
       {
-         "path": "/types",
+         "path": "/update",
          "operations": [
             {
                "method": "PATCH",
@@ -62,7 +62,7 @@
          ]
       },
       {
-         "path": "/types",
+         "path": "/list",
          "operations": [
             {
                "method": "GET",
@@ -89,7 +89,7 @@
          ]
       },
       {
-         "path": "/types",
+         "path": "/read",
          "operations": [
             {
                "method": "GET",
