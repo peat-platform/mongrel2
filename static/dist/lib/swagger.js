@@ -4,7 +4,7 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   SwaggerApi = (function() {
-    SwaggerApi.prototype.url = "http://api.wordnik.com/v4/resources.json";
+    SwaggerApi.prototype.url = "http://v1.wordnik.com/v4/resources.json";
 
     SwaggerApi.prototype.debug = false;
 
@@ -301,7 +301,7 @@
           headers: {},
           on: {
             error: function(response) {
-              return _this.api.fail("Unable to read api '" + _this.name + "' from path " + _this.url + " (server returned " + response.statusText + ")");
+              return _this.api.fail("Unable to read v1 '" + _this.name + "' from path " + _this.url + " (server returned " + response.statusText + ")");
             },
             response: function(rawResponse) {
               var response;

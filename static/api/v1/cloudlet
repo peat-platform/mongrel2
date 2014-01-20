@@ -1,38 +1,12 @@
 {
    "apiVersion": "1.0.0",
    "swaggerVersion": "1.2",
-   "basePath": "http://localhost/v1/api",
+   "basePath": "http://localhost/api/v1",
    "resourcePath": "/admin",
    "produces": [
       "application/json"
    ],
    "apis": [
-      {
-         "path": "/delete/{cloudletId}",
-         "operations": [
-            {
-               "method"     : "DELETE",
-               "summary"    : "DELETE Cloudlet user by Id",
-               "notes"      : "This endpoint allows a user delete their Cloudlet. When called all their data is purged from their Cloudlet and indexes referring to their Cloudlet are removed",
-               "nickname"   : "deleteById",
-               "parameters" : [
-                  {
-                     "name"        : "cloudletId",
-                     "description" : "The id of the Cloudlet that is to be deleted.",
-                     "required"    : true,
-                     "dataType"    : "string",
-                     "paramType"   : "path"
-                  }
-               ],
-               "responseMessages": [
-                  {
-                     "code": 501,
-                     "message": "Not yet Implemented"
-                  }
-               ]
-            }
-         ]
-      },
       {
          "path": "/create/{cloudletId}",
          "operations": [
@@ -61,6 +35,58 @@
                   }
                ],
                "responseClass": "ok",
+               "responseMessages": [
+                  {
+                     "code": 501,
+                     "message": "Not yet Implemented"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "path": "/delete/{cloudletId}",
+         "operations": [
+            {
+               "method"     : "DELETE",
+               "summary"    : "DELETE Cloudlet user by Id",
+               "notes"      : "This endpoint allows a user delete their Cloudlet. When called all their data is purged from their Cloudlet and indexes referring to their Cloudlet are removed. This endpoint is used by the platform only.",
+               "nickname"   : "deleteById",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "The id of the Cloudlet that is to be deleted.",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 501,
+                     "message": "Not yet Implemented"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "path": "/export/{cloudletId}",
+         "operations": [
+            {
+               "method"     : "GET",
+               "summary"    : "Export Cloudlet data.",
+               "notes"      : "This endpoint allows a user export all their data from their Cloudlet.",
+               "nickname"   : "exportById",
+               "parameters" : [
+                  {
+                     "name"        : "cloudletId",
+                     "description" : "The id of the Cloudlet that is to be exported.",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  }
+               ],
                "responseMessages": [
                   {
                      "code": 501,
