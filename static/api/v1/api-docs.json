@@ -5,7 +5,7 @@
    "apis": [
       {
          "path": "/cloudlet",
-         "description": "CLoudlet Administration API"
+         "description": "Cloudlet Administration API"
       },
       {
          "path": "/data",

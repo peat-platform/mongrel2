@@ -14,7 +14,7 @@
                "method"     : "POST",
                "summary"    : "Create an Object on the Cloudlet",
                "notes"      : "",
-               "type"       : "Object",
+               "type"       : "Status",
                "nickname"   : "createObject",
                "parameters" : [
                   {
@@ -28,14 +28,30 @@
                      "name"        : "data",
                      "description" : "Object to be created in JSON representation",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "dataType"    : "Object",
                      "paramType"   : "body"
                   }
                ],
                "responseMessages": [
                   {
-                     "code": 501,
-                     "message": "Not yet Implemented"
+                     "code": 200,
+                     "message": "ok",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Bad Request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 405,
+                     "message": "Method Not allowed",
+                     "responseModel": "Status"
                   }
                ]
             },
@@ -43,7 +59,7 @@
                "method"     : "PATCH",
                "summary"    : "Bulk create objects on the Cloudlet",
                "notes"      : "",
-               "type"       : "Object",
+               "type"       : "ObjectArray",
                "nickname"   : "bulkCreateObjects",
                "parameters" : [
                   {
@@ -52,6 +68,13 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "data",
+                     "description" : ".",
+                     "required"    : true,
+                     "dataType"    : "ObjectArray",
+                     "paramType"   : "body"
                   }
                ],
                "responseMessages": [
@@ -195,19 +218,45 @@
             }
          }
       },
-      "Object": {
-         "id": "Object",
+      "Status": {
+         "id": "Status",
          "properties": {
-            "id": {
-               "type"        : "integer",
-               "format"      : "int64",
-               "description" : "Unique identifier for the Object",
+            "value": {
+               "type"        : "boolean",
+               "description" : "Response was OK",
                "required"    : true
             },
-            "value": {
-               "type"        : "string",
-               "description" : "JSON Object Returned",
-               "required"    : true
+            "objectId":{
+               "type"     :"integer",
+               "format"   : "int32",
+               "required" : true
+            }
+         }
+      },
+   "Object": {
+      "id": "Object",
+      "properties": {
+         "id": {
+            "type"        : "integer",
+            "format"      : "int64",
+            "description" : "Unique identifier for the Object",
+            "required"    : true
+         },
+         "value": {
+            "type"        : "string",
+            "description" : "JSON Object Returned",
+            "required"    : true
+         }
+      }
+   },
+      "ObjectArray": {
+         "id": "ObjectArray",
+         "properties": {
+            "objects": {
+               "type"        : "array",
+               "items"       :{
+                  "$ref":"Object"
+               }
             }
          }
       },
