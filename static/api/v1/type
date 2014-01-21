@@ -8,14 +8,57 @@
    ],
    "apis": [
       {
-         "path": "/create",
+         "path": "/types/",
          "operations": [
             {
                "method"     : "POST",
-               "summary"    : "POST a new type to create.",
+               "summary"    : "Creates a type.",
                "notes"      : "",
                "type"       : "Type",
                "nickname"   : "createType",
+               "parameters" : [
+                  {
+                     "name"         : "body",
+                     "description"  : "The body should contain a JSON object representation of a type to create.",
+                     "required"     : true,
+                     "type"         : "string",
+                     "paramType"    : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 501,
+                     "message": "Not yet Implemented"
+                  }
+               ]
+            },
+            {
+               "method": "GET",
+               "summary": "Checks if types exist.",
+               "notes": "",
+               "nickname": "typesExist",
+               "parameters": [
+                  {
+                     "name"         : "exists",
+                     "description"  : "",
+                     "required"     : true,
+                     "dataType"     : "string",
+                     "paramType"    : "query"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 501,
+                     "message": "Not yet Implemented"
+                  }
+               ]
+            },
+            {
+               "method"     : "PATCH",
+               "summary"    : "Bulk add Types.",
+               "notes"      : "",
+               "type"       : "Type",
+               "nickname"   : "bulkAddType",
                "parameters" : [
                   {
                      "name"         : "body",
@@ -35,21 +78,21 @@
          ]
       },
       {
-         "path": "/update",
+         "path": "/types/{typeID}",
          "operations": [
             {
-               "method": "PATCH",
-               "summary": "Add types in bulk.",
-               "notes": "",
-               "type": "Type",
-               "nickname": "createTypes",
-               "parameters": [
+               "method"     : "GET",
+               "summary"    : "Creates a type by id.",
+               "notes"      : "",
+               "type"       : "Type",
+               "nickname"   : "getTypeById",
+               "parameters" : [
                   {
-                     "name"         : "body",
-                     "description"  : "The body should contain a JSON array representation of the types to add.",
+                     "name"         : "typeID",
+                     "description"  : "",
                      "required"     : true,
                      "type"         : "string",
-                     "paramType"    : "body"
+                     "paramType"    : "path"
                   }
                ],
                "responseMessages": [
@@ -58,62 +101,26 @@
                      "message": "Not yet Implemented"
                   }
                ]
-            }
-         ]
-      },
-      {
-         "path": "/list",
-         "operations": [
+            },
             {
                "method": "GET",
-               "summary": "List/search for types.",
+               "summary": "Checks if types exist by id.",
                "notes": "",
-               "type": "Type",
-               "nickname": "getTypes",
+               "nickname": "typeExistById",
                "parameters": [
                   {
-                     "name"         : "rql",
-                     "description"  : "RQL query parameter (click <a href=\"https://github.com/persvr/rql\">here</a> for more details).",
+                     "name"         : "typeID",
+                     "description"  : "",
                      "required"     : true,
-                     "dataType"     : "string",
-                     "paramType"    : "query"
-                  }
-               ],
-               "responseMessages": [
-                  {
-                     "code": 501,
-                     "message": "Not yet Implemented"
-                  }
-               ]
-            }
-         ]
-      },
-      {
-         "path": "/read",
-         "operations": [
-            {
-               "method": "GET",
-               "summary": "Check if the specified list of types exist.",
-               "notes": "",
-               "type": "Type",
-               "nickname": "checkTypes",
-               "parameters": [
-                  {
-                     "name"         : "typeIds",
-                     "description"  : "A string representation of comma seperated type IDs to check.",
-                     "required"     : true,
-                     "dataType"     : "string",
-                     "paramType"    : "query"
+                     "type"         : "string",
+                     "paramType"    : "path"
                   },
                   {
                      "name"         : "exists",
-                     "description"  : "A boolean operator which represents the desired state of the types being check (true means they should exist).",
+                     "description"  : "",
                      "required"     : true,
-                     "dataType"     : "string",
-                     "paramType"    : "query",
-                     "enum"         : [
-                        "true"
-                     ]
+                     "type"         : "string",
+                     "paramType"    : "query"
                   }
                ],
                "responseMessages": [

@@ -8,7 +8,7 @@
          "description": "CLoudlet Administration API"
       },
       {
-         "path": "/object",
+         "path": "/data",
          "description": "Controls OPENi Objects"
       },
       {
