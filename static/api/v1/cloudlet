@@ -140,8 +140,7 @@
          "id": "Cloudlet",
          "properties": {
             "id": {
-               "type"        : "integer",
-               "format"      : "int64",
+               "type"        : "string",
                "description" : "Unique identifier for the Cloudlet.",
                "required"    : true
             },
@@ -177,8 +176,7 @@
                "required"    : true
             },
             "cloudletId":{
-               "type"     : "integer",
-               "format"   : "int32",
+               "type"     : "string",
                "description" : "The id of the Cloudlet.",
                "required" : false
             }
