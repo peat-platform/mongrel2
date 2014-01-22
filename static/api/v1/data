@@ -233,22 +233,38 @@
             }
          }
       },
-   "Object": {
-      "id": "Object",
-      "properties": {
-         "id": {
-            "type"        : "integer",
-            "format"      : "int64",
-            "description" : "Unique identifier for the Object",
-            "required"    : true
-         },
-         "value": {
-            "type"        : "string",
-            "description" : "JSON Object Returned",
-            "required"    : true
+      "Object": {
+         "id": "Object",
+         "properties": {
+            "id": {
+               "type"        : "string",
+               "format"      : "string",
+               "description" : "Unique identifier for the Object",
+               "required"    : true
+            },
+            "value": {
+               "type"        : "string",
+               "description" : "JSON Object Returned",
+               "required"    : true
+            }
          }
-      }
-   },
+      },
+      "View": {
+         "id": "View",
+         "properties": {
+            "id": {
+               "type"        : "string",
+               "format"      : "string",
+               "description" : "Unique identifier for the Object",
+               "required"    : true
+            },
+            "value": {
+               "type"        : "string",
+               "description" : "JSON Object Returned",
+               "required"    : true
+            }
+         }
+      },
       "ObjectArray": {
          "id": "ObjectArray",
          "properties": {
