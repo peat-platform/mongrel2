@@ -13,22 +13,22 @@
             {
                "method"     : "POST",
                "summary"    : "Create an Object on the Cloudlet",
-               "notes"      : "",
+               "notes"      : "This endpoint creates pushes a data object into a Cloudlet.",
                "type"       : "Status",
                "nickname"   : "createObject",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
-                     "description" : "The id of the Cloudlet that is to be accessed.",
+                     "description" : "The id of the Cloudlet that is to be deleted.",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "data",
-                     "description" : "Object to be created in JSON representation",
+                     "description" : "Object to be created.",
                      "required"    : true,
-                     "dataType"    : "Object",
+                     "dataType"    : "OPENiObject",
                      "paramType"   : "body"
                   }
                ],
@@ -58,8 +58,8 @@
             {
                "method"     : "PATCH",
                "summary"    : "Bulk create objects on the Cloudlet",
-               "notes"      : "",
-               "type"       : "ObjectArray",
+               "notes"      : "Creates multiple objects within a Cloudlet in one go",
+               "type"       : "StatusArray",
                "nickname"   : "bulkCreateObjects",
                "parameters" : [
                   {
@@ -73,14 +73,30 @@
                      "name"        : "data",
                      "description" : ".",
                      "required"    : true,
-                     "dataType"    : "ObjectArray",
+                     "dataType"    : "OPENiObjectArray",
                      "paramType"   : "body"
                   }
                ],
                "responseMessages": [
                   {
-                     "code": 501,
-                     "message": "Not yet Implemented"
+                     "code": 200,
+                     "message": "ok",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Bad Request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 405,
+                     "message": "Method Not allowed",
+                     "responseModel": "Status"
                   }
                ]
             }
@@ -92,20 +108,20 @@
             {
                "method"     : "GET",
                "summary"    : "Gets an objects properties exposed under a type.",
-               "notes"      : "",
-               "type"       : "Object",
+               "notes"      : "Returns a nugget of data from an object. A data nugget is the parts of an OPENi's object that implement/make up a type.",
+               "type"       : "DataView",
                "nickname"   : "getView",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
-                     "description" : "",
+                     "description" : "The id of the Cloudlet that is to be accessed.",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "viewId",
-                     "description" : ".",
+                     "description" : "The name of the data view (data nugget). Where do we get these view ids?",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
@@ -113,27 +129,44 @@
                ],
                "responseMessages": [
                   {
-                     "code": 501,
-                     "message": "Not yet Implemented"
+                     "code": 200,
+                     "message": "ok",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Bad Request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 405,
+                     "message": "Method Not allowed",
+                     "responseModel": "Status"
                   }
                ]
             },
             {
                "method"     : "PUT",
-               "summary"    : "Set the object properties exposed under type.",
-               "notes"      : "",
-               "nickname"   : "setObjectProperties",
+               "summary"    : "Set the cloudlet properties.",
+               "notes"      : "Set the cloudlet data properties exposed under a view.",
+               "nickname"   : "setDataProperties",
+               "type"       : "Status",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
-                     "description" : "",
+                     "description" : "The id of the Cloudlet that is to be accessed.",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "viewId",
-                     "description" : ".",
+                     "description" : "The name of the data view (data nugget). Where do we get these view ids?",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
@@ -142,7 +175,7 @@
                      "name"        : "data",
                      "description" : ".",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "dataType"    : "DataView",
                      "paramType"   : "body"
                   }
                ],
@@ -151,26 +184,41 @@
                   {
                      "code": 501,
                      "message": "Not yet Implemented"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Bad Request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 405,
+                     "message": "Method Not allowed",
+                     "responseModel": "Status"
                   }
                ]
             },
             {
                "method"     : "DELETE",
-               "summary"    : "Deletes the view",
-               "notes"      : "",
-               "type"       : "Object",
+               "summary"    : "Deletes a view.",
+               "notes"      : "Deletes a view from the Cloudlet.",
+               "type"       : "Status",
                "nickname"   : "deleteView",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
-                     "description" : "",
+                     "description" : "The id of the Cloudlet that is to be accessed.",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
                   },
                   {
-                     "name"        : "objectId",
-                     "description" : ".",
+                     "name"        : "viewId",
+                     "description" : "The name of the data view (data nugget). Where do we get these view ids?",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
@@ -180,6 +228,21 @@
                   {
                      "code": 501,
                      "message": "Not yet Implemented"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Bad Request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 405,
+                     "message": "Method Not allowed",
+                     "responseModel": "Status"
                   }
                ]
             }
@@ -187,37 +250,6 @@
       }
    ],
    "models": {
-      "Cloudlet": {
-         "id": "Cloudlet",
-         "properties": {
-            "id": {
-               "type"        : "integer",
-               "format"      : "int64",
-               "description" : "Unique identifier for the Cloudlet",
-               "required"    : true
-            },
-            "alias": {
-               "type"        : "string",
-               "description" : "Human readable name for the Cloudlet",
-               "required"    : true
-            },
-            "username": {
-               "type"        : "string",
-               "description" : "Username of person who owns the Cloudlet",
-               "required"    : true
-            },
-            "cloudletStatus": {
-               "type"        : "integer",
-               "format"      : "int32",
-               "description" : "Cloudlet Status",
-               "enum"        : [
-                  "1-registered",
-                  "2-active",
-                  "3-closed"
-               ]
-            }
-         }
-      },
       "Status": {
          "id": "Status",
          "properties": {
@@ -226,52 +258,86 @@
                "description" : "Response was OK",
                "required"    : true
             },
-            "objectId":{
-               "type"     :"integer",
-               "format"   : "int32",
-               "required" : true
+            "viewId":{
+               "type"     :"string",
+               "required" : false
             }
          }
       },
-      "Object": {
-         "id": "Object",
+      "StatusArray": {
+         "id": "StatusArray",
          "properties": {
-            "id": {
+            "objects": {
+               "type"  : "array",
+               "items" :{
+                  "$ref":"Status"
+               }
+            }
+         }
+      },
+      "OPENiObject": {
+         "id": "OPENiObject",
+         "properties": {
+            "@id": {
                "type"        : "string",
                "format"      : "string",
                "description" : "Unique identifier for the Object",
-               "required"    : true
+               "required"    : false
             },
-            "value": {
-               "type"        : "string",
-               "description" : "JSON Object Returned",
+            "@context" : {
+               "type"        : "array",
+               "required"    : false,
+               "items"       :{
+                  "$ref" : "Context"
+               }
+            },
+            "@type" : {
+               "type"        : "array",
+               "required"    : true,
+               "items"       :{
+                  "$ref" : "string"
+               }
+            },
+            "data": {
+               "type"        : "Object",
+               "description" : "data",
                "required"    : true
             }
          }
       },
-      "View": {
-         "id": "View",
+      "Object" : {
+
+      },
+      "DataView": {
+         "id": "DataView",
          "properties": {
-            "id": {
+            "@id": {
                "type"        : "string",
                "format"      : "string",
-               "description" : "Unique identifier for the Object",
+               "description" : "Unique identifier for the data view/nugget",
                "required"    : true
             },
-            "value": {
+            "@type": {
                "type"        : "string",
-               "description" : "JSON Object Returned",
+               "format"      : "string",
+               "description" : "The type that the view/nugget implements.",
+               "required"    : true
+            },
+            "data": {
+               "type"        : "Object",
+               "description" : "The properties and their values that make up the views data.",
                "required"    : true
             }
          }
       },
-      "ObjectArray": {
+      "OPENiObjectArray": {
          "id": "ObjectArray",
          "properties": {
             "objects": {
-               "type"        : "array",
-               "items"       :{
-                  "$ref":"Object"
+               "type"     : "array",
+               "required" : true,
+               "items"  :{
+                  "$ref":"OPENiObject"
                }
             }
          }
@@ -293,6 +359,21 @@
             "schema": {
                "type"        : "string",
                "description" : "The defined schema format for this type",
+               "required"    : true
+            }
+         }
+      },
+      "Context": {
+         "id": "Context",
+         "properties": {
+            "name": {
+               "type"        : "string",
+               "description" : "Context name.",
+               "required"    : true
+            },
+            "URL": {
+               "type"        : "string",
+               "description" : "Context URL.",
                "required"    : true
             }
          }
