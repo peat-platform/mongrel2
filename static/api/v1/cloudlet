@@ -99,7 +99,7 @@
                "method"     : "GET",
                "summary"    : "Export Cloudlet data.",
                "notes"      : "This endpoint allows a user export all their data from their Cloudlet. Data is exported in a json file.",
-               "type"       : "complex",
+               "type"       : "Cloudlet",
                "nickname"   : "exportCloudletById",
                "parameters" : [
                   {
