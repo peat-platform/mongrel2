@@ -1,27 +1,20 @@
 {
    "apiVersion"      : "1.0.0",
    "swaggerVersion"  : "1.2",
-   "basePath"        : "http://localhost/api/v1",
    "resourcePath"    : "/search",
    "produces"        : [
       "application/json"
    ],
    "apis": [
       {
-         "path": "search/{cloudletId}/data",
+         "path": "/search/{cloudletId}",
          "operations": [
             {
                "method"   : "GET",
                "summary"  : "Search for data within a cloudlet.",
                "notes"    : "This endpoint can be used to search within a Cloudlet. Objects can be searched by their types, context and data properties. All parameters support RQL queries <a href='http://www.persvr.org/rql'>http://www.persvr.org/rql</a>. Parameters allow for pagination and result sorting. The response contains an array of data views.",
-               "type"     : "ResultArray",
+               "type"     : "JSON",
                "nickname" : "search",
-               "responseMessages": [
-                  {
-                     "code": 501,
-                     "message": "Not yet Implemented"
-                  }
-               ],
                "parameters" : [
                   {
                      "name"        : "cloudletId",
@@ -75,22 +68,12 @@
                ],
                "responseMessages": [
                   {
-                     "code": 501,
-                     "message": "Not yet Implemented"
-                  },
-                  {
-                     "code": 400,
-                     "message": "Bad Request",
-                     "responseModel": "Status"
+                     "code": 200,
+                     "message": "Ok"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
-                  },
-                  {
-                     "code": 405,
-                     "message": "Method Not allowed",
                      "responseModel": "Status"
                   }
                ]
@@ -99,69 +82,21 @@
       }
    ],
    "models" : {
-      "DataView": {
-         "id": "DataView",
-         "properties": {
-            "id": {
-               "type"        : "string",
-               "format"      : "string",
-               "description" : "Unique identifier for the Object",
-               "required"    : true
-            },
-            "value": {
-               "type"        : "string",
-               "description" : "JSON Object Returned",
-               "required"    : true
-            }
-         }
+      "JSON" : {
+         "id": "JSON"
       },
-      "Result" : {
-         "id": "Result",
+      "Status": {
+         "id": "Status",
          "properties": {
-            "index": {
-               "type"        : "string",
-               "format"      : "int32",
-               "description" : "The position of this object in the complete result array.",
-               "required"    : true
-            },
-            "view" : {
-               "type"        : "DataView",
-               "description" : "Data View",
-               "required"    : true
-            }
-         }
-      },
-      "ResultArray": {
-         "id": "ResultArray",
-         "properties": {
-            "value": {
-               "type"        : "boolean",
-               "format"      : "boolean",
-               "description" : "True if request was success, otherwise False.",
-               "required"    : true
-            },
-            "errorMessage" : {
-               "type"        : "string",
-               "description" : "If the search caused an error the error message appears here.",
-               "required"    : false
-            },
-            "count" : {
+            "code": {
                "type"        : "integer",
-               "format"      : "int32",
-               "description" : "The amounts of results in this result array."
-            },
-            "total.count" : {
-               "type"        : "integer",
-               "format"      : "int32",
-               "description" : "The complete number of matching views/objects."
-            },
-            "results":{
-               "type"        : "array",
-               "description" : "An array of Results for the created types.",
-               "items"       : {
-                  "$ref" : "Result"
-               },
+               "description" : "Response code",
                "required"    : true
+            },
+            "message":{
+               "type"     :"string",
+               "description" : "Descriptive message",
+               "required" : false
             }
          }
       }

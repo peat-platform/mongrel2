@@ -1,0 +1,186 @@
+{
+   "apiVersion": "1.0.0",
+   "swaggerVersion": "1.2",
+   "resourcePath": "/types",
+   "produces": [
+      "application/json"
+   ],
+   "apis": [
+      {
+         "path": "/types",
+         "operations": [
+            {
+               "method"     : "POST",
+               "summary"    : "Creates a type.",
+               "notes"      : "Creates a type on the Cloudlet platform",
+               "type"       : "string",
+               "nickname"   : "createType",
+               "parameters" : [
+                  {
+                     "name"         : "data",
+                     "description"  : "The type to be created.",
+                     "required"     : true,
+                     "type"         : "Type",
+                     "paramType"    : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok",
+                     "responseModel": "string"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Type could not be created",
+                     "responseModel": "Error"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Error"
+                  }
+               ]
+            },
+            {
+               "method"     : "PATCH",
+               "summary"    : "Create multiple types in a single request.",
+               "notes"      : "Create multiple types to a in one go.",
+               "type"       : "StatusArray",
+               "nickname"   : "createTypes",
+               "parameters" : [
+                  {
+                     "name"         : "body",
+                     "description"  : "JSON array of the types to be created.",
+                     "required"     : true,
+                     "type"         : "TypeArray",
+                     "paramType"    : "body"
+                  }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok",
+                     "responseModel": "StatusArray"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Error adding some types.",
+                     "responseModel": "StatusArray"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "StatusArray"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "path": "/types/{typeID}",
+         "operations": [
+            {
+               "method"     : "GET",
+               "summary"    : "Get a type.",
+               "notes"      : "Returns the type associated with the provided Id.",
+               "type"       : "Type",
+               "nickname"   : "getType",
+               "parameters" : [
+                  {
+                     "name"         : "typeID",
+                     "description"  : "The Id of the type.",
+                     "required"     : true,
+                     "type"         : "string",
+                     "paramType"    : "path"
+                  },
+				 {
+					"name"        : "format",
+					"description" : "Format the type should be returned in.",
+					"required"    : true,
+					"dataType"    : "string",
+					"paramType"   : "query"
+				 }
+               ],
+               "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
+                  {
+                     "code": 400,
+                     "message": "Type not found",
+                     "responseModel": "Status"
+                  },
+                  {
+                     "code": 401,
+                     "message": "Unauthorised request",
+                     "responseModel": "Status"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "models": {
+      "TypeArray": {
+         "id": "TypeArray",
+         "properties": {
+            "types": {
+               "type"        : "array",
+               "description" : "An array of Types",
+               "items"       : {
+                  "$ref" : "Type"
+               }
+            }
+         }
+      },
+      "Type": {
+         "id": "Type",
+         "properties": {
+            "id": {
+               "type"        : "string",
+               "description" : "Unique identifier for the type",
+               "required"    : true
+            },
+            "@context": {
+               "type"        : "string",
+               "description" : "The type's semantic context (optional?)",
+               "required"    : true
+            },
+            "properties": {
+               "type"        : "string",
+               "description" : "The defined schema format for this type (format JSON)",
+               "required"    : true
+            }
+         }
+      },
+      "Status": {
+         "id": "Status",
+         "properties": {
+            "code": {
+               "type"        : "integer",
+               "description" : "Response code",
+               "required"    : true
+            },
+            "message":{
+               "type"     :"string",
+               "description" : "Descriptive message",
+               "required" : false
+            }
+         }
+      },
+      "StatusArray": {
+         "id": "StatusArray",
+         "properties": {
+            "types": {
+               "type"        : "array",
+               "description" : "An array of Statuses",
+               "items"       : {
+                  "$ref" : "Status"
+               }
+            }
+         }
+      }
+   }
+}
