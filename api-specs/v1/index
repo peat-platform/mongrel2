@@ -3,31 +3,31 @@
    "swaggerVersion": "1.2",
    "apis": [
       {
-         "path": "cloudlets",
+         "path": "/cloudlets",
          "description": "Cloudlet Administration API"
       },
       {
-         "path": "objects",
+         "path": "/objects",
          "description": "Controls OPENi Objects"
       },
       {
-         "path": "types",
+         "path": "/types",
          "description": "Controls OPENi types"
       },
       {
-         "path": "attachments",
+         "path": "/attachments",
          "description": "Serves binary content"
       },
       {
-         "path": "search",
+         "path": "/search",
          "description": "Search API"
       },
       {
-         "path": "notify",
+         "path": "/notify",
          "description": "Notification API"
       },
       {
-         "path": "aggregate",
+         "path": "/aggregate",
          "description": "Aggregator API"
       }
    ],

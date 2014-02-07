@@ -1341,13 +1341,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.showPetStore = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://localhost/api/v1/"
+        url: "http://localhost/api-spec/v1/"
       });
     };
 
     HeaderView.prototype.showWordnikDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://localhost/api/v1/"
+        url: "http://localhost/api-spec/"
       });
     };
 
