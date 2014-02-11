@@ -1,0 +1,102 @@
+{
+   "apiVersion"      : "1.0.0",
+   "swaggerVersion"  : "1.2",
+   "basePath"        : "tcp://127.0.0.1:49994",
+   "resourcePath"    : "/dao",
+   "produces"        : [
+      "application/json"
+   ],
+   "apis": [
+      {
+         "path"       : "",
+         "operations" : [
+            {
+               "method"     : "PUT",
+               "summary"    : "Creates an Object in the database.",
+               "notes"      : "Creates an Object in the database.",
+               "nickname"   : "createCloudlet",
+               "parameters" : [
+                  {
+                     "name"          : "data",
+                     "description"   : "The Object to create in the datastore.",
+                     "required"      : true,
+                     "type"          : "DAO",
+                     "paramType"     : "body"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+"models": {
+      "DAO": {
+         "id": "DAO",
+         "properties": {
+            "action": {
+               "action"      : "string",
+               "description" : "DATABASE action.",
+               "required"    : true,
+               "enum"        : ["CREATE", "DELETE", "FETCH", "GET", "PUT"]
+            },
+            "cloudlet": {
+               "type"        : "string",
+               "description" : "The id of the Cloudlet to perform action upon. Not required for create Cloudlet",
+               "required"    : false
+            },
+            "object_name": {
+               "type"        : "string",
+               "description" : "Index for the Cloudlet object to be added.",
+               "required"    : true
+            },
+            "object_data": {
+               "type"        : "{}",
+               "description" : "Data for the Cloudlet object to be added in JSON format.",
+               "required"    : true
+            },
+            "mongrel_resp": {
+               "type"        : "MongrelResp",
+               "description" : "Responce object to send back to Client once database action has been performed.",
+               "required"    : true
+            }
+         }
+      },
+      "MongrelResp": {
+         "id"          : "MongrelResp",
+         "description" : "Responce object to send back to Client once database action has been performed.",
+         "properties": {
+            "value" : {
+               "type"        : "string",
+               "format"      : "boolean",
+               "description" : "True if request was success, otherwise False.",
+               "required"    : true
+            },
+            "cloudletId":{
+               "type"        : "string",
+               "description" : "The id of the Cloudlet that action was performed on.",
+               "required"    : false
+            },
+            "clients":{
+               "type"        : "array",
+               "items"       : {
+                  "$ref":"Client"
+               },
+               "description" : "Other data that is passed along.",
+               "required"    : false
+            }
+         }
+      },
+      "Client" : {
+         "id"           :  "Client",
+         "properties"   : {
+            "uuid"  : {
+               "type"      : "string",
+               "required"  : true
+            },
+            "connId"  : {
+               "type"      : "string",
+               "required"  : true
+            }
+         }
+      }
+   }
+}
