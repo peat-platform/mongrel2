@@ -94,7 +94,11 @@
                      "responseModel": "Status"
                   }
                ]
-            },
+            }]
+      },
+      {
+         "path": "/objects/{cloudletId}/{objectId}/{revision}",
+         "operations": [
             {
                "method"     : "PUT",
                "summary"    : "Updates the properties of on object with the provided properties",
@@ -111,6 +115,13 @@
                   {
                      "name"        : "objectId",
                      "description" : "Id of the object to be accessed.",
+                     "required"    : true,
+                     "dataType"    : "string",
+                     "paramType"   : "path"
+                  },
+                  {
+                     "name"        : "revision",
+                     "description" : "revision id of the object to be updated.",
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
