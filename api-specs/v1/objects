@@ -75,14 +75,7 @@
                      "required"    : true,
                      "dataType"    : "string",
                      "paramType"   : "path"
-                  },
-				 {
-					"name"        : "format",
-					"description" : "Format the object should be returned in.",
-					"required"    : true,
-					"dataType"    : "string",
-					"paramType"   : "query"
-				 }
+                  }
                ],
                "responseMessages": [
                   {
@@ -169,12 +162,12 @@
       "Object" : {
          "id": "Object",
 		   "properties": {
-			  "id": {
+			  "_id": {
 				 "type"        : "string",
 				 "description" : "Unique identifier for the type",
 				 "required"    : true
 			  },
-			  "properties": {
+			  "object": {
 				 "type"        : "string",
 				 "description" : "If the Id is requested, the rest of the object is namespaced here.",
 				 "required"    : true
