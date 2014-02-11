@@ -23,8 +23,8 @@
          "description": "Search API"
       },
       {
-         "path": "/notify",
-         "description": "Notification API"
+         "path": "/subscription",
+         "description": "Subscription API"
       },
       {
          "path": "/aggregate",
