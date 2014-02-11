@@ -139,11 +139,6 @@
       "Cloudlet": {
          "id": "Cloudlet",
          "properties": {
-            "id": {
-               "type"        : "string",
-               "description" : "Unique identifier for the Cloudlet.",
-               "required"    : true
-            },
             "alias": {
                "type"        : "string",
                "description" : "Human readable name for the Cloudlet.",
@@ -153,23 +148,13 @@
                "type"        : "string",
                "description" : "Username of person who owns the Cloudlet.",
                "required"    : true
-            },
-            "cloudletStatus": {
-               "type"        : "integer",
-               "format"      : "int32",
-               "description" : "Cloudlet Status",
-               "enum"        : [
-                  "1-registered",
-                  "2-active",
-                  "3-closed"
-               ]
             }
          }
       },
       "Status": {
          "id": "Status",
          "properties": {
-            "value": {
+            "result": {
                "type"        : "boolean",
                "format"      : "boolean",
                "description" : "True if request was success, otherwise False.",

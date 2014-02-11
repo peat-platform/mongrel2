@@ -33,39 +33,39 @@
          "id": "DAO",
          "properties": {
             "action": {
-               "action"      : "string",
+               "type"        : "string",
                "description" : "DATABASE action.",
                "required"    : true,
                "enum"        : ["CREATE", "DELETE", "FETCH", "GET", "PUT"]
             },
             "cloudlet": {
                "type"        : "string",
-               "description" : "The id of the Cloudlet to perform action upon. Not required for create Cloudlet",
-               "required"    : false
+               "description" : "The id of the Cloudlet(database) to perform action upon.",
+               "required"    : true
             },
             "object_name": {
                "type"        : "string",
-               "description" : "Index for the Cloudlet object to be added.",
-               "required"    : true
+               "description" : "Index of the Cloudlet object to be added or read.",
+               "required"    : false
             },
             "object_data": {
                "type"        : "{}",
-               "description" : "Data for the Cloudlet object to be added in JSON format.",
-               "required"    : true
+               "description" : "Data (in JSON format) for the Cloudlet object to be added.",
+               "required"    : false
             },
             "mongrel_resp": {
                "type"        : "MongrelResp",
-               "description" : "Responce object to send back to Client once database action has been performed.",
+               "description" : "Data object to send to Client once database action has been performed. Note: the dao module may add to the response.",
                "required"    : true
             }
          }
       },
       "MongrelResp": {
          "id"          : "MongrelResp",
-         "description" : "Responce object to send back to Client once database action has been performed.",
+         "description" : "Responce object to send to Client once database action has been performed.",
          "properties": {
             "value" : {
-               "type"        : "string",
+               "type"        : "boolean",
                "format"      : "boolean",
                "description" : "True if request was success, otherwise False.",
                "required"    : true
@@ -80,7 +80,7 @@
                "items"       : {
                   "$ref":"Client"
                },
-               "description" : "Other data that is passed along.",
+               "description" : "An array of clients that the Response object is to be sent to.",
                "required"    : false
             }
          }
@@ -90,11 +90,13 @@
          "properties"   : {
             "uuid"  : {
                "type"      : "string",
-               "required"  : true
+               "required"  : true,
+               "description" : "Connected Clients uuid."
             },
             "connId"  : {
                "type"      : "string",
-               "required"  : true
+               "required"  : true,
+               "description" : "Connected Clients connId."
             }
          }
       }
