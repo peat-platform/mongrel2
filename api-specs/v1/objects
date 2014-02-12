@@ -171,19 +171,7 @@
          }
       },
       "Object" : {
-         "id": "Object",
-		   "properties": {
-			  "_id": {
-				 "type"        : "string",
-				 "description" : "Unique identifier for the type",
-				 "required"    : true
-			  },
-			  "object": {
-				 "type"        : "string",
-				 "description" : "If the Id is requested, the rest of the object is namespaced here.",
-				 "required"    : true
-			  }
-		   }
+         "id": "Object"
       }
    }
 }
