@@ -142,15 +142,15 @@
             "id": {
                "type"        : "string",
                "description" : "Unique identifier for the type",
-               "required"    : true
+               "required"    : false
             },
             "@context": {
                "type"        : "string",
                "description" : "The type's semantic context (optional?)",
                "required"    : true
             },
-            "properties": {
-               "type"        : "string",
+            "object": {
+               "type"        : "Object",
                "description" : "The defined schema format for this type (format JSON)",
                "required"    : true
             }
@@ -170,6 +170,9 @@
                "required" : false
             }
          }
+      },
+      "Object": {
+         "id": "Object"
       },
       "StatusArray": {
          "id": "StatusArray",

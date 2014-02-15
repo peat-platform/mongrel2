@@ -32,15 +32,40 @@
       "DAO": {
          "id": "DAO",
          "properties": {
+            "dao_actions": {
+               "type"        : "array",
+               "description" : "An array of DAO Actions",
+               "items"       : {
+                  "$ref" : "DaoAction"
+               }
+            },
+            "mongrel_resp": {
+               "type"        : "MongrelResp",
+               "description" : "Data object to send to Client once database action has been performed. Note: the dao module may add to the response.",
+               "required"    : true
+            },
+            "clients":{
+               "type"        : "array",
+               "items"       : {
+                  "$ref":"Client"
+               },
+               "description" : "An array of clients that the Response object is to be sent to.",
+               "required"    : false
+            }
+         }
+      },
+      "DaoAction" : {
+        "id"      : "DaoAction",
+         "properties" : {
             "action": {
                "type"        : "string",
                "description" : "DATABASE action.",
                "required"    : true,
-               "enum"        : ["CREATE", "DELETE", "FETCH", "GET", "PUT"]
+               "enum"        : ["CREATE", "DELETE", "FETCH", "GET", "PUT", "POST"]
             },
-            "cloudlet": {
+            "database": {
                "type"        : "string",
-               "description" : "The id of the Cloudlet(database) to perform action upon.",
+               "description" : "The id of the database to perform action upon.",
                "required"    : true
             },
             "object_name": {
@@ -49,14 +74,9 @@
                "required"    : false
             },
             "object_data": {
-               "type"        : "{}",
+               "type"        : "Object",
                "description" : "Data (in JSON format) for the Cloudlet object to be added.",
                "required"    : false
-            },
-            "mongrel_resp": {
-               "type"        : "MongrelResp",
-               "description" : "Data object to send to Client once database action has been performed. Note: the dao module may add to the response.",
-               "required"    : true
             }
          }
       },
@@ -70,17 +90,9 @@
                "description" : "True if request was success, otherwise False.",
                "required"    : true
             },
-            "cloudletId":{
-               "type"        : "string",
+            "data":{
+               "type"        : "Object",
                "description" : "The id of the Cloudlet that action was performed on.",
-               "required"    : false
-            },
-            "clients":{
-               "type"        : "array",
-               "items"       : {
-                  "$ref":"Client"
-               },
-               "description" : "An array of clients that the Response object is to be sent to.",
                "required"    : false
             }
          }
@@ -99,6 +111,9 @@
                "description" : "Connected Clients connId."
             }
          }
+      },
+      "Object" : {
+         "id" :  "Object"
       }
    }
 }
