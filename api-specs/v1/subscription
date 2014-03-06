@@ -12,7 +12,7 @@
                "method": "GET",
                "summary": "List All Subscriptions",
                "notes": "",
-               "nickname": "",
+               "nickname": "getSubscriptionsByCloudlet",
                "responseMessages": [
                   {
                      "code": 200,
@@ -43,7 +43,7 @@
                "method": "GET",
                "summary": "List subscription settings for {objectId}",
                "notes": "",
-               "nickname": "",
+               "nickname": "getSubscriptionsByCloudletAndObject",
                "responseMessages": [
                   {
                      "code": 200,
@@ -76,7 +76,7 @@
                "method": "POST",
                "summary": "Update Subscription settings for {objectId}",
                "notes": "",
-               "nickname": "",
+               "nickname": "setSubscriptionForObject",
                "responseMessages": [
                   {
                      "code": 200,
@@ -116,7 +116,7 @@
                "method": "DELETE",
                "summary": "??",
                "notes": "",
-               "nickname": "",
+               "nickname": "removeSubscription",
                "responseMessages": [
                   {
                      "code": 501,
