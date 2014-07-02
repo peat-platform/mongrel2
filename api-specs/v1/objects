@@ -1,4 +1,4 @@
-{
+{ 
    "apiVersion"      : "1.0.0",
    "swaggerVersion"  : "1.2",
    "basePath"        : "http://dev.openi-ict.eu/api/v1",
@@ -21,14 +21,14 @@
                      "name"        : "cloudletId",
                      "description" : "The id of the users cloudlet.",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "type"        : "String",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "object",
                      "description" : "Object to be created in the cloudlet.",
                      "required"    : true,
-                     "dataType"    : "Object",
+                     "type"        : "Object",
                      "paramType"   : "body"
                   }
                ],
@@ -66,14 +66,14 @@
                      "name"        : "cloudletId",
                      "description" : "The id of the users Cloudlet that is to be accessed.",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "type"        : "String",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "objectId",
                      "description" : "Id of the object to be accessed.",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "type"        : "String",
                      "paramType"   : "path"
                   }
                ],
@@ -104,33 +104,34 @@
                "summary"    : "Updates the properties of on object with the provided properties",
                "notes"      : "Updates the properties of on object with the provided properties.",
                "nickname"   : "setObject",
+               "type"        : "String",
                "parameters" : [
                   {
                      "name"        : "cloudletId",
                      "description" : "The id of the users Cloudlet that is to be accessed.",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "type"        : "String",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "objectId",
                      "description" : "Id of the object to be accessed.",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "type"        : "String",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "revision",
                      "description" : "revision id of the object to be updated.",
                      "required"    : true,
-                     "dataType"    : "string",
+                     "type"        : "String",
                      "paramType"   : "path"
                   },
                   {
                      "name"        : "data",
                      "description" : "Object with properties that are to be overwritten.",
                      "required"    : true,
-                     "dataType"    : "Object",
+                     "type"    : "Object",
                      "paramType"   : "body"
                   }
                ],

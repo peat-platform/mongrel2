@@ -1,4 +1,4 @@
-{
+{ 
     "apiVersion": "1.0.0",
     "swaggerVersion": "1.2",
     "basePath": "http://dev.openi-ict.eu/api/v1",
@@ -12,6 +12,7 @@
                     "summary": "List All Subscriptions",
                     "notes": "",
                     "nickname": "getSubscriptionsByCloudlet",
+                    "type"        : "String",
                     "responseMessages": [
                         {
                             "code": 200,
@@ -34,38 +35,39 @@
                     ]
                 },
                 {
-                                    "method": "POST",
-                                    "summary": "Add Subscriptions",
-                                    "notes": "",
-                                    "nickname": "addSunscription",
-                                    "responseMessages": [
-                                        {
-                                            "code": 200,
-                                            "message": "ok"
-                                        },
-                                        {
-                                            "code": 400,
-                                            "message": "Bad Request",
-                                            "responseModel": "Status"
-                                        }
-                                    ],
-                                    "parameters": [
-                                        {
-                                            "name": "subscriptions",
-                                            "description": "",
-                                            "required": true,
-                                            "type": "SubsBlock",
-                                            "paramType": "body"
-                                        },
-                                        {
-                                            "name": "cloudletId",
-                                            "description": "The Cloudlet Id for the User",
-                                            "required": true,
-                                            "type": "string",
-                                            "paramType": "path"
-                                        }
-                                    ]
-                                }
+                     "method": "POST",
+                     "summary": "Add Subscriptions",
+                     "notes": "",
+                     "nickname": "addSubscription",
+                     "type"        : "String",
+                     "responseMessages": [
+                         {
+                             "code": 200,
+                             "message": "ok"
+                         },
+                         {
+                             "code": 400,
+                             "message": "Bad Request",
+                             "responseModel": "Status"
+                         }
+                     ],
+                     "parameters": [
+                         {
+                             "name": "subscriptions",
+                             "description": "",
+                             "required": true,
+                             "type": "SubsBlock",
+                             "paramType": "body"
+                         },
+                         {
+                             "name": "cloudletId",
+                             "description": "The Cloudlet Id for the User",
+                             "required": true,
+                             "type": "string",
+                             "paramType": "path"
+                         }
+                     ]
+                 }
             ]
         },
         {
@@ -76,6 +78,7 @@
                     "summary": "List subscription settings for {objectId}",
                     "notes": "",
                     "nickname": "getSubscriptionsByCloudletAndObject",
+                     "type"   : "String",
                     "responseMessages": [
                         {
                             "code": 200,
@@ -99,7 +102,7 @@
                             "name": "objectId",
                             "description": "Subscription Object to be returned in JSON representation",
                             "required": true,
-                            "dataType": "string",
+                            "type"        : "String",
                             "paramType": "path"
                         }
                     ]
@@ -109,6 +112,7 @@
                     "summary": "Update Subscription settings for {objectId}",
                     "notes": "",
                     "nickname": "setSubscriptionForObject",
+                    "type"        : "String",
                     "responseMessages": [
                         {
                             "code": 200,
@@ -132,7 +136,7 @@
                             "name": "objectId",
                             "description": "Subscription Object to be returned in JSON representation",
                             "required": true,
-                            "dataType": "string",
+                             "type"        : "String",
                             "paramType": "path"
                         },
                         {
@@ -149,6 +153,7 @@
                     "summary": "??",
                     "notes": "",
                     "nickname": "removeSubscription",
+                    "type"        : "String",
                     "responseMessages": [
                         {
                             "code": 501,

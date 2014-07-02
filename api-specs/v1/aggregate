@@ -3,16 +3,22 @@
    "swaggerVersion"  : "1.2",
    "basePath"        : "http://dev.openi-ict.eu/api/v1",
    "resourcePath"    : "/aggregate",
-   "apis": [
+   "type"            : "String",
+   "apis": [ 
       {
          "path": "/aggregate/{typeId}",
          "operations": [
             {
-               "method": "GET",
-               "summary": "",
-               "notes": "",
-               "nickname": "getAggregated",
+               "method"    : "GET",
+               "summary"   : "",
+               "notes"     : "",
+               "nickname"  : "getAggregated",
+               "type"      : "String",
                "responseMessages": [
+                  {
+                     "code": 200,
+                     "message": "Ok"
+                  },
                   {
                      "code": 501,
                      "message": "Not yet Implemented"
