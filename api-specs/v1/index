@@ -1,4 +1,4 @@
-{    
+{     
    "apiVersion": "1.0.0",
    "swaggerVersion": "1.2",
    "apis": [
@@ -29,93 +29,6 @@
       {
          "path": "/aggregate",
          "description": "Aggregator API"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/account"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/application"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/article"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/audio"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/badge"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/card"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/cbsconnector"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/checkin"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/contact"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/context"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/device"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/event"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/file"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/game"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/measurement"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/note"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/nutrition"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/photo"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/place"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/product"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/question"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/route"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/service"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/shop"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/sleep"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/status"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/user"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/video"
-      },
-      {
-         "path": "http://dev.openi-ict.eu/api/doc/schema/workout"
       }
    ],
    "info": {
