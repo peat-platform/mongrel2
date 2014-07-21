@@ -21,7 +21,7 @@
                   {
                      "code": 400,
                      "message": "Bad Request",
-                     "responseModel": "Status"
+                     "responseModel": "NotifyStatus"
                   }
                ],
                "parameters" : [
@@ -52,7 +52,7 @@
                   {
                      "code": 400,
                      "message": "Bad Request",
-                     "responseModel": "Status"
+                     "responseModel": "NotifyStatus"
                   }
                ],
                "parameters" : [
@@ -85,7 +85,7 @@
                   {
                      "code": 400,
                      "message": "Bad Request",
-                     "responseModel": "Status"
+                     "responseModel": "NotifyStatus"
                   }
                ],
                "parameters" : [
@@ -128,8 +128,8 @@
       }
    ],
    "models": {
-      "Status": {
-         "id": "Status",
+      "NotifyStatus": {
+         "id": "NotifyStatus",
          "properties": {
             "value": {
                "type"        : "boolean",

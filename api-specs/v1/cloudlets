@@ -14,7 +14,7 @@
                "method"     : "POST",
                "summary"    : "Creates a Cloudlet",
                "notes"      : "Provisions a Cloudlet on the Cloudlet Platform. This is an internal API that only the resource service can use.",
-               "type"       : "Status",
+               "type"       : "CloudletStatus",
                "nickname"   : "createCloudlet",
                "parameters" : [
                   {
@@ -25,7 +25,7 @@
                      "paramType"     : "body"
                   }
                ],
-               "responseClass": "Status",
+               "responseClass": "CloudletStatus",
                "responseMessages": [
                   {
                      "code": 501,
@@ -34,17 +34,17 @@
                   {
                      "code": 400,
                      "message": "Bad Request",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   },
                   {
                      "code": 405,
                      "message": "Method Not allowed",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   }
                ]
             }
@@ -57,7 +57,7 @@
                "method"     : "DELETE",
                "summary"    : "DELETE Cloudlet by Id",
                "notes"      : "This endpoint allows a user delete their Cloudlet. When called all their data is purged from their Cloudlet and indexes referring to their Cloudlet are removed.",
-               "type"       : "Status",
+               "type"       : "CloudletStatus",
                "nickname"   : "deleteCloudletById",
                "parameters" : [
                   {
@@ -86,7 +86,7 @@
                   {
                      "code": 405,
                      "message": "Method Not allowed",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   }
                ]
             }
@@ -118,17 +118,17 @@
                   {
                      "code": 400,
                      "message": "Bad Request",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   },
                   {
                      "code": 405,
                      "message": "Method Not allowed",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   }
                ]
             }
@@ -151,8 +151,8 @@
             }
          }
       },
-      "Status": {
-         "id": "Status",
+      "CloudletStatus": {
+         "id": "CloudletStatus",
          "properties": {
             "result": {
                "type"        : "boolean",
