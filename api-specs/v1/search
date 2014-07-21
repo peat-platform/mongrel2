@@ -86,8 +86,8 @@
       "JSON" : {
          "id": "JSON"
       },
-      "Status": {
-         "id": "Status",
+      "SearchStatus": {
+         "id": "SearchStatus",
          "properties": {
             "code": {
                "type"        : "integer",

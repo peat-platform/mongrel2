@@ -41,12 +41,12 @@
                   {
                      "code": 400,
                      "message": "Data could not be added to the cloudlet",
-                     "responseModel": "Status"
+                     "responseModel": "ObjectStatus"
                   },
 			      {
 				 	 "code": 401,
 					 "message": "Unauthorised request",
-					 "responseModel": "Status"
+					 "responseModel": "ObjectStatus"
 				  }
                ]
             }
@@ -86,12 +86,12 @@
                   {
                      "code": 400,
                      "message": "Object not found",
-                     "responseModel": "Status"
+                     "responseModel": "ObjectStatus"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "ObjectStatus"
                   }
                ]
             }]
@@ -143,12 +143,12 @@
                   {
                      "code": 400,
                      "message": "Object not found",
-                     "responseModel": "Status"
+                     "responseModel": "ObjectStatus"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "ObjectStatus"
                   }
                ]
             }
@@ -156,8 +156,8 @@
       }
    ],
    "models": {
-      "Status": {
-         "id": "Status",
+      "ObjectStatus": {
+         "id": "ObjectStatus",
          "properties": {
             "code": {
                "type"        : "integer",
