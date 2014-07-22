@@ -76,12 +76,12 @@
                   {
                      "code": 400,
                      "message": "Bad Request",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "CloudletStatus"
                   },
                   {
                      "code": 405,

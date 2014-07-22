@@ -75,7 +75,7 @@
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "SearchStatus"
                   }
                ]
             }
