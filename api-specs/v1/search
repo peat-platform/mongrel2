@@ -91,7 +91,7 @@
          "properties": {
             "code": {
                "type"        : "integer",
-	       "format"	     : "int32"
+	       "format"	     : "int32",
                "description" : "Response code",
                "required"    : true
             },
