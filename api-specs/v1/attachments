@@ -118,5 +118,23 @@
 		  }
 	   ]
 	}
-   ]
+   ],
+
+   "models" : {
+		"AttachmentStatus" : {
+			"id" : "AttachmentStatus",
+			"properties" : {
+				"code" : {
+					"type" : "integer",
+					"description" : "Response code",
+               "required"    : true
+				},
+				"message":{
+               "type"     :"string",
+               "description" : "Descriptive message",
+               "required" : false
+            }
+			}
+		}
+   }
 }
