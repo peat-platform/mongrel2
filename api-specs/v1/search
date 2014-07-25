@@ -75,7 +75,7 @@
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "SearchStatus"
                   }
                ]
             }
@@ -86,11 +86,12 @@
       "JSON" : {
          "id": "JSON"
       },
-      "Status": {
-         "id": "Status",
+      "SearchStatus": {
+         "id": "SearchStatus",
          "properties": {
             "code": {
                "type"        : "integer",
+	       "format"	     : "int32",
                "description" : "Response code",
                "required"    : true
             },

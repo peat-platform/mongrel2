@@ -21,7 +21,7 @@
                         {
                             "code": 400,
                             "message": "Bad Request",
-                            "responseModel": "Status"
+                            "responseModel": "SubscriptionStatus"
                         }
                     ],
                     "parameters": [
@@ -48,7 +48,7 @@
                          {
                              "code": 400,
                              "message": "Bad Request",
-                             "responseModel": "Status"
+                             "responseModel": "SubscriptionStatus"
                          }
                      ],
                      "parameters": [
@@ -87,7 +87,7 @@
                         {
                             "code": 400,
                             "message": "Bad Request",
-                            "responseModel": "Status"
+                            "responseModel": "SubscriptionStatus"
                         }
                     ],
                     "parameters": [
@@ -121,7 +121,7 @@
                         {
                             "code": 400,
                             "message": "Bad Request",
-                            "responseModel": "Status"
+                            "responseModel": "SubscriptionStatus"
                         }
                     ],
                     "parameters": [
@@ -165,8 +165,8 @@
         }
     ],
     "models": {
-        "Status": {
-            "id": "Status",
+        "SubscriptionStatus": {
+            "id": "SubscriptionStatus",
             "properties": {
                 "value": {
                     "type": "boolean",

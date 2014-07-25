@@ -111,12 +111,12 @@
                   {
                      "code": 400,
                      "message": "Type not found",
-                     "responseModel": "Status"
+                     "responseModel": "TypeStatus"
                   },
                   {
                      "code": 401,
                      "message": "Unauthorised request",
-                     "responseModel": "Status"
+                     "responseModel": "TypeStatus"
                   }
                ]
             }
@@ -156,8 +156,8 @@
             }
          }
       },
-      "Status": {
-         "id": "Status",
+      "TypeStatus": {
+         "id": "TypeStatus",
          "properties": {
             "code": {
                "type"        : "string",
@@ -196,7 +196,7 @@
                "type"        : "array",
                "description" : "An array of Statuses",
                "items"       : {
-                  "$ref" : "Status"
+                  "$ref" : "TypeStatus"
                }
             }
          }
