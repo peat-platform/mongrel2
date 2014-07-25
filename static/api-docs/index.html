@@ -1,4 +1,4 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>      
 <!--[if IE 7]>
 <html class="ie ie7" lang="en-US">
 <![endif]-->
@@ -80,7 +80,11 @@
     <script type="text/javascript">
         $(function () {
 
-            var apiPath = (location.search.indexOf("all=true") != -1) ? "/api-spec/all" : "/api-spec/v1" ;
+            var apiPath = (location.search.indexOf("cloudlet=true") != -1)
+                    ? "/api-spec/v1/cloudlet"    :
+                        ((location.search.indexOf("api_framework=true") != -1)
+                                ? "/api-spec/v1/api_framework" : "/api-spec/v1");
+
 
             window.swaggerUi = new SwaggerUi({
                 url: apiPath,
