@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
   <title>Swagger UI</title>
   <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
@@ -19,7 +19,7 @@
   <script type="text/javascript">
     $(function () {
 
-      var apiPath = (location.search.indexOf("internal=true") != -1) ? "/internal-api-spec/v1" : "/api-spec/v1" ;
+      var apiPath = (location.search.indexOf("all=true") != -1) ? "/api-spec/all" : "/api-spec/v1" ;
 
       window.swaggerUi = new SwaggerUi({
       url: apiPath,
