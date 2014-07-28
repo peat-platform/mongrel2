@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>Get Json</title>
+</head>
+<body>
+
+<div id="control">
+    <input id="jsonLocation" type="text" value="users.json">
+    <input id="loadJsonButton" type="button" value="Pull Json">
+
+    </br>
+
+    <input id="elementIndex" type="text" onkeyup="digitsOnly(this);">
+    <input id="showElementButton" type="button" value="Show Element">
+    <p id="error"></p>
+</div>
+
+<div id="content"></div>
+
+<script type="application/javascript" src="main.js"></script>
+</body>
+</html>
