@@ -2605,7 +2605,8 @@ Request.prototype.write = function (s) {
 
 Request.prototype.end = function (s) {
     if (s !== undefined) this.write(s);
-    this.xhr.send(this.body);
+    
+	this.xhr.send(this.body);
 };
 
 });
