@@ -1,4 +1,4 @@
-// swagger.js
+// swagger.js 
 // version 2.0.37
 
 var __bind = function(fn, me){
@@ -590,7 +590,8 @@ SwaggerModel.prototype.createJSONSample = function(modelsToIgnore) {
 var SwaggerModelProperty = function(name, obj) {
   this.name = name;
   this.dataType = obj.type || obj.dataType || obj["$ref"];
-  this.isCollection = this.dataType && (this.dataType.toLowerCase() === 'array' || this.dataType.toLowerCase() === 'list' || this.dataType.toLowerCase() === 'set');
+  this.isCollection = this.dataType && (this.dataType.toLowerCase() === 'array' || this.dataType.toLowerCase() === 'list' || this.dataType.toLowerCase() === 'set' );
+  this.isJSON       = this.dataType && (this.dataType.toLowerCase() === 'json' || this.dataType.toLowerCase() === 'map' )
   this.descr = obj.description;
   this.required = obj.required;
   if (obj.items != null) {
@@ -645,7 +646,13 @@ SwaggerModelProperty.prototype.toSampleValue = function(value) {
   } else if (value === "double" || value === "number") {
     result = 0.0;
   } else if (value === "string") {
-    result = "";
+     result = "";
+  } else if (value === "Map") {
+     result = {};
+  }else if (value === "json") {
+     result = {};
+  }else if (value === "JSON") {
+     result = {};
   } else {
     result = value;
   }

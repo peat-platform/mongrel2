@@ -1,4 +1,4 @@
-// swagger-ui.js
+// swagger-ui.js   
 // version 2.0.22
 $(function() {
 
@@ -1639,6 +1639,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       }
       $(this.el).html(Handlebars.templates.operation(this.model));
       if (this.model.responseClassSignature && this.model.responseClassSignature !== 'string') {
+
         signatureModel = {
           sampleJSON: this.model.responseSampleJSON,
           isParam: false,
