@@ -5216,13 +5216,9 @@
 <h1 id="hackaton-security-api">Hackaton Security API</h1>
 <p>The simplified hackaton security API allows to directly register clients and users, log them in and out and let them agree to applications (without UI interaction or permissions). We expect this to simplify the overall interaction during the hackaton.</p>
 <p>In order to utilize the OPENi system a client and user are required. Examples of these commands are shown below.</p>
-<h2 id="security-api-ui">Security API UI</h2>
-<p>To get to the Security API UI from the home page, see below.
-<img src="https://dev.openi-ict.eu/tutorials/Security_1.PNG" alt="">
-<hr>
-<img src="/tutorials/Security_2.PNG" alt=""></p>
 <h3 id="client-registration">Client Registration</h3>
 <p>This endpoint allows you to register new clients. The client registration requires a client_id. If not existent, a new client with the id will be created.</p>
+<p>Upon success this call will return an <em>empty</em> responce with a 200 status code.</p>
 <p>Endpoint</p>
 <pre><code>
 POST /uaa/clients
@@ -5230,8 +5226,9 @@ POST /uaa/clients
 <pre><code>
 {"<span class="hljs-attribute">client_id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>}
 </code></pre><hr>
-<h2 id="user-registration">User Registration</h2>
+<h1 id="user-registration">User Registration</h1>
 <p>This endpoint allows you to register new users. The user registration requires a username, an email and a password. If not existent, a new user will be created.</p>
+<p>Upon success this call will return an <em>empty</em> responce with a 200 status code.</p>
 <p>Endpoint</p>
 <pre><code>
 POST /uaa/users
@@ -5239,8 +5236,9 @@ POST /uaa/users
 <pre><code>
 {"<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>, "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>}
 </code></pre><hr>
-<h2 id="user-login">User Login</h2>
+<h1 id="user-login">User Login</h1>
 <p>This endpoint allows you to log in existing users. It requires a username and a password. If the user does not exist, the call will fail. The login will return a session. The session will expire eventually.</p>
+<p>Upon success this call will return a responce object, as seen below and with a 200 status code.</p>
 <p>Endpoint</p>
 <pre><code>
 POST /uaa/session
@@ -5251,8 +5249,10 @@ POST /uaa/session
 <pre><code>
 {"<span class="hljs-attribute">session</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>}
 </code></pre><hr>
-<h2 id="user-authorizes-app">User Authorizes App</h2>
+<h1 id="user-authorizes-app">User Authorizes App</h1>
 <p>This endpoint allows you to authorize clients on behalf of a user. It requires a session and a client. If the user or the client do not exist, the call will fail. The authorization will return a token that can be passed to the resource platforms.</p>
+<p>This request takes a previously queried <em>session key</em> and the <em>client_id</em> from the applications the user is usinf to access the platform.</p>
+<p>Upon success this call will return a responce object with a <em>token</em>, as seen below and with a 200 status code.</p>
 <p>Endpoint</p>
 <pre><code>
 POST /uaa/authorize
@@ -5263,8 +5263,9 @@ POST /uaa/authorize
 <pre><code>
 {"<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>}
 </code></pre><hr>
-<h2 id="user-logout">User Logout</h2>
+<h1 id="user-logout">User Logout</h1>
 <p>This endpoint allows you to log out a user, if so needed.</p>
+<p>Upon success this call will return an <em>empty</em> responce with a 200 status code.</p>
 <p>Endpoint</p>
 <pre><code>
 <span class="hljs-operator"><span class="hljs-keyword">DELETE</span> /uaa/<span class="hljs-keyword">session</span></span>
