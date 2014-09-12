@@ -5214,9 +5214,9 @@
     <div id="main" class="wrapper" style="width: 700px;">
 
 <h1 id="rest-calls-to-the-openi-graph-api">REST calls to the OPENi Graph API</h1>
-<p>In order to use the OPENi Graph API Framework you can make simple calls to the base URI <a href="http://openi.epu.ntua.gr:1988">http://openi.epu.ntua.gr:1988</a> appended by the version of the API, currently v.04, and the object needed.</p>
+<p>In order to use the OPENi Graph API Framework you can make simple calls to the OPENi platform appended by the version of the API, currently v.04, and the object needed.</p>
 <p>So the url should look like this:</p>
-<p><a href="http://openi.epu.ntua.gr:1988/v.04/photo/">http://openi.epu.ntua.gr:1988/v.04/photo/</a></p>
+<p><script>document.write("https://"+location.hostname)</script>/v.04/photo/</p>
 <p>After this basic url you should append the parameters you need.</p>
 <p>These parameters consist of:</p>
 <ul>
@@ -5226,7 +5226,7 @@
 <li>data ( a json with parameters applied into the methods called )</li>
 </ul>
 <p>An example call is as follows:</p>
-<pre><code class="lang-html">http://openi.epu.ntua.gr:1988/v.04/status/?user=openi-test-user&amp;apps=[{"cbs": "facebook"}, {"cbs": "twitter"}]&amp;method=get_all_statuses_for_account&amp;data={"account_id": "675350314", "user_id": "10876852"}
+<pre><code class="lang-html"><span class="hljs-label">https://</span><script>document.write(location.hostname)</script>/v<span class="hljs-number">.04</span>/status/?user=openi-test-user&amp;apps=[{<span class="hljs-string">"cbs"</span>: <span class="hljs-string">"facebook"</span>}, {<span class="hljs-string">"cbs"</span>: <span class="hljs-string">"twitter"</span>}]&amp;method=get_all_statuses_for_account&amp;data={<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"675350314"</span>, <span class="hljs-string">"user_id"</span>: <span class="hljs-string">"10876852"</span>}
 </code></pre>
 <p>If your user is properly authenticated then the latest statuses from both the Services are returned and get merged into one big response which is similar to this:</p>
 <pre><code class="lang-json">[
@@ -5234,100 +5234,100 @@
         data: [
             {
                 from: {
-                    id: "675350314"
-                    name: "Romanos Tsouroplis"
-                    object_type: ""
-                    url: ""
+                    id: <span class="hljs-string">"675350314"</span>
+                    name: <span class="hljs-string">"Romanos Tsouroplis"</span>
+                    object_type: <span class="hljs-string">""</span>
+                    url: <span class="hljs-string">""</span>
                 }
-                id: "10154523190120315"
-                object_type: "status"
-                service: "facebook"
+                id: <span class="hljs-string">"10154523190120315"</span>
+                object_type: <span class="hljs-string">"status"</span>
+                service: <span class="hljs-string">"facebook"</span>
                 text: https://www.youtube.com/watch?v=09LTT0xwdfw
                 time: {
-                    created_time: ""
-                    deleted_time: ""
-                    edited_time: "2014-09-03T11:54:54+0000"
+                    created_time: <span class="hljs-string">""</span>
+                    deleted_time: <span class="hljs-string">""</span>
+                    edited_time: <span class="hljs-string">"2014-09-03T11:54:54+0000"</span>
                 }
-                title: ""
-                url: ""
+                title: <span class="hljs-string">""</span>
+                url: <span class="hljs-string">""</span>
             },
             {
                 from: {
-                    id: "675350314"
-                    name: "Romanos Tsouroplis"
-                    object_type: ""
-                    url: ""
+                    id: <span class="hljs-string">"675350314"</span>
+                    name: <span class="hljs-string">"Romanos Tsouroplis"</span>
+                    object_type: <span class="hljs-string">""</span>
+                    url: <span class="hljs-string">""</span>
                 }
-                id: "10154467227810315"
-                object_type: "status"
-                service: "facebook"
-                text: "Amame las horas que puedes.. ≈ÌÙ¸Ú Û·ÎÔÌÈÍÈÔÙÈÍÔı ÎÂ˘ˆÔÒÂﬂÔı.. ¬·ÛﬂÎÁÚ ÛÂ ¸ÎÂÚ ÙÈÚ „Î˛ÛÛÂÚ!"
+                id: <span class="hljs-string">"10154467227810315"</span>
+                object_type: <span class="hljs-string">"status"</span>
+                service: <span class="hljs-string">"facebook"</span>
+                text: <span class="hljs-string">"Amame las horas que puedes.. ����� �������������� ����������.. ������� �� ���� ��� �������!"</span>
                 time: {
-                    created_time: ""
-                    deleted_time: ""
-                    edited_time: "2014-08-18T17:35:16+0000"
+                    created_time: <span class="hljs-string">""</span>
+                    deleted_time: <span class="hljs-string">""</span>
+                    edited_time: <span class="hljs-string">"2014-08-18T17:35:16+0000"</span>
                 }
-                title: ""
-                url: ""
+                title: <span class="hljs-string">""</span>
+                url: <span class="hljs-string">""</span>
             },
-            ...
-            ...
-            ...
+            <span class="hljs-keyword">...</span>
+            <span class="hljs-keyword">...</span>
+            <span class="hljs-keyword">...</span>
             ],
         meta: {
-            next: https://graph.facebook.com/v1.0/675350314/statuses?access_token=CAABptKWDIR0BAGZCDOxZCXaw2zZChUHOIMlmR9enE3zZCCLUsZBs6ZCWeFd1svsiwOMaKi1NV7uAuWYQLmfGEE2WvUI07Cr81C8kMTBpbFZAZCSIyT2pOfUoG7oJCSThO6bX25voN1RcaGIkZAD1fvqi8elVA85sd6g96l6RoCdCB857iA1VM3oHpTrCbG5eIw7caWIWXZBVsBTdqoOZC0qRE4NphsrLo90CZBVDujyWS0Sq6W6mSwO17XMqbglQOBWbTVSXvu76Teg6YmukR4bqO9TXsjB5TpYsB4tgl9HCIV5zTTknaHTaZACJz3YaRUTpjvE4ZD&amp;limit=25&amp;until=1378940511&amp;__paging_token=enc_AexcyAj9F9WQ1VmL1J2ERbF3NWkoI9_EApycgJGXSRj6SCiKW_shZirMHSE1KZOBvmjp4egnbbGxz01IhylEa0Va
-            previous: https://graph.facebook.com/v1.0/675350314/statuses?access_token=CAABptKWDIR0BAGZCDOxZCXaw2zZChUHOIMlmR9enE3zZCCLUsZBs6ZCWeFd1svsiwOMaKi1NV7uAuWYQLmfGEE2WvUI07Cr81C8kMTBpbFZAZCSIyT2pOfUoG7oJCSThO6bX25voN1RcaGIkZAD1fvqi8elVA85sd6g96l6RoCdCB857iA1VM3oHpTrCbG5eIw7caWIWXZBVsBTdqoOZC0qRE4NphsrLo90CZBVDujyWS0Sq6W6mSwO17XMqbglQOBWbTVSXvu76Teg6YmukR4bqO9TXsjB5TpYsB4tgl9HCIV5zTTknaHTaZACJz3YaRUTpjvE4ZD&amp;limit=25&amp;since=1409745294&amp;__paging_token=enc_AeztLMb2HcJMTp9hPiu8mBtKmpoaqtXY8hcUddQpgZr4zZzw5ABEd6BGA1i-4QcLAukp2hX4jOW3ZYPzc4XDexnh&amp;__previous=1
-            total_count: 25
+            <span class="hljs-keyword">next</span>: https://graph.facebook.com/v1.0/<span class="hljs-number">675350314</span>/statuses?access_token=CAABptKWDIR0BAGZCDOxZCXaw2zZChUHOIMlmR9enE3zZCCLUsZBs6ZCWeFd1svsiwOMaKi1NV7uAuWYQLmfGEE2WvUI07Cr81C8kMTBpbFZAZCSIyT2pOfUoG7oJCSThO6bX25voN1RcaGIkZAD1fvqi8elVA85sd6g96l6RoCdCB857iA1VM3oHpTrCbG5eIw7caWIWXZBVsBTdqoOZC0qRE4NphsrLo90CZBVDujyWS0Sq6W6mSwO17XMqbglQOBWbTVSXvu76Teg6YmukR4bqO9TXsjB5TpYsB4tgl9HCIV5zTTknaHTaZACJz3YaRUTpjvE4ZD&amp;limit=<span class="hljs-number">25</span>&amp;until=<span class="hljs-number">1378940511</span>&amp;__paging_token=enc_AexcyAj9F9WQ1VmL1J2ERbF3NWkoI9_EApycgJGXSRj6SCiKW_shZirMHSE1KZOBvmjp4egnbbGxz01IhylEa0Va
+            previous: https://graph.facebook.com/v1.0/<span class="hljs-number">675350314</span>/statuses?access_token=CAABptKWDIR0BAGZCDOxZCXaw2zZChUHOIMlmR9enE3zZCCLUsZBs6ZCWeFd1svsiwOMaKi1NV7uAuWYQLmfGEE2WvUI07Cr81C8kMTBpbFZAZCSIyT2pOfUoG7oJCSThO6bX25voN1RcaGIkZAD1fvqi8elVA85sd6g96l6RoCdCB857iA1VM3oHpTrCbG5eIw7caWIWXZBVsBTdqoOZC0qRE4NphsrLo90CZBVDujyWS0Sq6W6mSwO17XMqbglQOBWbTVSXvu76Teg6YmukR4bqO9TXsjB5TpYsB4tgl9HCIV5zTTknaHTaZACJz3YaRUTpjvE4ZD&amp;limit=<span class="hljs-number">25</span>&amp;since=<span class="hljs-number">1409745294</span>&amp;__paging_token=enc_AeztLMb2HcJMTp9hPiu8mBtKmpoaqtXY8hcUddQpgZr4zZzw5ABEd6BGA1i-4QcLAukp2hX4jOW3ZYPzc4XDexnh&amp;__previous=<span class="hljs-number">1</span>
+            total_count: <span class="hljs-number">25</span>
         }
     },
     {
         data: [
                 {
                     from: {
-                        id: 10876852
-                        name: "The Next Web"
-                        object_type: "user"
+                        id: <span class="hljs-number">10876852</span>
+                        name: <span class="hljs-string">"The Next Web"</span>
+                        object_type: <span class="hljs-string">"user"</span>
                         url: http://t.co/BV4ajjxry7
                     }
-                    id: 509633548140433408
-                    object_type: "status"
-                    service: "twitter"
-                    text: "From Yesterday: Google's new Hangouts on Air tool lets viewers cheer and jeer in real-time http://t.co/7JrBB58lXZ http://t.co/Hnc3bWZa1i"
+                    id: <span class="hljs-number">509633548140433408</span>
+                    object_type: <span class="hljs-string">"status"</span>
+                    service: <span class="hljs-string">"twitter"</span>
+                    text: <span class="hljs-string">"From Yesterday: Google's new Hangouts on Air tool lets viewers cheer and jeer in real-time http://t.co/7JrBB58lXZ http://t.co/Hnc3bWZa1i"</span>
                     time: {
-                        created_time: "Wed Sep 10 09:24:41 +0000 2014"
-                        deleted_time: ""
-                        edited_time: ""
+                        created_time: <span class="hljs-string">"Wed Sep 10 09:24:41 +0000 2014"</span>
+                        deleted_time: <span class="hljs-string">""</span>
+                        edited_time: <span class="hljs-string">""</span>
                     }
-                    title: ""
-                    url: ""
+                    title: <span class="hljs-string">""</span>
+                    url: <span class="hljs-string">""</span>
                 },
                 {
                     from: {
-                        id: 10876852
-                        name: "The Next Web"
-                        object_type: "user"
+                        id: <span class="hljs-number">10876852</span>
+                        name: <span class="hljs-string">"The Next Web"</span>
+                        object_type: <span class="hljs-string">"user"</span>
                         url: http://t.co/BV4ajjxry7
                     }
-                    id: 509630336717062144
-                    object_type: "status"
-                    service: "twitter"
-                    text: "Itís official: Rocket Internet is going public with a $970m IPO in Germany this year http://t.co/sgPM5ZZVsZ by @jonrussell"
+                    id: <span class="hljs-number">509630336717062144</span>
+                    object_type: <span class="hljs-string">"status"</span>
+                    service: <span class="hljs-string">"twitter"</span>
+                    text: <span class="hljs-string">"It�s official: Rocket Internet is going public with a $970m IPO in Germany this year http://t.co/sgPM5ZZVsZ by @jonrussell"</span>
                     time: {
-                        created_time: "Wed Sep 10 09:11:55 +0000 2014"
-                        deleted_time: ""
-                        edited_time: ""
+                        created_time: <span class="hljs-string">"Wed Sep 10 09:11:55 +0000 2014"</span>
+                        deleted_time: <span class="hljs-string">""</span>
+                        edited_time: <span class="hljs-string">""</span>
                     }
-                    title: ""
-                    url: ""
+                    title: <span class="hljs-string">""</span>
+                    url: <span class="hljs-string">""</span>
                 },
-                ...
-                ...
-                ...
+                <span class="hljs-keyword">...</span>
+                <span class="hljs-keyword">...</span>
+                <span class="hljs-keyword">...</span>
             ],
         meta: {
-            next: "Doesn't Exist"
-            previous: "Doesn't Exist"
-            total_count: 20
+            <span class="hljs-keyword">next</span>: <span class="hljs-string">"Doesn't Exist"</span>
+            previous: <span class="hljs-string">"Doesn't Exist"</span>
+            total_count: <span class="hljs-number">20</span>
         }
     }
 ]
