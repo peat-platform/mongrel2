@@ -5256,8 +5256,10 @@ POST /uaa/session
 </code></pre><hr>
 <h1 id="user-authorizes-app">User Authorizes App</h1>
 <p>This endpoint allows you to authorize clients on behalf of a user. It requires a session and a client. If the user or the client do not exist, the call will fail. The authorization will return a token that can be passed to the resource platforms.</p>
-<p>This request takes a previously queried <em>session key</em> and the <em>client_id</em> from the applications the user is usinf to access the platform.</p>
+<p>This request takes a previously queried <em>session key</em> and the <em>client_id</em> from the applications the user is using to access the platform.</p>
 <p>Upon success this call will return a responce object with a <em>token</em>, as seen below and with a 200 status code.</p>
+
+This token is then used within the **Cloudlet API** to access the cloudlet of the owner of the *token*.
 <p>Endpoint</p>
 <pre><code>
 POST /uaa/authorize
