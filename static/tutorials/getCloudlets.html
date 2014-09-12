@@ -5213,24 +5213,48 @@
 
     <div id="main" class="wrapper" style="width: 700px;">
 
-<h1 id="openi-tutorial">OPENi Tutorial</h1>
+<h1 id="cloudlet-and-object-creation">Cloudlet and Object Creation</h1>
 <hr>
-<h2 id="step-1">Step 1</h2>
-<p>Go to <a href="https://193.1.188.34/">https://193.1.188.34/</a> to access the OPENi homepage.</p>
-<h2 id="step-2">Step 2</h2>
-<p>From there, go to the subheading &#39;Client Libraries&#39;. From there you will have links to client libraries and REST Endpoints. Go to the &#39;Cloudlet REST Endpoints HTML UI&#39;.</p>
-<h2 id="step-3">Step 3</h2>
-<p>Choose the &#39;Cloudlets Administration API&#39; drop-down menu from there click the &#39;GET/cloudlets&#39; option.</p>
-<h2 id="step-4">Step 4</h2>
-<p>In &#39;GET/cloudlets&#39; there is Implementation Notes that will have a token located in it. This token will be placed in the &#39;Value&#39; text box under the subheading &#39;Parameters&#39;.</p>
-<h2 id="step-5">Step 5</h2>
-<p>At the bottom of the &#39;GET/cloudlets&#39; you can then activate it by pressing the &quot;Try it out!&quot; button. This will produce a cloudlet ID.</p>
-<h2 id="step-6">Step 6</h2>
-<p>Go to &#39;Objects: Controls OPENi Objects&#39; from the REST APIs menu.
-Choose the &#39;POST /objects/{cloudletId}&#39; option from the drop down menu</p>
-<h2 id="step-7">Step 7</h2>
-<p>Enter your Cloudlet ID into the &#39;clouletId&#39; Value text box. Click the &#39;Model Schema&#39; box to set as parameter value. </p>
-<h2 id="step-8">Step 8</h2>
-<p>Edit your values and press the &#39;Try it out!&#39; button. This will now give you a &#39;Request URL&#39;, &#39;Response Body&#39;, &#39;Response Code&#39; and &#39;Response Headers&#39;.</p>
-
+<p>The Cloudlet platform API handles all requests for cloudlets, objects and types for OPENi. Instructions for accessing the Cloudlet API UI from the home page cam be seen below.</p>
+<p><img src="/tutorials/Cloudlets_2.PNG" alt=""></p>
+<hr>
+<h3 id="cloudlet-retrieval">Cloudlet Retrieval</h3>
+<p>The <em>Authorization token</em> received from the security API can be used within the <em>cloudlets : Cloudlet Administration API</em> section with the <strong>GET/cloudlets</strong> API endpoint to retrieve the cloudlet id for a user to be used when accessing the OPENi platform on their behalf.
+<img src="/tutorials/Cloudlets_3.PNG" alt=""></p>
+<p>At the bottom of the 'GET/cloudlets' section you can then activate it by pressing the "Try it out!" button. This will produce a cloudlet ID.</p>
+<p><img src="/tutorials/Cloudlets_4.PNG" alt=""></p>
+<hr>
+<h3 id="type-creation">Type Creation</h3>
+<p>In order to creat an object within the OPENi Platform there must first be a corresponding <em>type</em> upon the platform that an object can conform too.</p>
+<p>Type creation is done within the <em>types : Controls OPENi types</em> section using the 'POST/types' endpoint.</p>
+<p><img src="/tutorials/Cloudlets_5.PNG" alt=""></p>
+<p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example 'HelloWorld' type can be seen below.</p>
+<pre><code>{
+  "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"hello"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"openi/hello"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"openi/HelloWorld"</span>
+</span>}
+</code></pre><p>The responce from the POST should return the <em>id</em> of the newly created type on the OPENi platform.</p>
+<hr>
+<h3 id="object-creation">Object Creation</h3>
+<p>Using the HelloWorld type we can create an object within the users cloudlet using the 'POST/objects/{cloudletId}' endpoint.</p>
+<p><img src="/tutorials/Cloudlets_6.PNG" alt=""></p>
+<p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example object using the 'HelloWorld' type can be seen below.</p>
+<pre><code>{
+  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_a73c1f67a0ec35fdc1b11c287edcaad2-138"</span></span>,
+  "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
+</span>}
+</code></pre><p>The "@openi_type" key hold the id of the reference type for that object. This field will also accept URLs like so:</p>
+<pre><code>{
+  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"https://demo.openi-ict.eu/api/v1/objects/c_f0bdae6dd7e375e1095b8e88f87ecec7-90"</span></span>,
+  "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
+</span>}
+</code></pre>
 </body></html>
