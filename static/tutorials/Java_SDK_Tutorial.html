@@ -5245,15 +5245,15 @@
     clientIdReq.setClientId(clientId);
     <span class="hljs-comment">//Call ClientAPI to create new client.</span>
     <span class="hljs-keyword">try</span> {
-    clientsapi.createClient(clientIdReq);
+        clientsapi.createClient(clientIdReq);
     } <span class="hljs-keyword">catch</span> (ApiException e) {
-    <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
-    System.out.println(<span class="hljs-string">"Client already exists"</span>);
-    } <span class="hljs-keyword">else</span> {
-    e.printStackTrace();
+        <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
+            System.out.println(<span class="hljs-string">"Client already exists"</span>);
+        } <span class="hljs-keyword">else</span> {
+            e.printStackTrace();
+        }
     }
-    }
-    }
+}
 </code></pre>
 <hr>
 <h4 id="registering-a-user">Registering a User</h4>
@@ -5269,15 +5269,15 @@
     userReq.setPassword(password);
     <span class="hljs-comment">//Create User</span>
     <span class="hljs-keyword">try</span> {
-    usersapi.createUser(userReq);
+        usersapi.createUser(userReq);
     } <span class="hljs-keyword">catch</span> (ApiException e) {
-    <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
-    System.out.println(<span class="hljs-string">"User already exists"</span>);
-    } <span class="hljs-keyword">else</span> {
-    e.printStackTrace();
+        <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
+            System.out.println(<span class="hljs-string">"User already exists"</span>);
+        } <span class="hljs-keyword">else</span> {
+            e.printStackTrace();
+        }
     }
-    }
-    }
+}
 </code></pre>
 <hr>
 <h4 id="login-as-user">Login as User</h4>
@@ -5293,13 +5293,13 @@
     creds.setPassword(password);
     <span class="hljs-comment">//Retrieve Session token</span>
     <span class="hljs-keyword">try</span> {
-    Session session = sessionapi.login(creds);
-    <span class="hljs-keyword">return</span> session;
-    } <span class="hljs-keyword">catch</span> (ApiException e) {
-    e.printStackTrace();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        Session session = sessionapi.login(creds);
+        <span class="hljs-keyword">return</span> session;
+        } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    }
+}
 </code></pre>
 <hr>
 <h4 id="authenticate-client-for-user">Authenticate Client for User</h4>
@@ -5315,13 +5315,13 @@
     authreq.setSession(userSession.getSession());
     <span class="hljs-comment">//Retrieve Authorization token</span>
     <span class="hljs-keyword">try</span> {
-    Token token = authorizeapi.authorizeClient(authreq);
-    <span class="hljs-keyword">return</span> token;
+        Token token = authorizeapi.authorizeClient(authreq);
+        <span class="hljs-keyword">return</span> token;
     } <span class="hljs-keyword">catch</span> (ApiException e) {
-    e.printStackTrace();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    }
+}
 </code></pre>
 <hr>
 <h4 id="using-authorization-token-to-get-cloudlet">Using Authorization Token to get Cloudlet</h4>
@@ -5332,13 +5332,13 @@
     CloudletsApi cloudletapi = <span class="hljs-keyword">new</span> CloudletsApi();
     <span class="hljs-comment">//Get Cloudlet</span>
     <span class="hljs-keyword">try</span> {
-    OPENiCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
-    <span class="hljs-keyword">return</span> cloudletData;
+        OPENiCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
+        <span class="hljs-keyword">return</span> cloudletData;
     } <span class="hljs-keyword">catch</span> (ApiException e) {
-    e.printStackTrace();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    }
+}
 </code></pre>
 <hr>
 <hr>
@@ -5359,18 +5359,18 @@
     <span class="hljs-comment">//Get user Session to authorize client</span>
     Session userSession = login(<span class="hljs-string">"TestUser"</span>,<span class="hljs-string">"secret"</span>);
     <span class="hljs-keyword">if</span> (userSession == <span class="hljs-keyword">null</span>) {
-    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting user Session token"</span>);
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting user Session token"</span>);
     }
 
     <span class="hljs-comment">//get Authorization Token to access OPENi platform</span>
     Token authToken = authorizeClient(<span class="hljs-string">"testClient"</span>, userSession);
     <span class="hljs-keyword">if</span> (authToken == <span class="hljs-keyword">null</span>) {
-    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting Authtoken"</span>);
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting Authtoken"</span>);
     }
     <span class="hljs-comment">// Use AuthToken to get Cloudlet</span>
     OPENiCloudlet cloudletData = getCloudletData(authToken);
     System.out.println(cloudletData);
-    }
+}
 </code></pre>
 <hr>
 <h4 id="creating-a-type">Creating a Type</h4>
@@ -5405,13 +5405,13 @@
 
     <span class="hljs-comment">//Post Type</span>
     <span class="hljs-keyword">try</span> {
-    CreateResponse resp = typeApi.createType(type);
-    <span class="hljs-keyword">return</span> resp;
+        CreateResponse resp = typeApi.createType(type);
+        <span class="hljs-keyword">return</span> resp;
     } <span class="hljs-keyword">catch</span> (ApiException e) {
-    e.printStackTrace();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    }
+}
 </code></pre>
 <hr>
 <h4 id="creating-an-object">Creating an Object</h4>
@@ -5430,13 +5430,13 @@
 
     <span class="hljs-comment">//Create Object</span>
     <span class="hljs-keyword">try</span> {
-    ObjectResponse resp = objectApi.createObject(cloudlet.getId(), object);
-    <span class="hljs-keyword">return</span> resp;
+        ObjectResponse resp = objectApi.createObject(cloudlet.getId(), object);
+        <span class="hljs-keyword">return</span> resp;
     } <span class="hljs-keyword">catch</span> (ApiException e) {
-    e.printStackTrace();
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    }
+}
 </code></pre>
 <hr>
 <h3 id="example-2-creating-a-type-and-an-object-of-that-type-">Example 2: Creating a Type and an Object of that Type.</h3>
@@ -5445,7 +5445,7 @@
     <li>Create a Type</li>
     <li>Create an Object of that type in a users Cloudlet.</li>
 </ul>
-<p>With a small extension to The main function in Example one the cloudlet ID retrieved can be used to create an Object.</p>
+<p>With a small extension to the main function in example 1 the cloudlet ID retrieved can be used to create an Object.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
     ...
 
@@ -5454,8 +5454,15 @@
 
     ObjectResponse exampleObject = createExampleObject(cloudletData,exampleType);
     System.out.println(exampleObject);
-    }
+}
 </code></pre>
+<hr>
+<h4>Full Example Download</h4>
+<a href="OPENi_SDK_Tutorial.zip">OPENi SDK Tutorial Eclipse Project</a>
+
+<hr>
+
+
 </div>
 
 </body></html>
