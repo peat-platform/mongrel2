@@ -5191,90 +5191,278 @@
             max-width:700px;
         }
     }
-    </style>
+  </style>
 </head>
 
 <body class="home page page-id-4 page-template-default custom-font-enabled">
 <div id="page" class="hfeed site">
-    <header id="masthead" class="site-header" role="banner">
-        <div id="headergroup"  style="width: 700px;">
-            <hgroup>
-                <h1 class="site-title"><a href="/" title="OPENi"
-                                          rel="home">OPENi</a></h1>
-                <!--<h2 class="site-description"></h2>-->
-            </hgroup>
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-                <h3 class="menu-toggle">Menu</h3>
-                <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+<header id="masthead" class="site-header" role="banner">
+    <div id="headergroup"  style="width: 700px;">
+        <hgroup>
+            <h1 class="site-title"><a href="/" title="OPENi"
+                                      rel="home">OPENi</a></h1>
+            <!--<h2 class="site-description"></h2>-->
+        </hgroup>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <h3 class="menu-toggle">Menu</h3>
+            <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
 
-            </nav>
-        </div>
-    </header>
-
-    <div id="main" class="wrapper" style="width: 700px;">
-
-
-
-        <h1 id="openi">OPENi</h1>
-        <p>Open-Source, Web-Based, Framework for Integrating Applications with Cloud-based Services and Personal Cloudlets.</p>
-        <hr>
-        <h2 id="what-is-openi-">What is OPENi?</h2>
-        <p>To <strong>developers</strong> OPENi is a fantastic service that simplifies the creation of mobile application by managing the applications interaction with a multitude of cloud based services through the Graph API.</p>
-        <p>To <strong>end users</strong> OPENi is a cloud based service that securely stores their personal data. Furthermore it&#39;s privacy control mechanisms gives them full control over how and with whome they data is shared.   </p>
-        <hr>
-        <h2 id="what-is-the-graph-api-">What is the Graph API?</h2>
-        <p>Todo. Michael?</p>
-        <h2 id="what-is-a-personal-cloudlet-">What is a Personal Cloudlet?</h2>
-        <p>A personal Cloudlet is the end-users personal data stored on the OPENi platform. The Cloudlet is built up from the user interataction with OPENi enabled apps. From an end users perspective it is an easy to use free storage facility that affords them full control over the storage and sharing of their personal data. From the app developers perspective it is 1) a rich source of data that they can utilise to enhance their applications, 2) a mechanisms to simplify the process of sharing, and 3) a third party service to which they can outsource the physical, legal, and ethical management of their mobile app&#39;s data. </p>
-        <h2 id="security-considerations-">Security considerations.</h2>
-        <p>Todo.</p>
-        <hr>
-        <h2 id="client-libraries">Client Libraries</h2>
-        <p>To experiment with OPENi&#39;s Graph API, security, and cloudlet frameworks you can use the <a href="/api-docs/">REST Endpoints HTML UI</a>. For Android application development we provide a <a href="/android-sdk/openi-android-sdk-1.0.0.jar">mobile client library</a>. This library abstracts and simplify access to the OPENi services, in simple terms it aggregates the REST clients of the three frameworks, but it also adds a significant number of enhancements including a number of security mechanisms and UI components. </p>
-        <p>We also provide standalone Java/Android client libraries for the individual frameworks:</p>
-        <ul>
-            <li><a href="/android-sdk/openi-graph-api-android-sdk-1.0.0.jar">Graph API client library</a></li>
-            <li><a href="/android-sdk/openi-cloudlet-android-sdk-1.0.0.jar">Cloudlet client library</a></li>
-            <li><a href="/android-sdk/openi-auth-android-sdk-1.0.0.jar">Security framework client library</a></li>
-            <li><a href="/api-docs/?api_framework=true">Graph API REST Endpoints HTML UI</a></li>
-            <li><a href="/api-docs/?cloudlet=true">Cloudlet REST Endpoints HTML UI</a></li>
-            <li><a href="/api-docs/?auth=true">Security API REST Endpoints HTML UI</a></li>
-        </ul>
-        <hr>
-        <h2 id="useful-tools">Useful Tools</h2>
-        <p>To ease development download and install this JSON Formatter <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en">chrome plugin</a>.</p>
-        <p>Alternatively you can use our own <a href="/viewJson/index.html">JSON-LD Viewer</a>.</p>
-        <hr>
-        <h2 id="tutorials">Tutorials</h2>
-        <ul>
-            <li><a href="/tutorials/logIn.html">Login Security</a></li>
-            <li><a href="/tutorials/getCloudlets.html">Get Cloudlets/Post Objects</a></li>
-            <li><a href="/tutorials/REST_calls_to_the_OPENi_Graph_API.html">REST calls to the OPENi Graph API</a></li>
-            <li><a href="/tutorials/Java_SDK_Tutorial.html">Cloudlet Android/Java SDK Tutorial</a></li>
-
-        </ul>
-        <hr>
-        <h2 id="architecture">Architecture</h2>
-        <p><img width="400" align="center" src="tutorials/High Level Architecture - New split.png" alt="alt text" title="OPENi Architecture Diagram"></p>
-        <p>At a high level the OPENi Platform is composed of four major components: 1) the mobile client library, 2) the security framework, 3) the API framework, and 4) the Cloudlet framework. Each component is developed using a different language and a different application stack as is suited to its functionality, yet all are presented to mobile developers through a single suite unified REST Endpoints. Internally the individual frameworks also interact with each other through their respective REST endpoints and SDK&#39;s. All interaction with external cloud-based services is performed by the API framework through it&#39;s Cloud-based services (CBS) connectors.</p>
-        <hr>
-        <h2 id="contributing">Contributing</h2>
-        <p>If you wish to contribute to the OPENi project or you just want a look at the code you can do so by cloning our <a href="vagrantup.com">Vagrant</a> development environment and following the instructions on the the README file.</p>
-<pre><code class="lang-sh">git clone https://github.com/OPENi-ict/openi-dev-env
-</code></pre>
-
-
+        </nav>
     </div>
+</header>
+
+<div id="main" class="wrapper" style="width: 700px;">
+
+<h1 id="openi-cloudlet-sdk-tutorial">OPENi Cloudlet SDK Tutorial</h1>
+<hr>
+<h3 id="generating-the-sdk">Generating the SDK</h3>
+<p>Inside the &quot;openi_android_sdk&quot; folder run the following command.</p>
+<p><strong>N.B.</strong> Change the <em>IP Address</em> to the adress of your local OPENi Development VM</p>
+<pre><code class="lang-Shell">sh build-cloudlet-sdk.sh 192.168.33.10
+</code></pre>
+<p>This will generate the <em>&quot;openi-cloudlet-android-sdk-1.0.0.jar&quot;</em> file from the OPENi swagger API definitions. </p>
+<p>This jar can be used in OPENi Java projects.</p>
+<hr>
+<p>The following function examples will work towards getting a working Java project for interacting with the OPENi system and will cover the following actions.</p>
+<ul>
+    <li>Registering a Client</li>
+    <li>Registering a User</li>
+    <li>Loging in as a User to get a Session token</li>
+    <li>Using the Session token to authenticate with a Client</li>
+    <li>Getting a Cloudlet from OPENi once authenticated.</li>
+</ul>
+<p><strong>Note:</strong> Below these examples will be a complete end-to-end example.</p>
+<hr>
+<h4 id="creating-a-client">Creating a Client</h4>
+<p>Clients will be accessing OPENi on behalf of the user and as such must be registered with the OPENi Platform.</p>
+<p><strong>N.B.</strong> This request does not return a body only a status code.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupClient</span>(String clientId) {
+    <span class="hljs-comment">//Setup Client API</span>
+    ClientsApi clientsapi = <span class="hljs-keyword">new</span> ClientsApi();
+    <span class="hljs-comment">//Prepare the client request object.</span>
+    ClientRegisterRequest clientIdReq = <span class="hljs-keyword">new</span> ClientRegisterRequest();
+    <span class="hljs-comment">//Set the Id of the new client to be created</span>
+    clientIdReq.setClientId(clientId);
+    <span class="hljs-comment">//Call ClientAPI to create new client.</span>
+    <span class="hljs-keyword">try</span> {
+        clientsapi.createClient(clientIdReq);
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
+            System.out.println(<span class="hljs-string">"Client already exists"</span>);
+        } <span class="hljs-keyword">else</span> {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<hr>
+<h4 id="registering-a-user">Registering a User</h4>
+<p>Users currently register with the OPENi system using a <em>username</em> and <em>password</em></p>
+<p><strong>N.B.</strong> This request does not return a body only a status code.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">registerUser</span>(String username, String password) {
+    <span class="hljs-comment">//Setup User API</span>
+    UsersApi usersapi = <span class="hljs-keyword">new</span> UsersApi();
+    <span class="hljs-comment">//Prepare User registration request</span>
+    UserRegisterRequest userReq = <span class="hljs-keyword">new</span> UserRegisterRequest();
+    <span class="hljs-comment">//Set name and password for user</span>
+    userReq.setName(username);
+    userReq.setPassword(password);
+    <span class="hljs-comment">//Create User</span>
+    <span class="hljs-keyword">try</span> {
+        usersapi.createUser(userReq);
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
+            System.out.println(<span class="hljs-string">"User already exists"</span>);
+        } <span class="hljs-keyword">else</span> {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<hr>
+<h4 id="login-as-user">Login as User</h4>
+<p>When a user logs into OPENi they create a Session token that can then be used by a client to authenticate itself and communicate with OPENi on the users behalf.</p>
+<p><strong>N.B.</strong> This request returns a Session token.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Session <span class="hljs-title">login</span>(String username, String password) {
+    <span class="hljs-comment">//Setup API</span>
+    SessionApi sessionapi = <span class="hljs-keyword">new</span> SessionApi();
+    <span class="hljs-comment">//Prepare User registration request</span>
+    Credentials creds = <span class="hljs-keyword">new</span> Credentials();
+    <span class="hljs-comment">//Set login credentials</span>
+    creds.setName(username);
+    creds.setPassword(password);
+    <span class="hljs-comment">//Retrieve Session token</span>
+    <span class="hljs-keyword">try</span> {
+        Session session = sessionapi.login(creds);
+        <span class="hljs-keyword">return</span> session;
+        } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h4 id="authenticate-client-for-user">Authenticate Client for User</h4>
+<p>The client then uses a Users Session token to authenticate itself before it can begin interactiong with the OPENi Platform.</p>
+<p><strong>N.B.</strong> This request returns an authentication Token.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Token <span class="hljs-title">authorizeClient</span>(String clientId, Session userSession) {
+    <span class="hljs-comment">//Setup API</span>
+    AuthorizeApi authorizeapi = <span class="hljs-keyword">new</span> AuthorizeApi();
+    <span class="hljs-comment">//Prepare authorization request</span>
+    AuthorizationRequest authreq = <span class="hljs-keyword">new</span> AuthorizationRequest();
+    <span class="hljs-comment">//Set ClientId and Session</span>
+    authreq.setClientId(clientId);
+    authreq.setSession(userSession.getSession());
+    <span class="hljs-comment">//Retrieve Authorization token</span>
+    <span class="hljs-keyword">try</span> {
+        Token token = authorizeapi.authorizeClient(authreq);
+        <span class="hljs-keyword">return</span> token;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h4 id="using-authorization-token-to-get-cloudlet">Using Authorization Token to get Cloudlet</h4>
+<p>Once the Token has been received the users cloudletId can be retrieved by passing the Token to the OPENi Platform vie the CloudletsAPI.</p>
+<p><strong>N.B.</strong> This request returns an OPENiCloudlet object.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> OPENiCloudlet <span class="hljs-title">getCloudletData</span>(Token authToken) {
+    <span class="hljs-comment">//Setup CloudletAPI</span>
+    CloudletsApi cloudletapi = <span class="hljs-keyword">new</span> CloudletsApi();
+    <span class="hljs-comment">//Get Cloudlet</span>
+    <span class="hljs-keyword">try</span> {
+        OPENiCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
+        <span class="hljs-keyword">return</span> cloudletData;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<hr>
+<h3 id="example-1-authentication-and-retrieve-cloudlet">Example 1: Authentication and retrieve Cloudlet</h3>
+<p>This function brings all the previous functions together as the first end-to-end example. This example</p>
+<ul>
+    <li>Creates a testClient</li>
+    <li>Creates a TestUser</li>
+    <li>Gets the User Session</li>
+    <li>Gets the Auth Token</li>
+    <li>Retrieves Users CloudletId</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+    <span class="hljs-comment">//Setup Required Client and User for Example</span>
+    setupClient(<span class="hljs-string">"testClient"</span>);
+    registerUser(<span class="hljs-string">"TestUser"</span>,<span class="hljs-string">"secret"</span>);
+
+    <span class="hljs-comment">//Get user Session to authorize client</span>
+    Session userSession = login(<span class="hljs-string">"TestUser"</span>,<span class="hljs-string">"secret"</span>);
+    <span class="hljs-keyword">if</span> (userSession == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting user Session token"</span>);
+    }
+
+    <span class="hljs-comment">//get Authorization Token to access OPENi platform</span>
+    Token authToken = authorizeClient(<span class="hljs-string">"testClient"</span>, userSession);
+    <span class="hljs-keyword">if</span> (authToken == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting Authtoken"</span>);
+    }
+    <span class="hljs-comment">// Use AuthToken to get Cloudlet</span>
+    OPENiCloudlet cloudletData = getCloudletData(authToken);
+    System.out.println(cloudletData);
+}
+</code></pre>
+<hr>
+<h4 id="creating-a-type">Creating a Type</h4>
+<p>The OPENi type consists of multple layers. </p>
+<ul>
+    <li><strong>The Context</strong> An array of properties within the Type.</li>
+    <li><strong>Context Entry</strong> The descriptor for a single property within the Type.</li>
+    <li><strong>Context Value</strong> METADATA about the single property including an <em>ID</em> and the OPENi primative type of that property.</li>
+</ul>
+<p><strong>N.B.</strong> The two required fields for a type are <em>context</em> and <em>reference</em></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> CreateResponse <span class="hljs-title">createExampleType</span>() {
+    <span class="hljs-comment">//Setup API</span>
+    TypesApi typeApi = <span class="hljs-keyword">new</span> TypesApi();
+    <span class="hljs-comment">//Create empty Type</span>
+    OPENiType type = <span class="hljs-keyword">new</span> OPENiType();
+    <span class="hljs-comment">//METADATA for single property within type</span>
+    ContextValue property = <span class="hljs-keyword">new</span> ContextValue();
+    property.setId(<span class="hljs-string">"openi:name"</span>);
+    property.setOpeniType(<span class="hljs-string">"string"</span>);
+    <span class="hljs-comment">//Single Type Property</span>
+    ContextEntry context = <span class="hljs-keyword">new</span> ContextEntry();
+    context.setPropertyName(<span class="hljs-string">"name"</span>);
+    context.setPropertyContext(property);
+    <span class="hljs-comment">//List of Type Properties</span>
+    List&lt;ContextEntry&gt; typeContext = <span class="hljs-keyword">new</span> ArrayList&lt;ContextEntry&gt;();
+    <span class="hljs-comment">//Add the property to the list</span>
+    typeContext.add(context);
+    <span class="hljs-comment">//Add the list to the type</span>
+    type.setContext(typeContext);
+    <span class="hljs-comment">//Set Type reference as it is a required field</span>
+    type.setReference(<span class="hljs-string">"Name"</span>);
+
+    <span class="hljs-comment">//Post Type</span>
+    <span class="hljs-keyword">try</span> {
+        CreateResponse resp = typeApi.createType(type);
+        <span class="hljs-keyword">return</span> resp;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h4 id="creating-an-object">Creating an Object</h4>
+<p>This example will create an Object with a Type id of the one created above.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ObjectResponse <span class="hljs-title">createExampleObject</span>(OPENiCloudlet cloudlet, CreateResponse type) {
+    <span class="hljs-comment">//Setup API</span>
+    ObjectsApi objectApi = <span class="hljs-keyword">new</span> ObjectsApi();
+    <span class="hljs-comment">//Create empty Type</span>
+    OPENiObject object = <span class="hljs-keyword">new</span> OPENiObject();
+    <span class="hljs-comment">//Set Object Type</span>
+    object.setOpeniType(type.getId());
+    <span class="hljs-comment">//Create Map for object Data</span>
+    Map data = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+    data.put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"TestName"</span>);
+    object.setData(data);
+
+    <span class="hljs-comment">//Create Object</span>
+    <span class="hljs-keyword">try</span> {
+        ObjectResponse resp = objectApi.createObject(cloudlet.getId(), object);
+        <span class="hljs-keyword">return</span> resp;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h3 id="example-2-creating-a-type-and-an-object-of-that-type-">Example 2: Creating a Type and an Object of that Type.</h3>
+<p>This function will extend example 1. It will </p>
+<ul>
+    <li>Create a Type</li>
+    <li>Create an Object of that type in a users Cloudlet.</li>
+</ul>
+<p>With a small extension to the main function in example 1 the cloudlet ID retrieved can be used to create an Object.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+    ...
+
+    CreateResponse exampleType = createExampleType();
+    System.out.println(exampleType);
+
+    ObjectResponse exampleObject = createExampleObject(cloudletData,exampleType);
+    System.out.println(exampleObject);
+}
+</code></pre>
+<hr>
+<h4>Full Example Download</h4>
+<a href="OPENi_SDK_Tutorial.zip">OPENi SDK Tutorial Eclipse Project</a>
+
+<hr>
+
 
 </div>
-<footer id="colophon" role="contentinfo">
-    <div class="site-info"  style="width: 700px;">
-        <p>Copyright © OPENi 2013 </p>
-    </div>
-</footer>
 
-<script type='text/javascript' src='/wp-content/themes/openi/js/navigation5152.js?ver=1.0'></script>
-<script type='text/javascript'
-        src='/wp-content/themes/openi/inc/slider/js/jquery.flexslider-min1bba.js?ver=3.5'></script>
-</body>
-</html>
+</body></html>
