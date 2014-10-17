@@ -5191,93 +5191,181 @@
             max-width:700px;
         }
     }
-    </style>
+  </style>
 </head>
 
 <body class="home page page-id-4 page-template-default custom-font-enabled">
 <div id="page" class="hfeed site">
-    <header id="masthead" class="site-header" role="banner">
-        <div id="headergroup"  style="width: 700px;">
-            <hgroup>
-                <h1 class="site-title"><a href="/" title="OPENi"
-                                          rel="home">OPENi</a></h1>
-                <!--<h2 class="site-description"></h2>-->
-            </hgroup>
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-                <h3 class="menu-toggle">Menu</h3>
-                <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+<header id="masthead" class="site-header" role="banner">
+    <div id="headergroup"  style="width: 700px;">
+        <hgroup>
+            <h1 class="site-title"><a href="/" title="OPENi"
+                                      rel="home">OPENi</a></h1>
+            <!--<h2 class="site-description"></h2>-->
+        </hgroup>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <h3 class="menu-toggle">Menu</h3>
+            <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
 
-            </nav>
-        </div>
-    </header>
+        </nav>
+    </div>
+</header>
 
-    <div id="main" class="wrapper" style="width: 700px;">
+<div id="main" class="wrapper" style="width: 700px;">
 
-
-
-        <h1 id="openi">OPENi</h1>
-        <p>Open-Source, Web-Based, Framework for Integrating Applications with Cloud-based Services and Personal Cloudlets.</p>
-        <hr>
-        <h2 id="what-is-openi-">What is OPENi?</h2>
-        <p>To <strong>developers</strong> OPENi is a fantastic service that simplifies the creation of mobile application by managing the applications interaction with a multitude of cloud based services through the Graph API.</p>
-        <p>To <strong>end users</strong> OPENi is a cloud based service that securely stores their personal data. Furthermore it&#39;s privacy control mechanisms gives them full control over how and with whome they data is shared.   </p>
-        <hr>
-        <h2 id="what-is-the-graph-api-">What is the Graph API?</h2>
-        <p>Todo. Michael?</p>
-        <h2 id="what-is-a-personal-cloudlet-">What is a Personal Cloudlet?</h2>
-        <p>A personal Cloudlet is the end-users personal data stored on the OPENi platform. The Cloudlet is built up from the user interataction with OPENi enabled apps. From an end users perspective it is an easy to use free storage facility that affords them full control over the storage and sharing of their personal data. From the app developers perspective it is 1) a rich source of data that they can utilise to enhance their applications, 2) a mechanisms to simplify the process of sharing, and 3) a third party service to which they can outsource the physical, legal, and ethical management of their mobile app&#39;s data. </p>
-        <h2 id="security-considerations-">Security considerations.</h2>
-        <p>Todo.</p>
-        <hr>
-        <h2 id="client-libraries">Client Libraries</h2>
-        <p>To experiment with OPENi&#39;s Graph API, security, and cloudlet frameworks you can use the <a href="/api-docs/">REST Endpoints HTML UI</a>. For Android application development we provide a <a href="/android-sdk/openi-android-sdk-1.0.0.jar">mobile client library</a>. This library abstracts and simplify access to the OPENi services, in simple terms it aggregates the REST clients of the three frameworks, but it also adds a significant number of enhancements including a number of security mechanisms and UI components. </p>
-        <p>We also provide standalone Java/Android client libraries for the individual frameworks:</p>
-        <ul>
-            <li><a href="/android-sdk/openi-android-sdk-1.0.0.jar">Full client library</a></li>
-            <li><a href="/android-sdk/openi-graph-api-android-sdk-1.0.0.jar">Graph API client library</a></li>
-            <li><a href="/android-sdk/openi-cloudlet-android-sdk-1.0.0.jar">Cloudlet client library</a></li>
-            <li><a href="/android-sdk/openi-auth-android-sdk-1.0.0.jar">Security framework client library</a></li>
-            <li><a href="/api-docs/">ALL REST Endpoints HTML UI</a></li>
-            <li><a href="/api-docs/?api_framework=true">Graph API REST Endpoints HTML UI</a></li>
-            <li><a href="/api-docs/?cloudlet=true">Cloudlet REST Endpoints HTML UI</a></li>
-            <li><a href="/api-docs/?auth=true">Security API REST Endpoints HTML UI</a></li>
-        </ul>
-        <hr>
-        <h2 id="useful-tools">Useful Tools</h2>
-        <p>To ease development download and install this JSON Formatter <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en">chrome plugin</a>.</p>
-        <p>Alternatively you can use our own <a href="/viewJson/index.html">JSON-LD Viewer</a>.</p>
-        <hr>
-        <h2 id="tutorials">Tutorials</h2>
-        <ul>
-            <li><a href="/tutorials/logIn.html">Login Security</a></li>
-            <li><a href="/tutorials/getCloudlets.html">Get Cloudlets/Post Objects</a></li>
-            <li><a href="/tutorials/REST_calls_to_the_OPENi_Graph_API.html">REST calls to the OPENi Graph API</a></li>
-            <li><a href="/tutorials/Java_SDK_Tutorial.html">Cloudlet Android/Java SDK Tutorial</a></li>
-            <li><a href="/tutorials/type_object_refs.html">Type and Object Referencing</a></li>
-
-        </ul>
-        <hr>
-        <h2 id="architecture">Architecture</h2>
-        <p><img width="400" align="center" src="tutorials/High Level Architecture - New split.png" alt="alt text" title="OPENi Architecture Diagram"></p>
-        <p>At a high level the OPENi Platform is composed of four major components: 1) the mobile client library, 2) the security framework, 3) the API framework, and 4) the Cloudlet framework. Each component is developed using a different language and a different application stack as is suited to its functionality, yet all are presented to mobile developers through a single suite unified REST Endpoints. Internally the individual frameworks also interact with each other through their respective REST endpoints and SDK&#39;s. All interaction with external cloud-based services is performed by the API framework through it&#39;s Cloud-based services (CBS) connectors.</p>
-        <hr>
-        <h2 id="contributing">Contributing</h2>
-        <p>If you wish to contribute to the OPENi project or you just want a look at the code you can do so by cloning our <a href="vagrantup.com">Vagrant</a> development environment and following the instructions on the the README file.</p>
-<pre><code class="lang-sh">git clone https://github.com/OPENi-ict/openi-dev-env
+    <h1 id="type-and-object-referencing">Type and Object Referencing</h1>
+    <hr>
+    <p>This section is an example of how <em>Types and Objects</em> within the OPENi platform can themselves contain references to other Types and Objects.</p>
+    <p>For this example Swagger UI compliant code will be used but note that type creation can also be done via the Java SDK.</p>
+    <p>This example will user three types.</p>
+    <ul>
+        <li>Person: which contain the sub types.</li>
+        <li>Full Name.</li>
+        <li>Address.</li>
+    </ul>
+    <p><strong>N.B.</strong> The person type must be created last as it references other types by ID.</p>
+    <hr>
+    <p>The following types must be created upon your OPENi dev environment.</p>
+    <p><strong>N.B.</strong> Keep a record of the IDs returned by the OPENi system as they may be different to the ones used here.</p>
+    <h4 id="full-name-type">Full Name Type</h4>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"firstname"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"middlename"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"lastname"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>}
+  ]</span>,
+    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"Full_Name"</span>
+</span>}
+</code></pre>
+    <h4 id="address-type">Address Type</h4>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Number"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"street"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"street"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"city"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"city/town"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"state"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"state/county"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"country"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"country"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>}
+  ]</span>,
+    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"Address"</span>
+</span>}
+</code></pre>
+    <h4 id="person-type">Person Type</h4>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"name"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Full Name"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_ff29cd6d53b1e3f4ef4a6ff828d0ddf4-324"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"email"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Email Address"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>},
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"address"</span></span>,
+      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Full Address"</span></span>,
+        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_fb651f2d7bd17d930fb45dee08eae660-485"</span>
+      </span>}
+    </span>}
+  ]</span>,
+    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"Person"</span>
+</span>}
+</code></pre>
+    <h2 id="object-creation">Object Creation</h2>
+    <hr>
+    <p>As can be seen above the Person Type references the two other types created during this example.</p>
+    <p>When a <em>Person</em> type is created the "name" and "address" properties must adhear to their respective types. This can be done in two ways.</p>
+    <ul>
+        <li>A type compliant Object literal can be passed in as the Person object is being created, as seen with Full Name below.</li>
+        <li>Or a reference to an already exiting object can be used.</li>
+    </ul>
+    <p>To show an example of both an <em>Address</em> object must first be created using the code below.</p>
+    <p><strong>N.B.</strong> Record the Object ID as it will be different from the one in the example.</p>
+    <h4 id="address-object">Address Object</h4>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_fb651f2d7bd17d930fb45dee08eae660-485"</span></span>,
+    "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">number</span>": <span class="hljs-value"><span class="hljs-string">"123"</span></span>,
+    "<span class="hljs-attribute">street</span>": <span class="hljs-value"><span class="hljs-string">"Fake St."</span></span>,
+    "<span class="hljs-attribute">city</span>": <span class="hljs-value"><span class="hljs-string">"Waterford"</span></span>,
+    "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"Co. Waterford"</span></span>,
+    "<span class="hljs-attribute">country</span>": <span class="hljs-value"><span class="hljs-string">"Ireland"</span>
+  </span>}
+</span>}
+</code></pre>
+    <p>Once the Address Object is created The following Person object can be created.</p>
+    <ul>
+        <li>Note the "Full Name" Object is not a reference but an object literal.</li>
+    </ul>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"https://192.168.33.10/api/v1/types/t_086a914f04ba528b812006f9e4b5d7a6-378"</span></span>,
+    "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Test"</span></span>,
+      "<span class="hljs-attribute">middlename</span>": <span class="hljs-value"><span class="hljs-string">"Ing"</span></span>,
+      "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Name"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"admin@openi-ict.eu"</span></span>,
+    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"o_279a18000b9aca696e88ad00843a874a-265"</span>
+  </span>}
+</span>}
 </code></pre>
 
 
-    </div>
-
 </div>
-<footer id="colophon" role="contentinfo">
-    <div class="site-info"  style="width: 700px;">
-        <p>Copyright © OPENi 2013 </p>
-    </div>
-</footer>
 
-<script type='text/javascript' src='/wp-content/themes/openi/js/navigation5152.js?ver=1.0'></script>
-<script type='text/javascript'
-        src='/wp-content/themes/openi/inc/slider/js/jquery.flexslider-min1bba.js?ver=3.5'></script>
-</body>
-</html>
+</body></html>
