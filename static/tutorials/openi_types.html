@@ -139,6 +139,8 @@
         </li>
         <li>@multiple - (true or false) specifies if the property is an array or values or a single value. </li>
         <li>@context_id - A context identifier for the property entry.</li>
+        <li>@allowed_values - this property limits the values that the property can be set to.</li>
+
     </ul>
     <h4 id="creating-a-type">Creating a type</h4>
     <p>The following example creates a profile type. The body of the POST contains a JSON object with the user defined @reference and @context properties. In this case the array of @context properties include a required username of type string, a optional slogan of type string, and an optional attachment with a name of avatar. You may also not that multiple values (or an array of values) are allowed for the slogan property. </p>
