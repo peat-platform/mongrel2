@@ -91,6 +91,19 @@
             <h1 class="site-title"><a href="/" title="OPENi"
                                       rel="home">OPENi</a></h1>
             <!--<h2 class="site-description"></h2>-->
+            <br>
+            <h2 class="site-description">Tutorials</h2>
+            <ul>
+                <li><a href="/tutorials/logIn.html">Login Security</a></li>
+                <li><a href="/tutorials/getCloudlets.html">Get Cloudlets/Post Objects</a></li>
+                <li><a href="/tutorials/openi_types.html">Creating OPENi Types</a></li>
+                <li><a href="/tutorials/REST_calls_to_the_OPENi_Graph_API.html">REST calls to the OPENi Graph API</a></li>
+                <li><a href="/tutorials/Java_SDK_Tutorial.html">Cloudlet Android/Java SDK Tutorial</a></li>
+                <li><a href="/tutorials/type_object_refs.html">Type and Object Referencing</a></li>
+                <li><a href="/tutorials/notifications_and_subscriptions.html">Notifications and Subscriptions</a></li>
+
+            </ul>
+
         </hgroup>
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <h3 class="menu-toggle">Menu</h3>
@@ -102,38 +115,7 @@
 
 <div id="main" class="wrapper" style="width: 700px;">
 
-    <h1 id="notifications-and-subscriptions">Notifications and Subscriptions</h1>
-    <hr>
-    <h3 id="server-sent-events">Server-Sent Events</h3>
-    <p>In order to complete this tutorial two objects are required.</p>
-    <ul>
-        <li>Create each objects within the same Cloudlet.</li>
-        <li>Record both the objectID and the CloudletID for each.</li>
-    </ul>
-    <p>Using these 2 objects we will create 2 SSE notifications, one object based and one cloudlet based.</p>
-    <p>The first is a subscription that focuses on a single object within a cloudlet, if this object is changed then a notification is triggered.</p>
-    <p><strong>N.B.</strong> Place your recorded IDs into the JSON below.</p>
-<pre><code class="lang-json">{
-    "<span class="hljs-attribute">cloudletid</span>": <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">objectid</span>"  : <span class="hljs-value">[ObjectID]</span>,
-    "<span class="hljs-attribute">type</span>"      : <span class="hljs-value"><span class="hljs-string">"SSE"</span>
-</span>}
-</code></pre>
-    <p>This second subscription is a cloudlet level subscription. If any object within this cloudlet is changed a notification will be sent out.</p>
-<pre><code class="lang-json">{
-    "<span class="hljs-attribute">cloudletid</span>": <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">type</span>"      : <span class="hljs-value"><span class="hljs-string">"SSE"</span>
-</span>}
-</code></pre>
-    <p>Using the Cloudlet API UI create these subscriptions and record the IDs returned.</p>
-    <p>Once the Subscriptions are created we can see the notifications in action. The OPENi example page is included in the mongrel2 git project. The url path for the example page is <strong>/sse.html</strong></p>
-    <p>This path alone will not show you any notifications, the page needs a url parameter to accomplish this.</p>
-    <p>The url parameter is <strong>?sse=</strong> and may look somethign like this: </p>
-    <ul>
-        <li>/sse.html?sse=s_subs1-134+s_subs2-166</li>
-    </ul>
-    <p>The url can take multiple subscription IDs separated by a "+".</p>
-    <hr>
+    <!-- ALL HTML GOES HERE-->
 
 </div>
 

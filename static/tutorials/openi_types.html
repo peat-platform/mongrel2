@@ -1,0 +1,260 @@
+<!DOCTYPE html>  
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>OPENi | a European Union ICT Project</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37594867-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+        //]]></script>
+    <link rel='stylesheet' id='cptchStylesheet-css' href='/wp-content/plugins/captcha/css/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-fonts-css'
+          href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css'
+          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+    <![endif]-->
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--script type='text/javascript' src='/wp-includes/js/jquery/jquery4511.js?ver=1.8.3'></script-->
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
+    <link rel='next' title='News' href='news/index.html'/>
+    <meta name="generator" content="WordPress 3.5"/>
+    <link rel='canonical' href='index.html'/>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function () {
+            jQuery('.flexslider').flexslider({
+                animation: "fade",
+                direction: "horizontal",
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                prevText: "Previous",
+                nextText: "Next"
+            });
+        });
+    </script>
+
+    <link rel='stylesheet' href='tutorial_style.css' type='text/css' media='all'/>
+
+</head>
+
+<body class="home page page-id-4 page-template-default custom-font-enabled">
+<div id="page" class="hfeed site">
+<header id="masthead" class="site-header" role="banner">
+    <div id="headergroup"  style="width: 700px;">
+        <hgroup>
+            <h1 class="site-title"><a href="/" title="OPENi"
+                                      rel="home">OPENi</a></h1>
+            <!--<h2 class="site-description"></h2>-->
+
+
+
+        </hgroup>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <h3 class="menu-toggle">Menu</h3>
+            <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+
+        </nav>
+    </div>
+</header>
+
+<div id="main" class="wrapper" style="width: 700px;">
+
+    <h2>Creating OPENi Types</h2>
+    <!-- ALL HTML GOES HERE-->
+    <p>Every object added to a users Cloudlet on the OPENi cloudlet framework must adhere to the rules set out in an OPENi Type object. Each type lists a number of properties and rules around that property which each object is validated against. </p>
+    <h4 id="openi-type-description">OPENi Type Description</h4>
+<pre><code class="lang-JSON">OPENiType {
+    @id (string) //Platform generated Unique identifier for the type,
+    @location (string) //Platform generated Unique types URI,
+    @context (array[ContextEntry]) //Developer specified array of object property description,
+    @reference (string) //Developer specified URL of the refernce type,
+    _date_created (Date) //Platform generated date that the Type was created.
+}
+</code></pre>
+    <h2 id="context-entry-details">Context Entry Details</h2>
+    <p>Each context entry must have one of the following entries.</p>
+    <ul>
+        <li>@property_name - (String) name of the property in the object.</li>
+        <li><p>@openi_type - the primitive type that the property will be validated against, the following primitives are allow:</p>
+            <ul>
+                <li>boolean </li>
+                <li>int </li>
+                <li>float </li>
+                <li>string </li>
+                <li>url </li>
+                <li>attachment - an OPENi attachment id from the same cloudlet</li>
+                <li>date - string of following format (DD-MM-YYYY)</li>
+                <li>timestamp - sting of following format (YYYY-MM-DD HH:mm:ss.SSS)</li>
+                <li>hexadecimal - a hexadecimal string </li>
+                <li>base64 - a base64 endoded string</li>
+                <li>{openi type id} - the id of another OPENi type. Allows objects to contain other objects. </li>
+            </ul>
+        </li>
+        <li><p>@required - (true or false) specifies if the object can be created with or without this context entry.</p>
+        </li>
+        <li>@multiple - (true or false) specifies if the property is an array or values or a single value. </li>
+        <li>@context_id - A context identifier for the property entry.</li>
+    </ul>
+    <h4 id="creating-a-type">Creating a type</h4>
+    <p>The following example creates a profile type. The body of the POST contains a JSON object with the user defined @reference and @context properties. In this case the array of @context properties include a required username of type string, a optional slogan of type string, and an optional attachment with a name of avatar. You may also not that multiple values (or an array of values) are allowed for the slogan property. </p>
+<pre><code class="lang-CURL">curl --insecure -X POST \
+    -H &quot;Accept:application/json&quot; \
+    -H &quot;Content-Type: application/json&quot; \
+    -d &#39;{
+    &quot;@context&quot;: [
+    {
+        &quot;@property_name&quot;: &quot;username&quot;,
+        &quot;@openi_type&quot;: &quot;string&quot;,
+        &quot;@required&quot;: true,
+        &quot;@multiple&quot;: false,
+        &quot;@context_id&quot;: &quot;https://openi-ict.eu/my_app_profile/username&quot;
+    },
+    {
+        &quot;@property_name&quot;: &quot;slogan&quot;,
+        &quot;@openi_type&quot;: &quot;string&quot;,
+        &quot;@required&quot;: false,
+        &quot;@multiple&quot;: true,
+        &quot;@context_id&quot;: &quot;https://openi-ict.eu/my_app_profile/username&quot;
+    },
+    {
+        &quot;@property_name&quot;: &quot;avatar&quot;,
+        &quot;@openi_type&quot;: &quot;attachment&quot;,
+        &quot;@required&quot;: false,
+        &quot;@multiple&quot;: false,
+        &quot;@context_id&quot;: &quot;https://openi-ict.eu/my_app_profile/avatar&quot;
+    }
+    ],
+    &quot;@reference&quot;: &quot;https://openi-ict.eu/my_app_profile&quot;
+    }&#39; \
+    https://dev.openi-ict.eu:443/api/v1/types
+</code></pre>
+    <p>The response is a JSON object containing the newly create type&#39;s id.</p>
+<pre><code class="lang-JSON">{
+    &quot;id&quot;:&quot;t_f3bfd0b665a3e32b1d3c9fe1927717d6-511&quot;
+}
+</code></pre>
+    <h4 id="retrieving-a-type">Retrieving a Type</h4>
+<pre><code class="lang-CURL">curl --insecure -X GET https://dev.openi-ict.eu/api/v1/types/t_f3bfd0b665a3e32b1d3c9fe1927717d6-511
+</code></pre>
+    <p>The resulting JSON object</p>
+<pre><code class="lang-JSON">{
+    &quot;@id&quot;: &quot;t_f3bfd0b665a3e32b1d3c9fe1927717d6-511&quot;,
+    &quot;@location&quot;: &quot;https://dev.openi-ict.eu/api/v1/types/t_f3bfd0b665a3e32b1d3c9fe1927717d6-511&quot;,
+    &quot;@context&quot;: [
+        {
+            &quot;@property_name&quot;: &quot;username&quot;,
+            &quot;@openi_type&quot;: &quot;string&quot;,
+            &quot;@required&quot;: true,
+            &quot;@multiple&quot;: false,
+            &quot;@context_id&quot;: &quot;https://openi-ict.eu/my_app_profile/username&quot;
+        },
+        {
+            &quot;@property_name&quot;: &quot;slogan&quot;,
+            &quot;@openi_type&quot;: &quot;string&quot;,
+            &quot;@required&quot;: false,
+            &quot;@multiple&quot;: true,
+            &quot;@context_id&quot;: &quot;https://openi-ict.eu/my_app_profile/username&quot;
+        },
+        {
+            &quot;@property_name&quot;: &quot;avatar&quot;,
+            &quot;@openi_type&quot;: &quot;attachment&quot;,
+            &quot;@required&quot;: false,
+            &quot;@multiple&quot;: false,
+            &quot;@context_id&quot;: &quot;https://openi-ict.eu/my_app_profile/avatar&quot;
+        }
+    ],
+    &quot;@reference&quot;: &quot;https://openi-ict.eu/my_app_profile&quot;,
+    &quot;_date_created &quot;: &quot;2014-10-29T13:02:19.991Z&quot;
+}
+</code></pre>
+    <h3 id="creating-an-object-of-that-type">Creating an object of that type</h3>
+<pre><code class="lang-JSON">curl --insecure -X POST \
+    -H &quot;Accept:application/json&quot; \
+    -H &quot;Content-Type: application/json&quot; \
+    -d &#39;{
+            &quot;@openi_type&quot;: &quot;t_f3bfd0b665a3e32b1d3c9fe1927717d6-511&quot;,
+            &quot;@data&quot;: {
+            &quot;username&quot; : &quot;bob&quot;,
+            &quot;slogan&quot; : [&quot;Best slogan last week&quot;, &quot;Best Slogan ever.&quot;],
+            &quot;avatar&quot; : &quot;a0e34cdf-6424-480d-b8cc-8350a9ce4eb8&quot;
+        }
+    }&#39; \
+    https://dev.openi-ict.eu:443/api/v1/objects/c_897b0ef002da79321dcb0d681cb473d0
+</code></pre>
+    <p>The response is a JSON object containing the newly create objects&#39;s id.</p>
+<pre><code class="lang-JSON">{
+    &quot;id&quot;:&quot;00d2c1c6-f440-48af-b774-136ea5f09f87&quot;
+}
+</code></pre>
+    <h4 id="retrieving-the-object">Retrieving the Object</h4>
+<pre><code class="lang-CURL">curl --insecure -X GET https://dev.openi-ict.eu/api/v1/objects/c_897b0ef002da79321dcb0d681cb473d0/00d2c1c6-f440-48af-b774-136ea5f09f87
+</code></pre>
+<pre><code class="lang-JSON">{
+    &quot;@id&quot;: &quot;00d2c1c6-f440-48af-b774-136ea5f09f87&quot;,
+    &quot;@location&quot;: &quot;https://dev.openi-ict.eu/api/v1/objects/c_897b0ef002da79321dcb0d681cb473d0/00d2c1c6-f440-48af-b774-136ea5f09f87&quot;,
+    &quot;@cloudlet&quot;: &quot;c_897b0ef002da79321dcb0d681cb473d0&quot;,
+    &quot;@openi_type&quot;: &quot;t_f3bfd0b665a3e32b1d3c9fe1927717d6-511&quot;,
+    &quot;@type_location&quot;: &quot;https://dev.openi-ict.eu/api/v1/types/t_f3bfd0b665a3e32b1d3c9fe1927717d6-511&quot;,
+    &quot;@data&quot;: {
+        &quot;username&quot;: &quot;bob&quot;,
+        &quot;slogan&quot;: [
+            &quot;Best slogan last week&quot;,
+            &quot;Best Slogan ever.&quot;
+        ],
+        &quot;avatar&quot;: &quot;a0e34cdf-6424-480d-b8cc-8350a9ce4eb8&quot;
+    },
+    &quot;_date_created&quot;: &quot;2014-10-29T14:40:35.345Z&quot;,
+    &quot;_date_modified&quot;: &quot;2014-10-29T14:40:35.345Z&quot;,
+    &quot;_revision&quot;: &quot;705495040-1414281864&quot;
+}
+</code></pre>
+
+
+</div>
+</div>
+</body></html>
