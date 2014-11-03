@@ -611,6 +611,7 @@
       this.name = name;
       this.dataType = obj.type || obj.dataType || obj["$ref"];
       this.isCollection = this.dataType && (this.dataType.toLowerCase() === 'array' || this.dataType.toLowerCase() === 'list' || this.dataType.toLowerCase() === 'set');
+      this.isJSON       = this.dataType && (this.dataType.toLowerCase() === 'json' || this.dataType.toLowerCase() === 'map' )
       this.descr = obj.description;
       this.required = obj.required;
       this.defaultValue = modelPropertyMacro(obj.defaultValue);
@@ -669,6 +670,12 @@
          result = 0.0;
       } else if (value === "string") {
          result = "";
+  } else if (value === "Map") {
+     result = {};
+  }else if (value === "json") {
+     result = {};
+  }else if (value === "JSON") {
+     result = {};
       } else {
          result = value;
       }
@@ -733,7 +740,7 @@
 
          // for 1.1 compatibility
          var type = param.type || param.dataType;
-         if (type === 'array') {
+    if(type === 'array' && undefined !== param.items) {
             type = 'array[' + (param.items.$ref ? param.items.$ref : param.items.type) + ']';
          }
          param.type = type;
