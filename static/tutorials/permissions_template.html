@@ -1,0 +1,172 @@
+<!DOCTYPE html>  
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>OPENi | a European Union ICT Project</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37594867-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+        //]]></script>
+    <link rel='stylesheet' id='cptchStylesheet-css' href='/wp-content/plugins/captcha/css/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-fonts-css'
+          href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css'
+          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+    <![endif]-->
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--script type='text/javascript' src='/wp-includes/js/jquery/jquery4511.js?ver=1.8.3'></script-->
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
+    <link rel='next' title='News' href='news/index.html'/>
+    <meta name="generator" content="WordPress 3.5"/>
+    <link rel='canonical' href='index.html'/>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function () {
+            jQuery('.flexslider').flexslider({
+                animation: "fade",
+                direction: "horizontal",
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                prevText: "Previous",
+                nextText: "Next"
+            });
+        });
+    </script>
+
+    <link rel='stylesheet' href='tutorial_style.css' type='text/css' media='all'/>
+
+</head>
+
+<body class="home page page-id-4 page-template-default custom-font-enabled">
+<div id="page" class="hfeed site">
+<header id="masthead" class="site-header" role="banner">
+    <div id="headergroup"  style="width: 700px;">
+        <hgroup>
+            <h1 class="site-title"><a href="/" title="OPENi"
+                                      rel="home">OPENi</a></h1>
+            <!--<h2 class="site-description"></h2>-->
+        </hgroup>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <h3 class="menu-toggle">Menu</h3>
+            <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+
+        </nav>
+    </div>
+</header>
+
+<div id="main" class="wrapper" style="width: 700px;">
+
+    <!DOCTYPE html><html><head><meta charset="utf-8"><title>Permissions</title><style></style></head><body>
+<h3 id="openi-permissions">OPENi Permissions</h3>
+<hr>
+<p>Before an application can write to a users cloudlet it must first set permission within the users cloudlet.</p>
+<p>The examples used within this tutorial should all be already configured on Demo2. They are also at the bottom of this tutorial.</p>
+<p>This is done using the <strong>POST Permissions</strong> endpoints within the Cloudlet API.</p>
+<pre><code class="lang-json">[
+  {
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"type"</span></span>,
+    "<span class="hljs-attribute">ref</span>": <span class="hljs-value"><span class="hljs-string">"t_195224462830d4175a9b92301f81fc59-159"</span></span>,
+    "<span class="hljs-attribute">access_type</span>": <span class="hljs-value"><span class="hljs-string">"CREATE"</span></span>,
+    "<span class="hljs-attribute">access_level</span>": <span class="hljs-value"><span class="hljs-string">"APP"</span>
+  </span>},
+ {
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"type"</span></span>,
+    "<span class="hljs-attribute">ref</span>": <span class="hljs-value"><span class="hljs-string">"t_195224462830d4175a9b92301f81fc59-159"</span></span>,
+    "<span class="hljs-attribute">access_type</span>": <span class="hljs-value"><span class="hljs-string">"READ"</span></span>,
+    "<span class="hljs-attribute">access_level</span>": <span class="hljs-value"><span class="hljs-string">"APP"</span>
+  </span>},
+ {
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"type"</span></span>,
+    "<span class="hljs-attribute">ref</span>": <span class="hljs-value"><span class="hljs-string">"t_195224462830d4175a9b92301f81fc59-159"</span></span>,
+    "<span class="hljs-attribute">access_type</span>": <span class="hljs-value"><span class="hljs-string">"UPDATE"</span></span>,
+    "<span class="hljs-attribute">access_level</span>": <span class="hljs-value"><span class="hljs-string">"APP"</span>
+  </span>},
+ {
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"type"</span></span>,
+    "<span class="hljs-attribute">ref</span>": <span class="hljs-value"><span class="hljs-string">"t_195224462830d4175a9b92301f81fc59-159"</span></span>,
+    "<span class="hljs-attribute">access_type</span>": <span class="hljs-value"><span class="hljs-string">"DELETE"</span></span>,
+    "<span class="hljs-attribute">access_level</span>": <span class="hljs-value"><span class="hljs-string">"APP"</span>
+  </span>}
+]
+</code></pre>
+<p>All the permissions must be posted in an array. The permission above allow the clientID for this Auth Token to perform all CRUD actions for the specified type upon the users cloudlet.</p>
+<p>The permissions can also have an access level of <strong>cloudlet</strong> and a type of <strong>object</strong> as shown below.</p>
+<pre><code class="lang-json">{
+      "<span class="hljs-attribute">ref</span>": <span class="hljs-value"><span class="hljs-string">"00000001-5203-4f5b-df3e-7f06c795775d"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">access_level</span>": <span class="hljs-value"><span class="hljs-string">"CLOUDLET"</span></span>,
+      "<span class="hljs-attribute">access_type</span>": <span class="hljs-value"><span class="hljs-string">"UPDATE"</span>
+    </span>}
+</code></pre>
+<hr>
+<h3 id="examples-used">Examples Used</h3>
+<p><strong>Type_ID</strong>: t_195224462830d4175a9b92301f81fc59-159</p>
+<p><strong>Type_JSON</strong>:</p>
+<pre><code class="lang-json">{
+  "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"hello"</span></span>,
+      "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">@required</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">@multiple</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">@context_id</span>": <span class="hljs-value"><span class="hljs-string">"openi/hello"</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"openi/HelloWorld"</span>
+</span>}
+</code></pre>
+<p><strong>Client_ID</strong>: hello</p>
+<p><strong>User</strong>: {hello : world}</p>
+<p><strong>Token</strong>: eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmOTI2OGRjYi0yZWQxLTQxMzgtYTAxMC02MTQ2MzUxYmE5YmUiLCJzdWIiOiJiMWY2ZjRhMS1iNWVlLTQwZjctODNmMC0wM2E0YzJjNzFjYmYiLCJzY29wZSI6WyJvcGVuaWQiXSwiY2xpZW50X2lkIjoidGVzdCIsImNpZCI6InRlc3QiLCJ1c2VyX2lkIjoiYjFmNmY0YTEtYjVlZS00MGY3LTgzZjAtMDNhNGMyYzcxY2JmIiwidXNlcl9uYW1lIjoiaGVsbG8iLCJlbWFpbCI6ImVtYWlsQGV4YW1wbGUub3JnIiwiaWF0IjoxNDE3NDUwMDQzLCJleHAiOjE0MTc0OTMyNDMsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC91YWEvb2F1dGgvdG9rZW4iLCJhdWQiOlsib3BlbmlkIl19.Ur35VJCSHAqu4VUMqvFN_XAyP7Dl9kRMr84ysjuWUZv264qIARSMF2QwQGP2pxVe6nf9kt7ptgvDGzjUTvCX6w</p>
+
+</body></html>
+
+</div>
+
+</div>
+</body></html>
