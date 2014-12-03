@@ -108,36 +108,45 @@
 <p><img src="/tutorials/Cloudlets_2.PNG" alt=""></p>
 <hr>
 <h3 id="cloudlet-retrieval">Cloudlet Retrieval</h3>
-<p>The <em>Authorization token</em> received from the security API can be used within the <em>cloudlets : Cloudlet Administration API</em> section with the <strong>GET/cloudlets</strong> API endpoint to retrieve the cloudlet id for a user to be used when accessing the OPENi platform on their behalf.
+<p>The <b>Authorization token</b> received from the security API can be used within the <em>cloudlets : Cloudlet Administration API</em> section with the <strong>GET/cloudlets</strong> API endpoint to retrieve the cloudlet id for a user to be used when accessing the OPENi platform on their behalf.
 <img src="/tutorials/Cloudlets_3.PNG" alt=""></p>
 <p>At the bottom of the 'GET/cloudlets' section you can then activate it by pressing the "Try it out!" button. This will produce a cloudlet ID.</p>
 <p><img src="/tutorials/Cloudlets_4.PNG" alt=""></p>
 <hr>
 <h3 id="type-creation">Type Creation</h3>
-<p>In order to creat an object within the OPENi Platform there must first be a corresponding <em>type</em> upon the platform that an object can conform too.</p>
+<p>In order to create an object within the OPENi Platform there must first be a corresponding <em>type</em> upon the platform that an object can conform too.</p>
 <p>Type creation is done within the <em>types : Controls OPENi types</em> section using the 'POST/types' endpoint.</p>
 <p><img src="/tutorials/Cloudlets_5.PNG" alt=""></p>
 <p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example 'HelloWorld' type can be seen below.</p>
-<pre><code>{
-  "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"hello"</span></span>,
-      "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"openi/hello"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}
+      "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">@required</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">@multiple</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">@allowed_values</span>": <span class="hljs-value">[
+        <span class="hljs-string">"foo"</span>,
+        <span class="hljs-string">"bar"</span>,
+        <span class="hljs-string">"world"</span>
+      ]</span>,
+      "<span class="hljs-attribute">@context_id</span>": <span class="hljs-value"><span class="hljs-string">"openi/hello"</span>
     </span>}
   ]</span>,
-  "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"openi/HelloWorld"</span>
+    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"openi/HelloWorld"</span>
 </span>}
-</code></pre><p>The responce from the POST should return the <em>id</em> of the newly created type on the OPENi platform.</p>
+</code></pre><p>This shows an example of all the fields for Types. In this example we can see thwet the "hello" key is required, there cannot be multiple "hello" keys and that the only acceptable values for it are "foo","bar" and "hello".</p>
+        <p>The responce from the POST should return the <em>id</em> of the newly created type on the OPENi platform.</p>
+<hr>
+<p><strong>N.B.</strong> Prior to Object creation within a cloudlet the correct <a href="permissions.html">Permissions</a> must be set on the OPENi Platform.See tutorial <a href="permissions.html">here</a></p>
 <hr>
 <h3 id="object-creation">Object Creation</h3>
+
 <p>Using the HelloWorld type we can create an object within the users cloudlet using the 'POST/objects/{cloudletId}' endpoint.</p>
 <p><img src="/tutorials/Cloudlets_6.PNG" alt=""></p>
 <p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example object using the 'HelloWorld' type can be seen below.</p>
 <pre><code>{
-  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_a73c1f67a0ec35fdc1b11c287edcaad2-138"</span></span>,
+  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_26c91405344400a0b7007f3788f3cf9f-199"</span></span>,
   "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
 </span>}
 </code></pre><p>The "@openi_type" key hold the id of the reference type for that object. This field will also accept URLs like so:</p>
