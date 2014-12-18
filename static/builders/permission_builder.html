@@ -13,11 +13,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>OPENi | a European Union ICT Project</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="profile" href="//gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
     <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <!--[if lt IE 9]>
     <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -45,26 +45,27 @@
     <link rel='stylesheet' id='contact-form-7-css'
           href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
     <link rel='stylesheet' id='twentytwelve-fonts-css'
-          href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
           href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
     <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='easy_table_style-css' href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
-
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <link rel='stylesheet' id='custom-css' href='/wp-content/themes/openi/custom.css' type='text/css' media='all'/>
 
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
     <link rel='next' title='News' href='news/index.html'/>
     <meta name="generator" content="WordPress 3.5"/>
     <link rel='canonical' href='index.html'/>
-    <link href="style.css" rel="stylesheet" type="text/css">
-
 
     <script type="text/javascript" charset="utf-8">
         jQuery(window).load(function () {
@@ -100,14 +101,32 @@
     </header>
 
     <div id="main" class="wrapper">
-        <div id="control">
-            <input id="jsonLocation" type="text" placeholder="JSON Url">
-            <input id="loadJsonButton" type="button" value="Pull Json">
+
+
+        <div class="column-left" style="float: left; width: 23%;">
+            <h3>Input</h3>
+            <textarea id="inputData"  rows="10" cols="100" placeholder="Paste your permissions object here and click Start Editing. Alternatively paste a list of type or object ids." ></textarea>
+
+            <input id="startEditing" type="button" value="Start editing >>>" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <input id="setPermissions1" type="button" value="Sample Input Data 1" />
+            <br />
+            <input id="setPermissions2" type="button" value="Sample Input Data 2" />
+        </div>
+        <div class="column-center" style="display: inline-block; width: 38%;">
+            <h3 style="margin-left: 5px;">Edit</h3>
+            <div id="editContainer"></div>
+        </div>
+        <div class="column-right" style="float: right; width: 38%;">
+            <h3>Output</h3>
+            <input id="copyPermissions" type="button" value="Download Permissions File" />
             </br>
-            <p id="error"></p>
+            <pre id="outputData"></pre>
         </div>
 
-        <div id="content"></div>
     </div>
 
 </div>
@@ -117,15 +136,75 @@
     </div>
 </footer>
 
-<script type="application/javascript" src="main.js"></script>
 <script type='text/javascript'
         src='/wp-content/plugins/contact-form-7/includes/js/jquery.form.mind23e.js?ver=3.23'></script>
-<script type='text/javascript'>
-    var _wpcf7 = {"loaderUrl": "/wp-content/plugins/contact-form-7/images/ajax-loader.gif", "sending": "Sending ..."};
-</script>
 <script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/scriptsd617.js?ver=3.3.2'></script>
 <script type='text/javascript' src='/wp-content/themes/openi/js/navigation5152.js?ver=1.0'></script>
 <script type='text/javascript'
         src='/wp-content/themes/openi/inc/slider/js/jquery.flexslider-min1bba.js?ver=3.5'></script>
+<script src="permissions.js"  type="text/javascript"></script>
+
+<style>
+    #editContainer .permInstance {
+        border: 2px solid;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+
+    #editContainer .permInstance div {
+        padding: 5px;
+    }
+
+    #editContainer .permInstance .headingType {
+        background-color: #81DAF5;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #editContainer .permInstance .headingObject {
+        background-color: #58ACFA;
+        border-radius: 11px 11px 0px 0px;
+    }
+
+    #editContainer span.removeFromPerms{
+        float: right;
+        color: #FF0000;
+        cursor: hand;
+        cursor: pointer;
+    }
+
+    #editContainer hr {
+        margin: 3px;
+    }
+
+    label {
+        display: inline-block;
+        width: 5em;
+    }
+
+    #editContainer span.help{
+        display: inline-block;
+        cursor: hand;
+        cursor: pointer;
+        background-color: #81DAF5;
+        border-radius: 4px 4px 4px 4px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        color: white;
+        margin-left: 4px;
+    }
+
+    #editContainer span.loadTypeDetails{
+
+        cursor: hand;
+        cursor: pointer;
+        color: #0000ff;
+        font-size: 10px;
+
+    }
+
+</style>
+    <div id="dialog-modal" title="Basic modal dialog" style="display: none;"></div>
 </body>
 </html>

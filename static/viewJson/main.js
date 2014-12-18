@@ -92,7 +92,7 @@ createObjectTable = function(data, type){
     var cellVal = row.insertCell(-1);
 
     cellProp.innerHTML = prop._property_name;
-    cellType.innerHTML = prop._property_context._openi_type;
+    cellType.innerHTML = prop._property_context['@openi_type'];
     cellId.innerHTML = '<a target="_blank" href="' + prop._property_context._id + '">' + prop._property_context._id + '</a>';
     cellVal.innerHTML = data[prop._property_name];
 
@@ -110,7 +110,7 @@ showType = function(url){
   //TODO load in the actual url
   loadedJson = loadJson(url);
   if(loadedJson){
-    if(!loadedJson['_context'] || !loadedJson['_id']){
+    if(!loadedJson['@context'] || !loadedJson['@id']){
       error.innerHTML = "Not a valid type";
     } else {
 
@@ -120,8 +120,8 @@ showType = function(url){
       content.innerHTML += "<h2>OPENi Type:</h2><p class='box'>" + loadedJson._id +
         "</p><br/><h2>Reference Type:</h2><p class='box'>" + refurl +
         "</p><br/><h2>Context:</h2>";
-      for(var i in loadedJson._context){
-        content.appendChild(createTable(loadedJson._context[i]));
+      for(var i in loadedJson['@context']){
+        content.appendChild(createTable(loadedJson['@context'][i]));
       }
 
     }
@@ -131,14 +131,14 @@ showType = function(url){
 showObject = function(url){
   //TODO load in the actual url
   loadedJson = loadJson(url);
-  var objectType = loadJson(loadedJson['_openi_type']);
+  var objectType = loadJson(loadedJson['@type_location']);
   if(loadedJson){
     content.innerHTML += "<h2>OPENi Object:</h2><p class='box'>" + url + "</p>";
-    content.innerHTML += "<h2>OPENi Type:</h2><p class='box'><a target='_blank' href='" + loadedJson['_openi_type'] + "'>" + loadedJson['_openi_type'] + "</a></p>";
+    content.innerHTML += "<h2>OPENi Type:</h2><p class='box'><a target='_blank' href='" + loadedJson['@openi_type'] + "'>" + loadedJson['@openi_type'] + "</a></p>";
     content.innerHTML += "<h2>OPENi Revision:</h2><p class='box'>" + loadedJson['_revision'] + "</p>";
 
     content.innerHTML +=  "<br/><h2>Data:</h2>";
-    content.appendChild(createObjectTable(loadedJson._data, objectType._context));
+    content.appendChild(createObjectTable(loadedJson._data, objectType['@context']));
   }
 }
 
