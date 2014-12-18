@@ -72,6 +72,7 @@ var applyAccessValues = function(p){
 
 $('#startEditing').click(function(){
 
+   $("#introText").remove()
    var raw = $("#inputData").val()
 
    try {
