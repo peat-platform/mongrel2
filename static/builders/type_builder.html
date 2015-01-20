@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>OPENi | a European Union ICT Project</title>
+    <link rel="profile" href="//gmpg.org/xfn/11"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+
+    <script type="text/javascript">
+	//<![CDATA[
+    // Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37594867-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    //]]></script>
+    <link rel='stylesheet' id='cptchStylesheet-css' href='/wp-content/plugins/captcha/css/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-fonts-css'
+          href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css'
+          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+    <![endif]-->
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <link rel='stylesheet' id='custom-css' href='/wp-content/themes/openi/custom.css' type='text/css' media='all'/>
+
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
+    <link rel='next' title='News' href='news/index.html'/>
+    <meta name="generator" content="WordPress 3.5"/>
+    <link rel='canonical' href='index.html'/>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function () {
+            jQuery('.flexslider').flexslider({
+                animation: "fade",
+                direction: "horizontal",
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                prevText: "Previous",
+                nextText: "Next"
+            });
+        });
+    </script>
+</head>
+
+<body class="home page page-id-4 page-template-default custom-font-enabled">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
+        <div id="headergroup">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="OPENi"
+                                          rel="home">OPENi</a></h1>
+                <!--<h2 class="site-description"></h2>-->
+            </hgroup>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <h3 class="menu-toggle">Menu</h3>
+                <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <div id="main" class="wrapper">
+
+
+        <div class="column-left" style="float: left; width: 23%;">
+
+            <h3>Input</h3>
+            <div>Reference</div>
+                <input id="inputReference" type="text" placeholder="Type reference" />
+                <hr />
+                <div>Context Builder:</div>
+            <div class="contextBuilderWrapper">
+                <input id="property_name" type="text" placeholder="property_name">
+
+                <select id="type" name="type">
+                    <option value="boolean">boolean</option>
+                    <option value="int">int</option>
+                    <option value="string" selected="selected">string</option>
+                    <option value="float">float</option>
+                    <option value="url">url</option>
+                    <option value="attachment">attachment</option>
+                    <option value="date">date</option>
+                    <option value="timestamp">timestamp</option>
+                    <option value="gps">gps</option>
+                    <option value="url">url</option>
+                    <option value="hexadecimal">hexadecimal</option>
+                    <option value="base64">base64</option>
+                    <option value="base64">base64</option>
+                    <option value="type">type</option>
+                </select>
+                <br />
+                <input id="multiple" type="checkbox" name="multiple" value="multiple"> multiple
+                <br />
+                <input id="required" type="checkbox" name="required" value="required" checked="checked"> required
+                <br />
+
+                <input id="context_id" placeholder="context" type="text">
+            </div>
+            <br />
+            <input id="clearContext"     type="button" value="Clear" />
+            <br />
+            <input id="addUpdateContext" type="button" value="Add to Context >>>" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <input id="sampleType1" type="button" value="Sample Type 1" />
+            <br />
+            <input id="sampleType2" type="button" value="Sample Type 2" />
+        </div>
+        <div class="column-center" style="display: inline-block; width: 38%;">
+            <h3 style="margin-left: 5px;">Context</h3>
+            <div id="contextContainer">
+                <div id="introText">
+                    Intro
+                </div>
+            </div>
+        </div>
+        <div class="column-right" style="float: right; width: 38%;">
+            <div>Sample Object</div>
+            <pre id="outputDataObject"></pre>
+            <h3>Output</h3>
+            <input id="downloadType" type="button" value="Download Type File" />
+            <pre id="outputDataType"></pre>
+        </div>
+
+    </div>
+
+</div>
+<footer id="colophon" role="contentinfo">
+    <div class="site-info">
+        <p>Copyright © OPENi 2013 </p>
+    </div>
+</footer>
+
+<script type='text/javascript'
+        src='/wp-content/plugins/contact-form-7/includes/js/jquery.form.mind23e.js?ver=3.23'></script>
+<script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/scriptsd617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='/wp-content/themes/openi/js/navigation5152.js?ver=1.0'></script>
+<script type='text/javascript'
+        src='/wp-content/themes/openi/inc/slider/js/jquery.flexslider-min1bba.js?ver=3.5'></script>
+<script src="md5.js"    type="text/javascript"></script>
+<script src="types.js"  type="text/javascript"></script>
+
+<style>
+    #contextContainer .contextInstance {
+        border: 2px solid;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+
+    #contextContainer .permInstance div {
+        padding: 5px;
+    }
+
+    #contextContainer .permInstance .headingType {
+        background-color: #81DAF5;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #contextContainer .permInstance .headingObject {
+        background-color: #58ACFA;
+        border-radius: 11px 11px 0px 0px;
+    }
+
+    #contextContainer span.removeFromPerms{
+        float: right;
+        color: #FF0000;
+        cursor: hand;
+        cursor: pointer;
+    }
+
+    #typeInput hr {
+        margin: 3px;
+    }
+
+    label {
+        display: inline-block;
+        width: 5em;
+    }
+
+    #contextContainer span.help{
+        display: inline-block;
+        cursor: hand;
+        cursor: pointer;
+        background-color: #81DAF5;
+        border-radius: 4px 4px 4px 4px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        color: white;
+        margin-left: 4px;
+    }
+
+    #contextContainer span.loadTypeDetails{
+
+        cursor: hand;
+        cursor: pointer;
+        color: #0000ff;
+        font-size: 10px;
+
+    }
+
+    .contextBuilderWrapper {
+        border: 1px solid;
+        border-radius: 4px 4px 4px 4px;
+        padding: 5px;
+    }
+
+    .contextBuilderWrapper input[type="text"]{
+        width: 95%;
+    }
+
+    #contextContainer .contextInstance{
+        padding: 10px;
+    }
+
+    #contextContainer .contextInstance .nvp_name{
+        display: inline-block;
+        width: 120px;
+        color: #444;
+    }
+
+    #outputDataObject{
+        font-size: 11px;
+    }
+
+</style>
+    <div id="dialog-modal" title="Basic modal dialog" style="display: none;"></div>
+</body>
+</html>
