@@ -103,37 +103,48 @@
 <div id="main" class="wrapper" style="width: 700px;">
 
     <h1 id="notifications-and-subscriptions">Notifications and Subscriptions</h1>
-    <hr>
-    <h3 id="server-sent-events">Server-Sent Events</h3>
-    <p>In order to complete this tutorial two objects are required.</p>
-    <ul>
-        <li>Create each objects within the same Cloudlet.</li>
-        <li>Record both the objectID and the CloudletID for each.</li>
-    </ul>
-    <p>Using these 2 objects we will create 2 SSE notifications, one object based and one cloudlet based.</p>
-    <p>The first is a subscription that focuses on a single object within a cloudlet, if this object is changed then a notification is triggered.</p>
-    <p><strong>N.B.</strong> Place your recorded IDs into the JSON below.</p>
+<hr>
+<h3 id="server-sent-events">Server-Sent Events</h3>
+<p>In order to complete this tutorial two objects are required.</p>
+<p>Create each objects within the same Cloudlet.
+Record both the objectID and the CloudletID for each.
+Using these 2 objects we will create 2 SSE notifications, one object based and one cloudlet based.</p>
+<p>The first is a subscription that focuses on a single object within a cloudlet, if this object is changed then a notification is triggered. Note that the object type must be included when creating the notifications.</p>
+<p><strong>N.B.</strong> Place your recorded IDs into the JSON below.</p>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">cloudletid</span>": <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">objectid</span>"  : <span class="hljs-value">[ObjectID]</span>,
-    "<span class="hljs-attribute">type</span>"      : <span class="hljs-value"><span class="hljs-string">"SSE"</span>
+    "<span class="hljs-attribute">cloudletid</span>"       : <span class="hljs-value">[CloudletID]</span>,
+    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[OPENiTypeID]</span>,
+    "<span class="hljs-attribute">objectid</span>"         : <span class="hljs-value">[ObjectID]</span>,
+    "<span class="hljs-attribute">notification_type</span>": <span class="hljs-value"><span class="hljs-string">"SSE"</span>
 </span>}
 </code></pre>
-    <p>This second subscription is a cloudlet level subscription. If any object within this cloudlet is changed a notification will be sent out.</p>
+<p>This second subscription is a cloudlet level subscription. If an object of the selected OPENi type within this cloudlet is changed a notification will be sent out.</p>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">cloudletid</span>": <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">type</span>"      : <span class="hljs-value"><span class="hljs-string">"SSE"</span>
+    "<span class="hljs-attribute">cloudletid</span>"       : <span class="hljs-value">[CloudletID]</span>,
+    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[OPENiTypeID]</span>,
+    "<span class="hljs-attribute">notification_type</span>": <span class="hljs-value"><span class="hljs-string">"SSE"</span>
 </span>}
 </code></pre>
-    <p>Using the Cloudlet API UI create these subscriptions and record the IDs returned.</p>
-    <p>Once the Subscriptions are created we can see the notifications in action. The OPENi example page is included in the mongrel2 git project. The url path for the example page is <strong>/sse.html</strong></p>
-    <p>This path alone will not show you any notifications, the page needs a url parameter to accomplish this.</p>
-    <p>The url parameter is <strong>?sse=</strong> and may look somethign like this: </p>
-    <ul>
-        <li>/sse.html?sse=s_subs1-134+s_subs2-166</li>
-    </ul>
-    <p>The url can take multiple subscription IDs separated by a "+".</p>
-    <hr>
+<p>Using the Cloudlet API UI create these subscriptions and record the IDs returned.</p>
+<p>Once the Subscriptions are created we can see the notifications in action. The OPENi example page is included in the mongrel2 git project. The url path for the example page is <strong>/sse.html</strong></p>
+<p>This path alone will not show you any notifications, the page needs a url parameter to accomplish this.</p>
+<p>The url parameter is <strong>?sse=</strong> and may look something like this:</p>
+<ul>
+<li><em>/sse.html?sse=s_subs1-134+s_subs2-166</em></li>
+</ul>
+<p>The url can take multiple subscription IDs separated by a &quot;+&quot;.</p>
+<hr>
+<h3 id="google-cloud-messaging">Google Cloud Messaging</h3>
+<p>Subscription for Google Cloud Messaging follow a similar pattern to the previous subscriptions. It allows both object level or cloudlet level subscriptions.</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">cloudletid</span>"       : <span class="hljs-value">[CloudletID]</span>,
+    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[OPENiTypeID]</span>,
+    "<span class="hljs-attribute">objectid</span>"         : <span class="hljs-value">[ObjectID]</span>,
+    "<span class="hljs-attribute">notification_type</span>": <span class="hljs-value"><span class="hljs-string">"GCM"</span></span>,
+    "<span class="hljs-attribute">endpoint</span>"         : <span class="hljs-value">[Android Device Registration ID]
+</span>}
+</code></pre>
+<p>The Platform will send a GCM notification to the Android Device endpoint when it detects a change in the cloudlet that requires a notification.</p>
 
 </div>
 
