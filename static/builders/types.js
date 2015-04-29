@@ -5,6 +5,7 @@ var objectPatternMatch       = new RegExp(/^0[a-f,0-9]{7}-[a-f,0-9]{4}-4[a-f,0-9
 var objectPatternExtract     = new RegExp(/0[a-f,0-9]{7}-[a-f,0-9]{4}-4[a-f,0-9]{3}-[a-f,0-9]{4}-[a-f,0-9]{12}/gm);
 
 var entries                  = []
+var subTypes                 = [];
 var allowedTypes             = ['boolean', 'int', 'float', 'string', 'url', 'attachment', 'date', 'timestamp', 'gps', 'hexadecimal', 'base64'];
 
 
@@ -89,6 +90,9 @@ function hash(json) {
    //return require('crypto').createHash('md5').update(n).digest('hex') + '-' + n.length;
 }
 
+var isTypeId = function(path){
+   return typePatternMatch.test(path);
+};
 
 $('#setPermissions2').click(function(){
    var data = [ { "ref": "t_e782776271a49e49d1e1dc3f32ee59b1-535", "type": "type", "access_level": "APP", "access_type": "CREATE" }, { "ref": "t_e782776271a49e49d1e1dc3f32ee59b1-535", "type": "type", "access_level": "APP", "access_type": "READ" }, { "ref": "t_e782776271a49e49d1e1dc3f32ee59b1-535", "type": "type", "access_level": "APP", "access_type": "UPDATE" }, { "ref": "t_e782776271a49e49d1e1dc3f32ee59b1-535", "type": "type", "access_level": "APP", "access_type": "DELETE" }, { "ref": "t_57281a30ce2684932c5810e3d2884be5-247", "type": "type", "access_level": "APP", "access_type": "READ" }, { "ref": "t_57281a30ce2684932c5810e3d2884be5-247", "type": "type", "access_level": "APP", "access_type": "CREATE" }, { "ref": "t_a2c029fe882b2ad2fa630fc9f4556f32-259", "type": "type", "access_level": "APP", "access_type": "READ" }, { "ref": "t_a2c029fe882b2ad2fa630fc9f4556f32-259", "type": "type", "access_level": "APP", "access_type": "CREATE" }, { "ref": "t_11fe95b730bd42950e6b12208a25fe89-341", "type": "type", "access_level": "APP", "access_type": "READ" }, { "ref": "t_11fe95b730bd42950e6b12208a25fe89-341", "type": "type", "access_level": "APP", "access_type": "CREATE" }, { "ref": "00000001-5203-4f5b-df3e-7f06c795775d", "type": "object", "access_level": "CLOUDLET", "access_type": "READ" } ]
@@ -304,10 +308,8 @@ var validateTypeEntry = function(entry){
    }
    if (undefined === entry['@openi_type'] || -1 === allowedTypes.indexOf(entry['@openi_type'].toLowerCase())) {
 
-      type_val = entry['@openi_type'];
-
-      if ( openiUtils.isTypeId(type_val) ){
-         subTypes.push(type_val);
+      if ( isTypeId(entry["@openi_type"])){
+         subTypes.push(entry["@openi_type"]);
       }
       else{
          errs.push(entry['@openi_type'].toLowerCase() + ' is not a valid type.');
@@ -338,6 +340,14 @@ $('#clearContext').click(function(){
    $('#context_id').val('')
 })
 
+$('#type').change(function(){
+   if ("type" === $('#type').val()) {
+      $('#type_id').show();
+   }
+   else{
+      $('#type_id').hide();
+   }
+})
 
 $('#addUpdateContext').click(function(){
 
@@ -349,6 +359,11 @@ $('#addUpdateContext').click(function(){
       "@multiple"      : $('#multiple').prop('checked'),
       "@required"      : $('#required').prop('checked'),
       "@context_id"    : $('#context_id').val()
+   }
+
+
+   if ("type" === entry["@openi_type"]){
+      entry["@openi_type"] = $('#type_id').val();
    }
 
 
