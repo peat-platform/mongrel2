@@ -1,0 +1,186 @@
+<!DOCTYPE html>  
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>OPENi | a European Union ICT Project</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37594867-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+        //]]></script>
+    <link rel='stylesheet' id='cptchStylesheet-css' href='/wp-content/plugins/captcha/css/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-fonts-css'
+          href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css'
+          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+    <![endif]-->
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--script type='text/javascript' src='/wp-includes/js/jquery/jquery4511.js?ver=1.8.3'></script-->
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
+    <link rel='next' title='News' href='news/index.html'/>
+    <meta name="generator" content="WordPress 3.5"/>
+    <link rel='canonical' href='index.html'/>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function () {
+            jQuery('.flexslider').flexslider({
+                animation: "fade",
+                direction: "horizontal",
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                prevText: "Previous",
+                nextText: "Next"
+            });
+        });
+    </script>
+
+
+    <link rel='stylesheet' href='tutorial_style.css' type='text/css' media='all'/>
+
+</head>
+
+<body class="home page page-id-4 page-template-default custom-font-enabled">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
+        <div id="headergroup"  style="width: 700px;">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="OPENi"
+                                          rel="home">OPENi</a></h1>
+                <!--<h2 class="site-description"></h2>-->
+            </hgroup>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <h3 class="menu-toggle">Menu</h3>
+                <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <div id="main" class="wrapper" style="width: 700px;">
+
+        <!DOCTYPE html><html><head><meta charset="utf-8"><title>Security</title><style></style></head><body>
+    <h1 id="security-api">Security API</h1>
+    <p>The Security API will allow the registration of users and application with the OPENi platform.</p>
+    <p>The registration of applications with OPENi require multiple steps.</p>
+    <ul>
+        <li>The developer must register as a <em>user</em></li>
+        <li>The developer must then login to get a sesion token.</li>
+        <li>A client can then be created using the developers session token.</li>
+        <li>The api_key and secret are then used within the application.</li>
+    </ul>
+    <hr>
+    <h3 id="user-registration">User Registration</h3>
+    <ul>
+        <li><strong>/users</strong></li>
+    </ul>
+    <p>This endpoint allows you to register new users. The user registration requires a username and a password. If not existent, a new user will be created.</p>
+    <p>Upon success this call will return an empty response with a 200 status code.</p>
+    <p><strong>Example:</strong></p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">username</span>":<span class="hljs-value"><span class="hljs-string">"developer"</span></span>,
+    "<span class="hljs-attribute">password</span>":<span class="hljs-value"><span class="hljs-string">"password"</span>
+</span>}
+</code></pre>
+    <hr>
+    <h3 id="login">Login</h3>
+    <ul>
+        <li><strong>/session</strong></li>
+    </ul>
+    <p>This endpoint allows you to log in existing users. It requires a username and a password. The login will return a session token. The session will expire eventually.</p>
+    <p>Upon success this call will return a response object, as seen below and with a 200 status code.</p>
+    <p><strong>Response</strong></p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">session</span>":<span class="hljs-value"><span class="hljs-string">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJkZXZlbG9wZXJfMmI0Yzk1ODQtMTlkNy00ODkzLTg1MWYtNmFmZmExYjc3MTMyIiwiaXNzIjoiaHR0cHM6Ly8xOTIuMTY4LjMzLjEwL2F1dGgvdG9rZW4iLCJzdWIiOiJkZXZlbG9wZXIiLCJleHAiOjE0MjMwMDk0OTEsImlhdCI6MTQyMjk2NjI5MSwibm9uY2UiOiJjOWQ4ZjE0YS1kNzI4LTQ2ZWYtYjdkNi0yNjIwZjI3OGQyMjMiLCJ1c2VyX2lkIjoiZGV2ZWxvcGVyIiwiY2xvdWRsZXQiOiJjXzlmYWY4ZTY3ZmJiZTI3YjJhYTFjMDBjNWY5M2E4MGM2Iiwic2NvcGUiOiJvcGVuaSIsIm9wZW5pLXRva2VuLXR5cGUiOiJzZXNzaW9uIiwicmVzcG9uc2VfdHlwZSI6ImlkX3Rva2VuIn0.WucvjkLuQ0jnsEakTtLLI5SoPqtxgGtwBk-omv4Vgkc8kFjFa24-qJogIpMHZQYhnj3SR6dujD_oKBQ1otvO8A"</span>
+</span>}
+</code></pre>
+    <hr>
+    <h3 id="client-registration">Client Registration</h3>
+    <ul>
+        <li><strong>/clients</strong></li>
+    </ul>
+    <p>This endpoint allow a developer to register new clients. The client registration requires a name and a description. The <em>session token</em> is passed as Authentication when creating a client.</p>
+    <p>Upon success this call will return the following response with a 200 status code.</p>
+    <p><img src="/tutorials/Auth_Client_Create.png" alt=""></p>
+    <p><strong>Example:</strong></p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"OPENi_Android"</span></span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Official OPENi Android application"</span>
+</span>}
+</code></pre>
+    <p><strong>Response</strong></p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"OPENi_Android"</span></span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Official OPENi Android application"</span></span>,
+    "<span class="hljs-attribute">cloudlet</span>": <span class="hljs-value"><span class="hljs-string">"c_9faf8e67fbbe27b2aa1c00c5f93a80c6"</span></span>,
+    "<span class="hljs-attribute">api_key</span>": <span class="hljs-value"><span class="hljs-string">"b3e51db43d630ea349ac0b4b3dc16e6f"</span></span>,
+    "<span class="hljs-attribute">secret</span>": <span class="hljs-value"><span class="hljs-string">"761dbc37396338c4e3eb00610d923334d9fc282b4f4466d874ddf9dba1cde791"</span>
+</span>}
+</code></pre>
+    <hr>
+    <h3 id="user-client-authorisation">User-Client Authorisation</h3>
+    <ul>
+        <li><strong>/authorizations</strong></li>
+    </ul>
+    <p>This endpoint allows a <em>User</em> to authorise a <em>Client</em> to act on its behalf and access their cloudlet. The request requires the username and <em>password</em> of the <em>user</em> and the <em>api_key</em> and <em>secret</em> from the client.</p>
+    <p>Upon success this call will return a session object with a token, as seen below and with a 200 status code.</p>
+    <p>This token will then be used when making calls to the OPENi Platform.</p>
+    <p><strong>Example:</strong></p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"OPENi_user"</span></span>,
+    "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"passowrd"</span></span>,
+    "<span class="hljs-attribute">api_key</span>": <span class="hljs-value"><span class="hljs-string">"b3e51db43d630ea349ac0b4b3dc16e6f"</span></span>,
+    "<span class="hljs-attribute">secret</span>": <span class="hljs-value"><span class="hljs-string">"761dbc37396338c4e3eb00610d923334d9fc282b4f4466d874ddf9dba1cde791"</span>
+</span>}
+</code></pre>
+    <p><strong>Response</strong></p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">session</span>":<span class="hljs-value"><span class="hljs-string">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJjXzEyYmI5N2MxNGI1NDgyZmFhNzYwYzNkNmU1MTA0MWQ2XzYxZDQwMjI2LTVmODktNDUwOS05MzIzLWU2NzNkNGU0OTY0MCIsImlzcyI6Imh0dHBzOi8vMTkyLjE2OC4zMy4xMC9hdXRoL3Rva2VuIiwic3ViIjoiY18xMmJiOTdjMTRiNTQ4MmZhYTc2MGMzZDZlNTEwNDFkNiIsImV4cCI6MTQyMzAxNjk4NSwiaWF0IjoxNDIyOTczNzg1LCJub25jZSI6ImVhN2E3ZDY1LTc0ZTUtNGYyOC05YTkzLTZjODQ2NTE0OGNlZiIsInVzZXJfaWQiOiJjXzEyYmI5N2MxNGI1NDgyZmFhNzYwYzNkNmU1MTA0MWQ2IiwiY2xvdWRsZXQiOiJjXzEyYmI5N2MxNGI1NDgyZmFhNzYwYzNkNmU1MTA0MWQ2IiwiY2xpZW50X2lkIjoiT1BFTmlfQW5kcm9pZCIsImNvbnRleHQiOiJjXzlmYWY4ZTY3ZmJiZTI3YjJhYTFjMDBjNWY5M2E4MGM2Iiwic2NvcGUiOiJvcGVuaSIsIm9wZW5pLXRva2VuLXR5cGUiOiJ0b2tlbiIsInJlc3BvbnNlX3R5cGUiOiJpZF90b2tlbiJ9.HoeTvczPtoSVpkTxmJLgK-4F3kBEFgvbTt0L2sYs_JuKCIWaQt5Iwx4iLdbpVdOu19nHlreJ6JgdJFQQ9TolNw"</span>
+</span>}
+</code></pre>
+
+    </body></html>
+</body></html>

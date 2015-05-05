@@ -1,0 +1,18 @@
+{
+   "apiVersion": "1.0.0",
+   "swaggerVersion": "1.2",
+   "apis": [
+      {
+         "path": "/dao",
+         "description": "DAO Internal API"
+      }
+   ],
+   "info": {
+      "title": "OPENi Cloudlet Platform Internal REST APIs",
+      "description": "",
+      "termsOfServiceUrl": "http://openi-ict.eu/terms/",
+      "contact": "help@openi-ict.eu",
+      "license": "Apache 2.0",
+      "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
+   }
+}

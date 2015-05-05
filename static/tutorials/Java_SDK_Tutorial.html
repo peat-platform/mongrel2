@@ -1,0 +1,442 @@
+<!DOCTYPE html>  
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>OPENi | a European Union ICT Project</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37594867-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+        //]]></script>
+    <link rel='stylesheet' id='cptchStylesheet-css' href='/wp-content/plugins/captcha/css/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-fonts-css'
+          href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css'
+          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+    <![endif]-->
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--script type='text/javascript' src='/wp-includes/js/jquery/jquery4511.js?ver=1.8.3'></script-->
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
+    <link rel='next' title='News' href='news/index.html'/>
+    <meta name="generator" content="WordPress 3.5"/>
+    <link rel='canonical' href='index.html'/>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function () {
+            jQuery('.flexslider').flexslider({
+                animation: "fade",
+                direction: "horizontal",
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                prevText: "Previous",
+                nextText: "Next"
+            });
+        });
+    </script>
+
+
+    <link rel='stylesheet' href='tutorial_style.css' type='text/css' media='all'/>
+
+</head>
+
+<body class="home page page-id-4 page-template-default custom-font-enabled">
+<div id="page" class="hfeed site">
+<header id="masthead" class="site-header" role="banner">
+    <div id="headergroup"  style="width: 700px;">
+        <hgroup>
+            <h1 class="site-title"><a href="/" title="OPENi"
+                                      rel="home">OPENi</a></h1>
+            <!--<h2 class="site-description"></h2>-->
+        </hgroup>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <h3 class="menu-toggle">Menu</h3>
+            <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+
+        </nav>
+    </div>
+</header>
+
+<div id="main" class="wrapper" style="width: 700px;">
+
+<h1 id="openi-cloudlet-sdk-tutorial">OPENi Cloudlet SDK Tutorial</h1>
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<p>The following table of dependencies are all required by the OPENi Java SDK.</p>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:left"><strong>Group</strong></th>
+        <th style="text-align:left"><strong>Artifact</strong></th>
+        <th style="text-align:left"><strong>Version</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:left">com.fasterxml.jackson.core     </td>
+        <td style="text-align:left"><em>jackson-core</em></td>
+        <td style="text-align:left">2.1.4</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">com.fasterxml.jackson.core     </td>
+        <td style="text-align:left"><em>jackson-annotation</em></td>
+        <td style="text-align:left">2.1.4</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">com.fasterxml.jackson.core     </td>
+        <td style="text-align:left"><em>jackson-databind</em></td>
+        <td style="text-align:left">2.1.4</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">org.apache.httpcomponents     </td>
+        <td style="text-align:left"><em>httpclient</em></td>
+        <td style="text-align:left">4.3.2</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">org.apache.httpcomponents     </td>
+        <td style="text-align:left"><em>httpcore</em></td>
+        <td style="text-align:left">4.3.2</td>
+    </tr>
+    </tbody>
+</table border=1>
+<hr>
+<p>The atrifacts from the <strong>jackson.core</strong> group are required to handle the REST calls to and from the OPENi platform. They handle the serialization and deserialization of the JSON data through the use of annotations within the OPENi SDK Model classes</p>
+<p>The artifacts from the <strong>apache.httpcomponents</strong> group are required to enable the http communications with the OPENi Platform.</p>
+<p>These dependencies can be imported individually or managed using a project management tool like <em>Maven</em>. </p>
+<p>Using Maven the dependancies can be added to the pom.xml file and then installed using &quot;mvn install&quot; command.</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependencies</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>jackson-core<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${jackson-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>jackson-annotations<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${jackson-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>jackson-databind<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${jackson-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.httpcomponents<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>httpclient<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${http-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.httpcomponents<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>httpcore<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${http-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependencies</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">properties</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">jackson-version</span>&gt;</span>2.1.4<span class="hljs-tag">&lt;/<span class="hljs-title">jackson-version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">junit-version</span>&gt;</span>4.8.1<span class="hljs-tag">&lt;/<span class="hljs-title">junit-version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">http-version</span>&gt;</span>4.3.2<span class="hljs-tag">&lt;/<span class="hljs-title">http-version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">properties</span>&gt;</span>
+</code></pre>
+<p>Once these dependancies have been installed the OPENi SDK can be generated and imported.</p>
+<hr>
+
+
+<h2 id="generating-the-sdk">Generating the SDK</h2>
+<p>Inside the &quot;openi_android_sdk&quot; folder run the following command.</p>
+<p><strong>N.B.</strong> Change the <em>IP Address</em> to the adress of your local OPENi Development VM</p>
+<pre><code class="lang-Shell">sh build-cloudlet-sdk.sh 192.168.33.10
+</code></pre>
+<p>This will generate the <em>&quot;openi-cloudlet-android-sdk-1.0.0.jar&quot;</em> file from the OPENi swagger API definitions. </p>
+<p>This jar can be used in OPENi Java projects.</p>
+<hr>
+<p>The following function examples will work towards getting a working Java project for interacting with the OPENi system and will cover the following actions.</p>
+<ul>
+    <li>Registering a Client</li>
+    <li>Registering a User</li>
+    <li>Loging in as a User to get a Session token</li>
+    <li>Using the Session token to authenticate with a Client</li>
+    <li>Getting a Cloudlet from OPENi once authenticated.</li>
+</ul>
+<p><strong>Note:</strong> Below these examples will be a complete end-to-end example.</p>
+<hr>
+<h2 id="authentication-steps">Authentication Steps</h2>
+<h4 id="creating-a-client">Creating a Client</h4>
+<p>Clients will be accessing OPENi on behalf of the user and as such must be registered with the OPENi Platform.</p>
+<p><strong>N.B.</strong> This request does not return a body only a status code.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupClient</span>(String clientId) {
+    <span class="hljs-comment">//Setup Client API</span>
+    ClientsApi clientsapi = <span class="hljs-keyword">new</span> ClientsApi();
+    <span class="hljs-comment">//Prepare the client request object.</span>
+    ClientRegisterRequest clientIdReq = <span class="hljs-keyword">new</span> ClientRegisterRequest();
+    <span class="hljs-comment">//Set the Id of the new client to be created</span>
+    clientIdReq.setClientId(clientId);
+    <span class="hljs-comment">//Call ClientAPI to create new client.</span>
+    <span class="hljs-keyword">try</span> {
+        clientsapi.createClient(clientIdReq);
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
+            System.out.println(<span class="hljs-string">"Client already exists"</span>);
+        } <span class="hljs-keyword">else</span> {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<hr>
+<h4 id="registering-a-user">Registering a User</h4>
+<p>Users currently register with the OPENi system using a <em>username</em> and <em>password</em></p>
+<p><strong>N.B.</strong> This request does not return a body only a status code.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">registerUser</span>(String username, String password) {
+    <span class="hljs-comment">//Setup User API</span>
+    UsersApi usersapi = <span class="hljs-keyword">new</span> UsersApi();
+    <span class="hljs-comment">//Prepare User registration request</span>
+    UserRegisterRequest userReq = <span class="hljs-keyword">new</span> UserRegisterRequest();
+    <span class="hljs-comment">//Set name and password for user</span>
+    userReq.setName(username);
+    userReq.setPassword(password);
+    <span class="hljs-comment">//Create User</span>
+    <span class="hljs-keyword">try</span> {
+        usersapi.createUser(userReq);
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        <span class="hljs-keyword">if</span> (e.getCode() == <span class="hljs-number">400</span>) {
+            System.out.println(<span class="hljs-string">"User already exists"</span>);
+        } <span class="hljs-keyword">else</span> {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<hr>
+<h4 id="login-as-user">Login as User</h4>
+<p>When a user logs into OPENi they create a Session token that can then be used by a client to authenticate itself and communicate with OPENi on the users behalf.</p>
+<p><strong>N.B.</strong> This request returns a Session token.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Session <span class="hljs-title">login</span>(String username, String password) {
+    <span class="hljs-comment">//Setup API</span>
+    SessionApi sessionapi = <span class="hljs-keyword">new</span> SessionApi();
+    <span class="hljs-comment">//Prepare User registration request</span>
+    Credentials creds = <span class="hljs-keyword">new</span> Credentials();
+    <span class="hljs-comment">//Set login credentials</span>
+    creds.setName(username);
+    creds.setPassword(password);
+    <span class="hljs-comment">//Retrieve Session token</span>
+    <span class="hljs-keyword">try</span> {
+        Session session = sessionapi.login(creds);
+        <span class="hljs-keyword">return</span> session;
+        } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h4 id="authenticate-client-for-user">Authenticate Client for User</h4>
+<p>The client then uses a Users Session token to authenticate itself before it can begin interactiong with the OPENi Platform.</p>
+<p><strong>N.B.</strong> This request returns an authentication Token.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Token <span class="hljs-title">authorizeClient</span>(String clientId, Session userSession) {
+    <span class="hljs-comment">//Setup API</span>
+    AuthorizeApi authorizeapi = <span class="hljs-keyword">new</span> AuthorizeApi();
+    <span class="hljs-comment">//Prepare authorization request</span>
+    AuthorizationRequest authreq = <span class="hljs-keyword">new</span> AuthorizationRequest();
+    <span class="hljs-comment">//Set ClientId and Session</span>
+    authreq.setClientId(clientId);
+    authreq.setSession(userSession.getSession());
+    <span class="hljs-comment">//Retrieve Authorization token</span>
+    <span class="hljs-keyword">try</span> {
+        Token token = authorizeapi.authorizeClient(authreq);
+        <span class="hljs-keyword">return</span> token;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h4 id="using-authorization-token-to-get-cloudlet">Using Authorization Token to get Cloudlet</h4>
+<p>Once the Token has been received the users cloudletId can be retrieved by passing the Token to the OPENi Platform vie the CloudletsAPI.</p>
+<p><strong>N.B.</strong> This request returns an OPENiCloudlet object.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> OPENiCloudlet <span class="hljs-title">getCloudletData</span>(Token authToken) {
+    <span class="hljs-comment">//Setup CloudletAPI</span>
+    CloudletsApi cloudletapi = <span class="hljs-keyword">new</span> CloudletsApi();
+    <span class="hljs-comment">//Get Cloudlet</span>
+    <span class="hljs-keyword">try</span> {
+        OPENiCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
+        <span class="hljs-keyword">return</span> cloudletData;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<hr>
+<h3 id="example-1-authentication-and-retrieve-cloudlet">Example 1: Authentication and retrieve Cloudlet</h3>
+<p>This function brings all the previous functions together as the first end-to-end example. This example</p>
+<ul>
+    <li>Creates a testClient</li>
+    <li>Creates a TestUser</li>
+    <li>Gets the User Session</li>
+    <li>Gets the Auth Token</li>
+    <li>Retrieves Users CloudletId</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+    <span class="hljs-comment">//Setup Required Client and User for Example</span>
+    setupClient(<span class="hljs-string">"testClient"</span>);
+    registerUser(<span class="hljs-string">"TestUser"</span>,<span class="hljs-string">"secret"</span>);
+
+    <span class="hljs-comment">//Get user Session to authorize client</span>
+    Session userSession = login(<span class="hljs-string">"TestUser"</span>,<span class="hljs-string">"secret"</span>);
+    <span class="hljs-keyword">if</span> (userSession == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting user Session token"</span>);
+    }
+
+    <span class="hljs-comment">//get Authorization Token to access OPENi platform</span>
+    Token authToken = authorizeClient(<span class="hljs-string">"testClient"</span>, userSession);
+    <span class="hljs-keyword">if</span> (authToken == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting Authtoken"</span>);
+    }
+    <span class="hljs-comment">// Use AuthToken to get Cloudlet</span>
+    OPENiCloudlet cloudletData = getCloudletData(authToken);
+    System.out.println(cloudletData);
+}
+</code></pre>
+<hr>
+<h4 id="creating-a-type">Creating a Type</h4>
+<p>The OPENi type consists of multple layers. </p>
+<ul>
+    <li><strong>The Context</strong> An array of properties within the Type.</li>
+    <li><strong>Context Entry</strong> The descriptor for a single property within the Type.</li>
+    <li><strong>Context Value</strong> METADATA about the single property including an <em>ID</em> and the OPENi primative type of that property.</li>
+</ul>
+<p><strong>N.B.</strong> The two required fields for a type are <em>context</em> and <em>reference</em></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> CreateResponse <span class="hljs-title">createExampleType</span>() {
+    <span class="hljs-comment">//Setup API</span>
+    TypesApi typeApi = <span class="hljs-keyword">new</span> TypesApi();
+    <span class="hljs-comment">//Create empty Type</span>
+    OPENiType type = <span class="hljs-keyword">new</span> OPENiType();
+    <span class="hljs-comment">//METADATA for single property within type</span>
+    ContextValue property = <span class="hljs-keyword">new</span> ContextValue();
+    property.setId(<span class="hljs-string">"openi:name"</span>);
+    property.setOpeniType(<span class="hljs-string">"string"</span>);
+    <span class="hljs-comment">//Single Type Property</span>
+    ContextEntry context = <span class="hljs-keyword">new</span> ContextEntry();
+    context.setPropertyName(<span class="hljs-string">"name"</span>);
+    context.setPropertyContext(property);
+    <span class="hljs-comment">//List of Type Properties</span>
+    List&lt;ContextEntry&gt; typeContext = <span class="hljs-keyword">new</span> ArrayList&lt;ContextEntry&gt;();
+    <span class="hljs-comment">//Add the property to the list</span>
+    typeContext.add(context);
+    <span class="hljs-comment">//Add the list to the type</span>
+    type.setContext(typeContext);
+    <span class="hljs-comment">//Set Type reference as it is a required field</span>
+    type.setReference(<span class="hljs-string">"Name"</span>);
+
+    <span class="hljs-comment">//Post Type</span>
+    <span class="hljs-keyword">try</span> {
+        CreateResponse resp = typeApi.createType(type);
+        <span class="hljs-keyword">return</span> resp;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h4 id="creating-an-object">Creating an Object</h4>
+<p>This example will create an Object with a Type id of the one created above.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ObjectResponse <span class="hljs-title">createExampleObject</span>(OPENiCloudlet cloudlet, CreateResponse type) {
+    <span class="hljs-comment">//Setup API</span>
+    ObjectsApi objectApi = <span class="hljs-keyword">new</span> ObjectsApi();
+    <span class="hljs-comment">//Create empty Type</span>
+    OPENiObject object = <span class="hljs-keyword">new</span> OPENiObject();
+    <span class="hljs-comment">//Set Object Type</span>
+    object.setOpeniType(type.getId());
+    <span class="hljs-comment">//Create Map for object Data</span>
+    Map data = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+    data.put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"TestName"</span>);
+    object.setData(data);
+
+    <span class="hljs-comment">//Create Object</span>
+    <span class="hljs-keyword">try</span> {
+        ObjectResponse resp = objectApi.createObject(cloudlet.getId(), object);
+        <span class="hljs-keyword">return</span> resp;
+    } <span class="hljs-keyword">catch</span> (ApiException e) {
+        e.printStackTrace();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+}
+</code></pre>
+<hr>
+<h3 id="example-2-creating-a-type-and-an-object-of-that-type-">Example 2: Creating a Type and an Object of that Type.</h3>
+<p>This function will extend example 1. It will </p>
+<ul>
+    <li>Create a Type</li>
+    <li>Create an Object of that type in a users Cloudlet.</li>
+</ul>
+<p>With a small extension to the main function in example 1 the cloudlet ID retrieved can be used to create an Object.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+    ...
+
+    CreateResponse exampleType = createExampleType();
+    System.out.println(exampleType);
+
+    ObjectResponse exampleObject = createExampleObject(cloudletData,exampleType);
+    System.out.println(exampleObject);
+}
+</code></pre>
+<hr>
+<h4>Full Example Download</h4>
+<a href="OPENi_Java_SDK_Tutorial.zip">OPENi SDK Tutorial Eclipse Project</a>
+
+<hr>
+
+
+</div>
+
+</body></html>

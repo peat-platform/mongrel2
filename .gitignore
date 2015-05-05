@@ -1,0 +1,9 @@
+cloudlet_platform.db
+http_cloudlet_platform.db
+logs
+run
+tmp
+.idea
+*.db
+.DS_Store
+.DS_Store?

@@ -1,0 +1,119 @@
+{
+   "apiVersion"      : "1.0.0",
+   "swaggerVersion"  : "1.2",
+   "basePath"        : "tcp://127.0.0.1:49994",
+   "resourcePath"    : "/dao",
+   "produces"        : [
+      "application/json"
+   ],
+   "apis": [
+      {
+         "path"       : "",
+         "operations" : [
+            {
+               "method"     : "PUT",
+               "summary"    : "Creates an Object in the database.",
+               "notes"      : "Creates an Object in the database.",
+               "nickname"   : "createCloudlet",
+               "parameters" : [
+                  {
+                     "name"          : "data",
+                     "description"   : "The Object to create in the datastore.",
+                     "required"      : true,
+                     "type"          : "DAO",
+                     "paramType"     : "body"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+"models": {
+      "DAO": {
+         "id": "DAO",
+         "properties": {
+            "dao_actions": {
+               "type"        : "array",
+               "description" : "An array of DAO Actions",
+               "items"       : {
+                  "$ref" : "DaoAction"
+               }
+            },
+            "mongrel_resp": {
+               "type"        : "MongrelResp",
+               "description" : "Data object to send to Client once database action has been performed. Note: the dao module may add to the response.",
+               "required"    : true
+            },
+            "clients":{
+               "type"        : "array",
+               "items"       : {
+                  "$ref":"Client"
+               },
+               "description" : "An array of clients that the Response object is to be sent to.",
+               "required"    : false
+            }
+         }
+      },
+      "DaoAction" : {
+        "id"      : "DaoAction",
+         "properties" : {
+            "action": {
+               "type"        : "string",
+               "description" : "DATABASE action.",
+               "required"    : true,
+               "enum"        : ["CREATE", "DELETE", "FETCH", "GET", "PUT", "POST"]
+            },
+            "database": {
+               "type"        : "string",
+               "description" : "The id of the database to perform action upon.",
+               "required"    : true
+            },
+            "object_name": {
+               "type"        : "string",
+               "description" : "Index of the Cloudlet object to be added or read.",
+               "required"    : false
+            },
+            "object_data": {
+               "type"        : "Object",
+               "description" : "Data (in JSON format) for the Cloudlet object to be added.",
+               "required"    : false
+            }
+         }
+      },
+      "MongrelResp": {
+         "id"          : "MongrelResp",
+         "description" : "Responce object to send to Client once database action has been performed.",
+         "properties": {
+            "value" : {
+               "type"        : "boolean",
+               "format"      : "boolean",
+               "description" : "True if request was success, otherwise False.",
+               "required"    : true
+            },
+            "data":{
+               "type"        : "Object",
+               "description" : "The id of the Cloudlet that action was performed on.",
+               "required"    : false
+            }
+         }
+      },
+      "Client" : {
+         "id"           :  "Client",
+         "properties"   : {
+            "uuid"  : {
+               "type"      : "string",
+               "required"  : true,
+               "description" : "Connected Clients uuid."
+            },
+            "connId"  : {
+               "type"      : "string",
+               "required"  : true,
+               "description" : "Connected Clients connId."
+            }
+         }
+      },
+      "Object" : {
+         "id" :  "Object"
+      }
+   }
+}

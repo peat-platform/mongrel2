@@ -1,0 +1,158 @@
+<!DOCTYPE html>  
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>OPENi | a European Union ICT Project</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37594867-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+        //]]></script>
+    <link rel='stylesheet' id='cptchStylesheet-css' href='/wp-content/plugins/captcha/css/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='/wp-content/plugins/contact-form-7/includes/css/stylesd617.css?ver=3.3.2' type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-fonts-css'
+          href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css'
+          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+    <![endif]-->
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='easy_table_style-css'
+          href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--script type='text/javascript' src='/wp-includes/js/jquery/jquery4511.js?ver=1.8.3'></script-->
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"/>
+    <link rel='next' title='News' href='news/index.html'/>
+    <meta name="generator" content="WordPress 3.5"/>
+    <link rel='canonical' href='index.html'/>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function () {
+            jQuery('.flexslider').flexslider({
+                animation: "fade",
+                direction: "horizontal",
+                slideshowSpeed: 7000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                prevText: "Previous",
+                nextText: "Next"
+            });
+        });
+    </script>
+
+
+    <link rel='stylesheet' href='tutorial_style.css' type='text/css' media='all'/>
+
+</head>
+
+<body class="home page page-id-4 page-template-default custom-font-enabled">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
+        <div id="headergroup"  style="width: 700px;">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="OPENi"
+                                          rel="home">OPENi</a></h1>
+                <!--<h2 class="site-description"></h2>-->
+            </hgroup>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <h3 class="menu-toggle">Menu</h3>
+                <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <div id="main" class="wrapper" style="width: 700px;">
+
+<h1 id="cloudlet-and-object-creation">Cloudlet and Object Creation</h1>
+<hr>
+<p>The Cloudlet platform API handles all requests for cloudlets, objects and types for OPENi. Instructions for accessing the Cloudlet API UI from the home page cam be seen below.</p>
+<p><img src="/tutorials/Cloudlets_2.PNG" alt=""></p>
+<hr>
+<h3 id="cloudlet-retrieval">Cloudlet Retrieval</h3>
+<p>The <b>Authorization token</b> received from the security API can be used within the <em>cloudlets : Cloudlet Administration API</em> section with the <strong>GET/cloudlets</strong> API endpoint to retrieve the cloudlet id for a user to be used when accessing the OPENi platform on their behalf.
+<img src="/tutorials/Cloudlets_3.PNG" alt=""></p>
+<p>At the bottom of the 'GET/cloudlets' section you can then activate it by pressing the "Try it out!" button. This will produce a cloudlet ID.</p>
+<p><img src="/tutorials/Cloudlets_4.PNG" alt=""></p>
+<hr>
+<h3 id="type-creation">Type Creation</h3>
+<p>In order to create an object within the OPENi Platform there must first be a corresponding <em>type</em> upon the platform that an object can conform too.</p>
+<p>Type creation is done within the <em>types : Controls OPENi types</em> section using the 'POST/types' endpoint.</p>
+<p><img src="/tutorials/Cloudlets_5.PNG" alt=""></p>
+<p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example 'HelloWorld' type can be seen below.</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"hello"</span></span>,
+      "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">@required</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">@multiple</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">@allowed_values</span>": <span class="hljs-value">[
+        <span class="hljs-string">"foo"</span>,
+        <span class="hljs-string">"bar"</span>,
+        <span class="hljs-string">"world"</span>
+      ]</span>,
+      "<span class="hljs-attribute">@context_id</span>": <span class="hljs-value"><span class="hljs-string">"openi/hello"</span>
+    </span>}
+  ]</span>,
+    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"openi/HelloWorld"</span>
+</span>}
+</code></pre><p>This shows an example of all the fields for Types. In this example we can see thwet the "hello" key is required, there cannot be multiple "hello" keys and that the only acceptable values for it are "foo","bar" and "hello".</p>
+        <p>The responce from the POST should return the <em>id</em> of the newly created type on the OPENi platform.</p>
+<hr>
+<p><strong>N.B.</strong> Prior to Object creation within a cloudlet the correct <a href="permissions.html">Permissions</a> must be set on the OPENi Platform.See tutorial <a href="permissions.html">here</a></p>
+<hr>
+<h3 id="object-creation">Object Creation</h3>
+
+<p>Using the HelloWorld type we can create an object within the users cloudlet using the 'POST/objects/{cloudletId}' endpoint.</p>
+<p><img src="/tutorials/Cloudlets_6.PNG" alt=""></p>
+<p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example object using the 'HelloWorld' type can be seen below.</p>
+<pre><code>{
+  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_26c91405344400a0b7007f3788f3cf9f-199"</span></span>,
+  "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
+</span>}
+</code></pre><p>The "@openi_type" key hold the id of the reference type for that object. This field will also accept URLs like so:</p>
+<pre><code>{
+  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"https://demo.openi-ict.eu/api/v1/objects/c_f0bdae6dd7e375e1095b8e88f87ecec7-90"</span></span>,
+  "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
+</span>}
+</code></pre>
+</body></html>
