@@ -184,11 +184,11 @@ $('#editContainer').on('click', 'span.loadTypeDetails', function() {
 })
 
 
-var getMockEntry = function(openi_type, pos){
+var getMockEntry = function(type, pos){
 
-   switch(openi_type['@openi_type']){
+   switch(type['@type']){
    case "string" :
-      var prop = openi_type['@property_name']
+      var prop = type['@property_name']
       return (pos > 0 ) ? "mock " + prop + " " + pos : "mock " + prop
       break
    case "int":
@@ -261,7 +261,7 @@ var parseType = function(){
    //console.log(JSON.stringify(type))
 
    var mock_obj = {
-      '@openi_type' : hash(type),
+      '@type' : hash(type),
       '@data'       : mock_data
    }
 
@@ -289,11 +289,11 @@ var validateTypeEntry = function(entry){
    if ( !('@property_name' in  entry) || '' === entry['@property_name']) {
       errs.push('In \'' + name + '\' required parameter @property_name is missing.');
    }
-   if ( !('@context_id' in  entry) || '' === entry['@context_id']) {
-      errs.push('In \'' + name + '\' required parameter @context_id is missing.');
+   if ( !('@context' in  entry) || '' === entry['@context']) {
+      errs.push('In \'' + name + '\' required parameter @context is missing.');
    }
-   if ( !( '@openi_type' in entry) ) {
-      errs.push('In \'' + name + '\' required parameter @openi_type is missing.');
+   if ( !( '@type' in entry) ) {
+      errs.push('In \'' + name + '\' required parameter @type is missing.');
    }
    if ( !( '@required' in entry) ) {
       errs.push('In \'' + name + '\' required parameter @required is missing.');
@@ -306,13 +306,13 @@ var validateTypeEntry = function(entry){
          errs.push('In \'' + name + '\' @allowed_values array is empty');
       }
    }
-   if (undefined === entry['@openi_type'] || -1 === allowedTypes.indexOf(entry['@openi_type'].toLowerCase())) {
+   if (undefined === entry['@type'] || -1 === allowedTypes.indexOf(entry['@type'].toLowerCase())) {
 
-      if ( isTypeId(entry["@openi_type"])){
-         subTypes.push(entry["@openi_type"]);
+      if ( isTypeId(entry["@type"])){
+         subTypes.push(entry["@type"]);
       }
       else{
-         errs.push(entry['@openi_type'].toLowerCase() + ' is not a valid type.');
+         errs.push(entry['@type'].toLowerCase() + ' is not a valid type.');
       }
    }
 
@@ -355,15 +355,15 @@ $('#addUpdateContext').click(function(){
 
    var entry = {
       "@property_name" : $('#property_name').val(),
-      "@openi_type"    : $('#type').val(),
+      "@type"          : $('#type').val(),
       "@multiple"      : $('#multiple').prop('checked'),
       "@required"      : $('#required').prop('checked'),
-      "@context_id"    : $('#context_id').val()
+      "@context"       : $('#context').val()
    }
 
 
-   if ("type" === entry["@openi_type"]){
-      entry["@openi_type"] = $('#type_id').val();
+   if ("type" === entry["@type"]){
+      entry["@type"] = $('#type_id').val();
    }
 
 

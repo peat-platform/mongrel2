@@ -1,6 +1,6 @@
 # Mongrel2 module
 
-This module contains the configuration file (cloudlet_platform.conf) for the OPENi Cloudlet Platform Mongrel2 instance. It also contains the directory that servers the Cloudlet Platofrms static content and start/stop scripts.
+This module contains the configuration file (cloudlet_platform.conf) for the PEAT Cloudlet Platform Mongrel2 instance. It also contains the directory that servers the Cloudlet Platofrms static content and start/stop scripts.
 
 ## Getting Started
 
