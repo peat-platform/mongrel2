@@ -92,7 +92,7 @@ createObjectTable = function(data, type){
     var cellVal = row.insertCell(-1);
 
     cellProp.innerHTML = prop._property_name;
-    cellType.innerHTML = prop._property_context['@type'];
+    cellType.innerHTML = prop._property_context['@data_type'];
     cellId.innerHTML = '<a target="_blank" href="' + prop._property_context._id + '">' + prop._property_context._id + '</a>';
     cellVal.innerHTML = data[prop._property_name];
 

@@ -186,7 +186,7 @@ $('#editContainer').on('click', 'span.loadTypeDetails', function() {
 
 var getMockEntry = function(type, pos){
 
-   switch(type['@type']){
+   switch(type['@data_type']){
    case "string" :
       var prop = type['@property_name']
       return (pos > 0 ) ? "mock " + prop + " " + pos : "mock " + prop
@@ -292,8 +292,8 @@ var validateTypeEntry = function(entry){
    if ( !('@context' in  entry) || '' === entry['@context']) {
       errs.push('In \'' + name + '\' required parameter @context is missing.');
    }
-   if ( !( '@type' in entry) ) {
-      errs.push('In \'' + name + '\' required parameter @type is missing.');
+   if ( !( '@data_type' in entry) ) {
+      errs.push('In \'' + name + '\' required parameter @data_type is missing.');
    }
    if ( !( '@required' in entry) ) {
       errs.push('In \'' + name + '\' required parameter @required is missing.');
@@ -306,13 +306,13 @@ var validateTypeEntry = function(entry){
          errs.push('In \'' + name + '\' @allowed_values array is empty');
       }
    }
-   if (undefined === entry['@type'] || -1 === allowedTypes.indexOf(entry['@type'].toLowerCase())) {
+   if (undefined === entry['@data_type'] || -1 === allowedTypes.indexOf(entry['@data_type'].toLowerCase())) {
 
-      if ( isTypeId(entry["@type"])){
-         subTypes.push(entry["@type"]);
+      if ( isTypeId(entry["@data_type"])){
+         subTypes.push(entry["@data_type"]);
       }
       else{
-         errs.push(entry['@type'].toLowerCase() + ' is not a valid type.');
+         errs.push(entry['@data_type'].toLowerCase() + ' is not a valid type.');
       }
    }
 
@@ -355,15 +355,15 @@ $('#addUpdateContext').click(function(){
 
    var entry = {
       "@property_name" : $('#property_name').val(),
-      "@type"          : $('#type').val(),
+      "@data_type"     : $('#type').val(),
       "@multiple"      : $('#multiple').prop('checked'),
       "@required"      : $('#required').prop('checked'),
       "@context"       : $('#context').val()
    }
 
 
-   if ("type" === entry["@type"]){
-      entry["@type"] = $('#type_id').val();
+   if ("type" === entry["@data_type"]){
+      entry["@data_type"] = $('#type_id').val();
    }
 
 
