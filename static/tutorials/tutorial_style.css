@@ -286,14 +286,7 @@ textarea {
 .clearfix:after {
     clear: both;
 }
-body {
-    margin: 0;
-    font-family: "Arvo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #444;
-    background-color: #fff;
-}
+
 a {
     color: #0000EE;
     text-decoration: none;
@@ -486,26 +479,6 @@ p small {
     font-weight: 200;
     line-height: 27px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    font-weight: bold;
-    color: #444;
-    text-rendering: optimizelegibility;
-}
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
-    font-weight: normal;
-    color: #999;
-}
 h1 {
     font-size: 30px;
     line-height: 36px;
@@ -683,7 +656,6 @@ pre {
     margin: 0 0 9px;
     font-size: 12px;
     line-height: 18px;
-    background-color: #f5f5f5;
     border: 1px solid #ccc;
     border: 1px solid rgba(0,0,0,0.15);
     -webkit-border-radius: 4px;
@@ -697,9 +669,17 @@ pre {
 pre.prettyprint {
     margin-bottom: 18px;
 }
+pre {
+    padding: 0 3px 2px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 12px;
+    color: #444;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 pre code {
     padding: 0;
-    color: inherit;
     background-color: transparent;
     border: 0;
 }
