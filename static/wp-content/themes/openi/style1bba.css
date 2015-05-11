@@ -65,7 +65,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
 	line-height: 1;
 	/*background:url(images/bkgd.gif) repeat;*/
-	background-color: #222222;
+	background-color: #FFF;
 }
 ol,
 ul {
@@ -592,7 +592,8 @@ a:hover {
 	padding:1rem 1.42857143rem 0rem 1.42857143rem;
 	max-width:68.5714rem;
 	min-height: 700px;
-	background: #303030;
+	color: #303030;
+	background-color: #FFF;
 	position:relative;
 	z-index:0; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
@@ -604,7 +605,7 @@ a:hover {
 }
 */
 .site-header {
-	background-color: #222222;
+	background-color: #FFF;
 	background-size: auto 120px;
     display: block;
    /* height: auto;*/
