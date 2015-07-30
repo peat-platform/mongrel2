@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -87,8 +87,8 @@
 <header id="masthead" class="site-header" role="banner">
     <div id="headergroup"  style="width: 700px;">
         <hgroup>
-            <h1 class="site-title"><a href="/" title="OPENi"
-                                      rel="home">OPENi</a></h1>
+            <h1 class="site-title"><a href="/" title="PEAT"
+                                      rel="home">PEAT</a></h1>
             <!--<h2 class="site-description"></h2>-->
         </hgroup>
         <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -103,7 +103,7 @@
 
     <h1 id="type-and-object-referencing">Type and Object Referencing</h1>
     <hr>
-    <p>This section is an example of how <em>Types and Objects</em> within the OPENi platform can themselves contain references to other Types and Objects.</p>
+    <p>This section is an example of how <em>Types and Objects</em> within the PEAT platform can themselves contain references to other Types and Objects.</p>
     <p>For this example Swagger UI compliant code will be used but note that type creation can also be done via the Java SDK.</p>
     <p>This example will user three types.</p>
     <ul>
@@ -113,8 +113,8 @@
     </ul>
     <p><strong>N.B.</strong> The person type must be created last as it references other types by ID.</p>
     <hr>
-    <p>The following types must be created upon your OPENi dev environment.</p>
-    <p><strong>N.B.</strong> Keep a record of the IDs returned by the OPENi system as they may be different to the ones used here.</p>
+    <p>The following types must be created upon your PEAT dev environment.</p>
+    <p><strong>N.B.</strong> Keep a record of the IDs returned by the PEAT system as they may be different to the ones used here.</p>
     <h4 id="full-name-type">Full Name Type</h4>
 <pre><code class="lang-json">{
     "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
@@ -122,21 +122,21 @@
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"firstname"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"middlename"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"lastname"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>}
   ]</span>,
@@ -150,35 +150,35 @@
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Number"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"street"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"street"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"city"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"city/town"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"state"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"state/county"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"country"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"country"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>}
   ]</span>,
@@ -192,21 +192,21 @@
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"name"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Full Name"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_ff29cd6d53b1e3f4ef4a6ff828d0ddf4-324"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"t_ff29cd6d53b1e3f4ef4a6ff828d0ddf4-324"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"email"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Email Address"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
     </span>},
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"address"</span></span>,
       "<span class="hljs-attribute">@property_context</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">@id</span>": <span class="hljs-value"><span class="hljs-string">"Full Address"</span></span>,
-        "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_fb651f2d7bd17d930fb45dee08eae660-485"</span>
+        "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"t_fb651f2d7bd17d930fb45dee08eae660-485"</span>
       </span>}
     </span>}
   ]</span>,
@@ -225,7 +225,7 @@
     <p><strong>N.B.</strong> Record the Object ID as it will be different from the one in the example.</p>
     <h4 id="address-object">Address Object</h4>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_fb651f2d7bd17d930fb45dee08eae660-485"</span></span>,
+    "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"t_fb651f2d7bd17d930fb45dee08eae660-485"</span></span>,
     "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">number</span>": <span class="hljs-value"><span class="hljs-string">"123"</span></span>,
     "<span class="hljs-attribute">street</span>": <span class="hljs-value"><span class="hljs-string">"Fake St."</span></span>,
@@ -240,14 +240,14 @@
         <li>Note the "Full Name" Object is not a reference but an object literal.</li>
     </ul>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"https://192.168.33.10/api/v1/types/t_086a914f04ba528b812006f9e4b5d7a6-378"</span></span>,
+    "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"https://192.168.33.10/api/v1/types/t_086a914f04ba528b812006f9e4b5d7a6-378"</span></span>,
     "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Test"</span></span>,
       "<span class="hljs-attribute">middlename</span>": <span class="hljs-value"><span class="hljs-string">"Ing"</span></span>,
       "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Name"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"admin@openi-ict.eu"</span></span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"admin@peat-platform.org"</span></span>,
     "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"o_279a18000b9aca696e88ad00843a874a-265"</span>
   </span>}
 </span>}

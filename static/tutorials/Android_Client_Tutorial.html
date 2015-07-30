@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -87,8 +87,8 @@
 <header id="masthead" class="site-header" role="banner">
     <div id="headergroup"  style="width: 700px;">
         <hgroup>
-            <h1 class="site-title"><a href="/" title="OPENi"
-                                      rel="home">OPENi</a></h1>
+            <h1 class="site-title"><a href="/" title="PEAT"
+                                      rel="home">PEAT</a></h1>
             <!--<h2 class="site-description"></h2>-->
         </hgroup>
         <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -102,12 +102,12 @@
 <div id="main" class="wrapper" style="width: 700px;">
 
     
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>OPENi Android Tutorial</title><style></style></head><body>
-<h1 id="openi-android-tutorial">OPENi Android Tutorial</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>PEAT Android Tutorial</title><style></style></head><body>
+<h1 id="peat-android-tutorial">PEAT Android Tutorial</h1>
 <hr>
-<p>This tutorial will cover the use of the OPENi Android client library available for <a href="https://demo2.openi-ict.eu/android-sdk/openi-client-lib.aar">download</a>.</p>
+<p>This tutorial will cover the use of the PEAT Android client library available for <a href="https://demo2.peat-ict.eu/android-sdk/peat-client-lib.aar">download</a>.</p>
 <p>Create a new android project. This project will be used for the purpose of this tutorial.</p>
-<p>Download the OPENi Android Client Library and place it into the <strong>libs</strong> folder within your Android project directory.</p>
+<p>Download the PEAT Android Client Library and place it into the <strong>libs</strong> folder within your Android project directory.</p>
 <p>To enable your android project to utilize the library it must be imported by the porject. This is done in the <strong>gradle.build</strong> file.</p>
 <p>The <strong>gradle.build</strong> file should look something like this:</p>
 <pre><code>apply plugin: &#39;com.android.application&#39;
@@ -117,7 +117,7 @@ android {
     buildToolsVersion &quot;20.0.0&quot;
 
     defaultConfig {
-        applicationId &quot;org.tssg.openi.openiandroidtutorial&quot;
+        applicationId &quot;org.tssg.peat.peatandroidtutorial&quot;
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
@@ -160,35 +160,35 @@ repositories {
 
 dependencies {
     compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
-    compile(name:&#39;openi-client-lib&#39;, ext:&#39;aar&#39;)
+    compile(name:&#39;peat-client-lib&#39;, ext:&#39;aar&#39;)
 }
 </code></pre><p><strong>N.B.</strong> The packagingOptions configuration prevents known issues with duplicate META files within dependancies</p>
 <p><strong>libs</strong> is the folder that we placed the client library in when we downloaded it. This addition to the gradle.build file will allow the project to impoirt and use it. </p>
-<p>Once the project is rebuild with these lines included you should have access to the OPENi functions.</p>
+<p>Once the project is rebuild with these lines included you should have access to the PEAT functions.</p>
 <hr>
 <h2 id="activity-implementation">Activity Implementation</h2>
 <p>Using the default blank activity in the android project we will </p>
-<p>We add the call, OPENiAsync.initOPENiAsync(&quot;openi_camera_demo_app&quot;, this); to the onCreate function. This function takes the identifier for the application that has been setup on the OPENi Platform. In this case we are using an application id that is already setup on the Platform, <em>openi_camera_demo_app</em>.</p>
+<p>We add the call, PEATAsync.initPEATAsync(&quot;peat_camera_demo_app&quot;, this); to the onCreate function. This function takes the identifier for the application that has been setup on the PEAT Platform. In this case we are using an application id that is already setup on the Platform, <em>peat_camera_demo_app</em>.</p>
 <pre><code class="lang-java"><span class="hljs-annotation">@Override</span>
     <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
-        OPENiAsync.initOPENiAsync(<span class="hljs-string">"openi_camera_demo_app"</span>, <span class="hljs-keyword">this</span>);
+        PEATAsync.initPEATAsync(<span class="hljs-string">"peat_camera_demo_app"</span>, <span class="hljs-keyword">this</span>);
         ...
-        openiTest();
+        peatTest();
     }
 </code></pre>
-<p>This function below is called within the onCreate. It shows the use of the OPENiAsync class. In this example We are getting an Object via a call to OPENiAsync.</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">openiTest</span><span class="hljs-params">()</span> </span>{
-        OPENiAsync.getOPENiAsync().getCloudletObject(<span class="hljs-keyword">new</span> ICloudletObjectCall() {
+<p>This function below is called within the onCreate. It shows the use of the PEATAsync class. In this example We are getting an Object via a call to PEATAsync.</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">peatTest</span><span class="hljs-params">()</span> </span>{
+        PEATAsync.getPEATAsync().getCloudletObject(<span class="hljs-keyword">new</span> ICloudletObjectCall() {
 
             <span class="hljs-annotation">@Override</span>
             <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">doProcess</span><span class="hljs-params">(String authToken)</span> <span class="hljs-keyword">throws</span> ApiException </span>{
-                <span class="hljs-keyword">return</span> OPENiUtils.getObjectApi().getObjectByAuthToken(<span class="hljs-string">"0ecc29f0-a6c2-4531-a2b5-5cc27d94caf4"</span>, Boolean.FALSE, authToken);
+                <span class="hljs-keyword">return</span> PEATUtils.getObjectApi().getObjectByAuthToken(<span class="hljs-string">"0ecc29f0-a6c2-4531-a2b5-5cc27d94caf4"</span>, Boolean.FALSE, authToken);
             }
             <span class="hljs-annotation">@Override</span>
             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(Object obj)</span> </span>{
-                <span class="hljs-keyword">final</span> OPENiObject oo = (OPENiObject) obj;
+                <span class="hljs-keyword">final</span> PEATObject oo = (PEATObject) obj;
                 Log.d(<span class="hljs-string">"Get Object"</span>, oo.toString());
-                <span class="hljs-keyword">final</span> JSONObject data = OPENiUtils.getObjectData(oo);
+                <span class="hljs-keyword">final</span> JSONObject data = PEATUtils.getObjectData(oo);
                 Log.d(<span class="hljs-string">"Get Object"</span>, data.toString());
                 Toast toast = Toast.makeText(getApplicationContext(),data.toString(),Toast.LENGTH_LONG);
                 toast.show();`
@@ -203,7 +203,7 @@ dependencies {
 <p>--</p>
 <h2 id="permissions">Permissions</h2>
 <p>Add permissions to the <strong>AndroidManifest.xml</strong></p>
-<p><strong>N.B.</strong> This is needed to allow calls to the OPENi Platform</p>
+<p><strong>N.B.</strong> This is needed to allow calls to the PEAT Platform</p>
 <pre><code class="lang-xml"><span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">manifest</span>&gt;</span>
     ...
@@ -213,7 +213,7 @@ dependencies {
 <hr>
 <h2 id="running-the-applications">Running the Applications</h2>
 <p>When the application is run you will see a login dialog.</p>
-<p>Use the login details <strong>openitest</strong>, <strong>openitest</strong> and you should receive a popup showing the data received from OPENi.</p>
+<p>Use the login details <strong>peattest</strong>, <strong>peattest</strong> and you should receive a popup showing the data received from PEAT.</p>
 
 </body></html>
 

@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -88,8 +88,8 @@
     <header id="masthead" class="site-header" role="banner">
         <div id="headergroup"  style="width: 700px;">
             <hgroup>
-                <h1 class="site-title"><a href="/" title="OPENi"
-                                          rel="home">OPENi</a></h1>
+                <h1 class="site-title"><a href="/" title="PEAT"
+                                          rel="home">PEAT</a></h1>
                 <!--<h2 class="site-description"></h2>-->
             </hgroup>
             <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -104,25 +104,25 @@
 
 <h1 id="cloudlet-and-object-creation">Cloudlet and Object Creation</h1>
 <hr>
-<p>The Cloudlet platform API handles all requests for cloudlets, objects and types for OPENi. Instructions for accessing the Cloudlet API UI from the home page cam be seen below.</p>
+<p>The Cloudlet platform API handles all requests for cloudlets, objects and types for PEAT. Instructions for accessing the Cloudlet API UI from the home page cam be seen below.</p>
 <p><img src="/tutorials/Cloudlets_2.PNG" alt=""></p>
 <hr>
 <h3 id="cloudlet-retrieval">Cloudlet Retrieval</h3>
-<p>The <b>Authorization token</b> received from the security API can be used within the <em>cloudlets : Cloudlet Administration API</em> section with the <strong>GET/cloudlets</strong> API endpoint to retrieve the cloudlet id for a user to be used when accessing the OPENi platform on their behalf.
+<p>The <b>Authorization token</b> received from the security API can be used within the <em>cloudlets : Cloudlet Administration API</em> section with the <strong>GET/cloudlets</strong> API endpoint to retrieve the cloudlet id for a user to be used when accessing the PEAT platform on their behalf.
 <img src="/tutorials/Cloudlets_3.PNG" alt=""></p>
 <p>At the bottom of the 'GET/cloudlets' section you can then activate it by pressing the "Try it out!" button. This will produce a cloudlet ID.</p>
 <p><img src="/tutorials/Cloudlets_4.PNG" alt=""></p>
 <hr>
 <h3 id="type-creation">Type Creation</h3>
-<p>In order to create an object within the OPENi Platform there must first be a corresponding <em>type</em> upon the platform that an object can conform too.</p>
-<p>Type creation is done within the <em>types : Controls OPENi types</em> section using the 'POST/types' endpoint.</p>
+<p>In order to create an object within the PEAT Platform there must first be a corresponding <em>type</em> upon the platform that an object can conform too.</p>
+<p>Type creation is done within the <em>types : Controls PEAT types</em> section using the 'POST/types' endpoint.</p>
 <p><img src="/tutorials/Cloudlets_5.PNG" alt=""></p>
 <p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example 'HelloWorld' type can be seen below.</p>
 <pre><code class="lang-json">{
     "<span class="hljs-attribute">@context</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">@property_name</span>": <span class="hljs-value"><span class="hljs-string">"hello"</span></span>,
-      "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">@required</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">@multiple</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
       "<span class="hljs-attribute">@allowed_values</span>": <span class="hljs-value">[
@@ -130,15 +130,15 @@
         <span class="hljs-string">"bar"</span>,
         <span class="hljs-string">"world"</span>
       ]</span>,
-      "<span class="hljs-attribute">@context_id</span>": <span class="hljs-value"><span class="hljs-string">"openi/hello"</span>
+      "<span class="hljs-attribute">@context_id</span>": <span class="hljs-value"><span class="hljs-string">"peat/hello"</span>
     </span>}
   ]</span>,
-    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"openi/HelloWorld"</span>
+    "<span class="hljs-attribute">@reference</span>": <span class="hljs-value"><span class="hljs-string">"peat/HelloWorld"</span>
 </span>}
 </code></pre><p>This shows an example of all the fields for Types. In this example we can see thwet the "hello" key is required, there cannot be multiple "hello" keys and that the only acceptable values for it are "foo","bar" and "hello".</p>
-        <p>The responce from the POST should return the <em>id</em> of the newly created type on the OPENi platform.</p>
+        <p>The responce from the POST should return the <em>id</em> of the newly created type on the PEAT platform.</p>
 <hr>
-<p><strong>N.B.</strong> Prior to Object creation within a cloudlet the correct <a href="permissions.html">Permissions</a> must be set on the OPENi Platform.See tutorial <a href="permissions.html">here</a></p>
+<p><strong>N.B.</strong> Prior to Object creation within a cloudlet the correct <a href="permissions.html">Permissions</a> must be set on the PEAT Platform.See tutorial <a href="permissions.html">here</a></p>
 <hr>
 <h3 id="object-creation">Object Creation</h3>
 
@@ -146,12 +146,12 @@
 <p><img src="/tutorials/Cloudlets_6.PNG" alt=""></p>
 <p>This section has some implementation notes about what parameters will be accepted in the body of the POST. An example object using the 'HelloWorld' type can be seen below.</p>
 <pre><code>{
-  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"t_26c91405344400a0b7007f3788f3cf9f-199"</span></span>,
+  "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"t_26c91405344400a0b7007f3788f3cf9f-199"</span></span>,
   "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
 </span>}
-</code></pre><p>The "@openi_type" key hold the id of the reference type for that object. This field will also accept URLs like so:</p>
+</code></pre><p>The "@type" key hold the id of the reference type for that object. This field will also accept URLs like so:</p>
 <pre><code>{
-  "<span class="hljs-attribute">@openi_type</span>": <span class="hljs-value"><span class="hljs-string">"https://demo.openi-ict.eu/api/v1/objects/c_f0bdae6dd7e375e1095b8e88f87ecec7-90"</span></span>,
+  "<span class="hljs-attribute">@type</span>": <span class="hljs-value"><span class="hljs-string">"https://demo.peat-platform.org/api/v1/objects/c_f0bdae6dd7e375e1095b8e88f87ecec7-90"</span></span>,
   "<span class="hljs-attribute">@data</span>": <span class="hljs-value">{"<span class="hljs-attribute">hello</span>" : <span class="hljs-value"><span class="hljs-string">"world"</span></span>}
 </span>}
 </code></pre>

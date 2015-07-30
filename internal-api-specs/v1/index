@@ -10,8 +10,8 @@
    "info": {
       "title": "PEAT Cloudlet Platform Internal REST APIs",
       "description": "",
-      "termsOfServiceUrl": "http://openi-ict.eu/terms/",
-      "contact": "help@openi-ict.eu",
+      "termsOfServiceUrl": "http://peat-platform.org/terms/",
+      "contact": "help@peat-platform.org",
       "license": "Apache 2.0",
       "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
    }

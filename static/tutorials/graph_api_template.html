@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -87,8 +87,8 @@
 <header id="masthead" class="site-header" role="banner">
     <div id="headergroup"  style="width: 700px;">
         <hgroup>
-            <h1 class="site-title"><a href="/" title="OPENi"
-                                      rel="home">OPENi</a></h1>
+            <h1 class="site-title"><a href="/" title="PEAT"
+                                      rel="home">PEAT</a></h1>
             <!--<h2 class="site-description"></h2>-->
         </hgroup>
         <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -103,24 +103,24 @@
 
 
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Graph API</title><style></style></head><body>
-<h1 id="rest-calls-to-the-openi-graph-api">REST calls to the OPENi Graph API</h1>
+<h1 id="rest-calls-to-the-peat-graph-api">REST calls to the PEAT Graph API</h1>
 <p>Here you can find all the available resources (objects) of our Graph API. Under every resource you can find the available REST calls you can make. </p>
-<p>In order to use the OPENi Graph API Framework you can make simple calls to the base URI  appended by the version of the API, currently v.04, and the object needed.</p>
+<p>In order to use the PEAT Graph API Framework you can make simple calls to the base URI  appended by the version of the API, currently v.04, and the object needed.</p>
 <p>So the url should look like this:</p>
-<p><a href="https://demo2.openi-ict.eu:443/v.04/[ObjectName">https://demo2.openi-ict.eu:443/v.04/[ObjectName</a>]
-e.g. <a href="https://demo2.openi-ict.eu:443/v.04/Photo/">https://demo2.openi-ict.eu:443/v.04/Photo/</a></p>
+<p><a href="https://demo2.peat-platform.org:443/v.04/[ObjectName">https://demo2.peat-platform.org:443/v.04/[ObjectName</a>]
+e.g. <a href="https://demo2.peat-platform.org:443/v.04/Photo/">https://demo2.peat-platform.org:443/v.04/Photo/</a></p>
 <p>After this basic url you should append the parameters you need. There are two parameters that are found under almost all available methods.</p>
 <ul>
 <li><p>user ( the user for whom you need the info - should be already authenticated to the platform )</p>
 </li>
-<li><p>cbs ( an array of CBS applications to which you need the method to be called, for example [&quot;facebook&quot;,&quot;twitter&quot;] )<br>Through the OPENi Graph API you can make calls to the Cloudlet but also invoke methods of the available 3rd party Cloud Based Services. This is why under almost all methods you can find the parameter cbs which you can use to specify to which Cloud Based Service(s) you want your call to be redirected.<br>Valid cbs values are only the following: &quot;twitter&quot;,&quot;foursquare&quot;, &quot;facebook&quot;, &quot;instagram&quot;, &quot;google&quot;, &quot;citygrid&quot;, &quot;flickr&quot;, &quot;dropbox&quot;, &quot;youtube&quot;, &quot;vimeo&quot;, &quot;windowslive&quot;. Using extra spaces or capital letters will return an error message.<br>If you want to invoke a method that only interacts with the OPENi Cloudlet, you should leave this field blank.<br>Note that all method calls are also interacting with the Cloudlet, as this is the default OPENi approach. This essentially means that when invoking a POST method giving for a specific cbs, an object is also created and stored in the OPENi cloudlet as well. </p>
+<li><p>cbs ( an array of CBS applications to which you need the method to be called, for example [&quot;facebook&quot;,&quot;twitter&quot;] )<br>Through the PEAT Graph API you can make calls to the Cloudlet but also invoke methods of the available 3rd party Cloud Based Services. This is why under almost all methods you can find the parameter cbs which you can use to specify to which Cloud Based Service(s) you want your call to be redirected.<br>Valid cbs values are only the following: &quot;twitter&quot;,&quot;foursquare&quot;, &quot;facebook&quot;, &quot;instagram&quot;, &quot;google&quot;, &quot;citygrid&quot;, &quot;flickr&quot;, &quot;dropbox&quot;, &quot;youtube&quot;, &quot;vimeo&quot;, &quot;windowslive&quot;. Using extra spaces or capital letters will return an error message.<br>If you want to invoke a method that only interacts with the PEAT Cloudlet, you should leave this field blank.<br>Note that all method calls are also interacting with the Cloudlet, as this is the default PEAT approach. This essentially means that when invoking a POST method giving for a specific cbs, an object is also created and stored in the PEAT cloudlet as well. </p>
 </li>
 </ul>
 <p>The rest of the parameters vary depending on the Object and Method.</p>
 <h2 id="method-invocation-examples">Method Invocation Examples</h2>
 <h4 id="get">GET</h4>
 <p>Example to get all Photo objects for the user romdim from his personal Cloudlet:</p>
-<pre><code class="lang-html">curl -k https://demo2.openi-ict.eu:443/v.04/Photo/?user=romdim
+<pre><code class="lang-html">curl -k https://demo2.peat-platform.org:443/v.04/Photo/?user=romdim
 </code></pre>
 <p>And the response:</p>
 <pre><code class="lang-json">[
@@ -147,7 +147,7 @@ e.g. <a href="https://demo2.openi-ict.eu:443/v.04/Photo/">https://demo2.openi-ic
         "<span class="hljs-attribute">object_type</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
         "<span class="hljs-attribute">profile</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">resource_uri</span>": <span class="hljs-value"><span class="hljs-string">"/v.04/Photo/1/"</span></span>,
-        "<span class="hljs-attribute">service</span>": <span class="hljs-value"><span class="hljs-string">"OPENi Cloudlet"</span></span>,
+        "<span class="hljs-attribute">service</span>": <span class="hljs-value"><span class="hljs-string">"PEAT Cloudlet"</span></span>,
         "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
         "<span class="hljs-attribute">width</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
@@ -156,7 +156,7 @@ e.g. <a href="https://demo2.openi-ict.eu:443/v.04/Photo/">https://demo2.openi-ic
 ]
 </code></pre>
 <p>Example to get all Photo objects for the user romdim from facebook and from his personal Cloudlet:</p>
-<pre><code class="lang-html">curl -k https://demo2.openi-ict.eu:443/v.04/Photo/?cbs=%5B%22facebook%22%5D&amp;user=romdim
+<pre><code class="lang-html">curl -k https://demo2.peat-platform.org:443/v.04/Photo/?cbs=%5B%22facebook%22%5D&amp;user=romdim
 </code></pre>
 <p>And the response:</p>
 <pre><code class="lang-json">[
@@ -334,7 +334,7 @@ e.g. <a href="https://demo2.openi-ict.eu:443/v.04/Photo/">https://demo2.openi-ic
         "<span class="hljs-attribute">object_type</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
         "<span class="hljs-attribute">profile</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">resource_uri</span>": <span class="hljs-value"><span class="hljs-string">"/v.04/Photo/1/"</span></span>,
-        "<span class="hljs-attribute">service</span>": <span class="hljs-value"><span class="hljs-string">"OPENi Cloudlet"</span></span>,
+        "<span class="hljs-attribute">service</span>": <span class="hljs-value"><span class="hljs-string">"PEAT Cloudlet"</span></span>,
         "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
         "<span class="hljs-attribute">width</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}
@@ -342,13 +342,13 @@ e.g. <a href="https://demo2.openi-ict.eu:443/v.04/Photo/">https://demo2.openi-ic
   </span>}
 ]
 </code></pre>
-<p>You can see that Photo Objects coming from different sources (facebook, OPENi) are returned in the same JSON response but inside different JSON arrays. The &quot;service&quot; field shows which objects come from which CBS/Cloudlet.  </p>
+<p>You can see that Photo Objects coming from different sources (facebook, PEAT) are returned in the same JSON response but inside different JSON arrays. The &quot;service&quot; field shows which objects come from which CBS/Cloudlet.  </p>
 <h4 id="post">POST</h4>
 <p>POst a Photo Object to the user&#39;s Cloudlet</p>
 <pre><code class="lang-html">curl -k -X POST 
  -H &quot;Content-Type: application/json&quot; 
  -d &#39;{  &quot;profile&quot;: &quot;test&quot;,  &quot;width&quot;: &quot;2&quot;,  &quot;context&quot;: {},   &quot;Location&quot;:&quot;/v.04/Location/2/&quot;,  &quot;height&quot;: &quot;3&quot;}&#39;  
- https://demo2.openi-ict.eu:443/v.04/Photo/?user=romdim
+ https://demo2.peat-platform.org:443/v.04/Photo/?user=romdim
 </code></pre>
 <p>Note that &quot;/v.04/Location/2/&quot; is the URI of a Location Object inside the user&#39;s Cloudlet. </p>
 

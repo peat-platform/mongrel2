@@ -1,9 +1,9 @@
 /*
-Theme Name: OpenI
+Theme Name: PEAT
 Theme URI: http://wordpress.org/extend/themes/twentytwelve
 Author: Elaine Breen
 Author URI: http://wordpress.org/
-Description: Bespoke theme for OpenI based on TwentyTwelve theme. The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
+Description: Bespoke theme for PEAT based on TwentyTwelve theme. The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
 Version: 2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2076,7 +2076,7 @@ body .site {
 and (max-width : 480px) {
 	
 .site-header h1 a, .site-header h2 a {
-    background: url("images/OPENi_logo_sm.png") no-repeat scroll 0 0 transparent;
+    background: url("images/PEAT_logo_sm.png") no-repeat scroll 0 0 transparent;
     color: #515151;
     display: inline-block;
     padding: 0.4em 1.8em;

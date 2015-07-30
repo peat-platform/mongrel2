@@ -1,11 +1,11 @@
-#OPENi Android Tutorial
+#PEAT Android Tutorial
 ---
 
-This tutorial will cover the use of the OPENi Android client library available for [download](https://demo2.openi-ict.eu/android-sdk/openi-client-lib.aar).
+This tutorial will cover the use of the PEAT Android client library available for [download](https://demo2.peat-platform.org/android-sdk/peat-client-lib.aar).
 
 Create a new android project. This project will be used for the purpose of this tutorial.
 
-Download the OPENi Android Client Library and place it into the **libs** folder within your Android project directory.
+Download the PEAT Android Client Library and place it into the **libs** folder within your Android project directory.
 
 To enable your android project to utilize the library it must be imported by the porject. This is done in the **gradle.build** file.
 
@@ -19,7 +19,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "org.tssg.openi.openiandroidtutorial"
+        applicationId "org.tssg.peat.peatandroidtutorial"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
@@ -65,7 +65,7 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile(name:'openi-client-lib', ext:'aar')
+    compile(name:'peat-client-lib', ext:'aar')
 }
 ~~~
 
@@ -73,38 +73,38 @@ dependencies {
 
 **libs** is the folder that we placed the client library in when we downloaded it. This addition to the gradle.build file will allow the project to impoirt and use it. 
 
-Once the project is rebuild with these lines included you should have access to the OPENi functions.
+Once the project is rebuild with these lines included you should have access to the PEAT functions.
 
 ---
 ##Activity Implementation
 
 Using the default blank activity in the android project we will 
 
-We add the call, OPENiAsync.initOPENiAsync("openi_camera_demo_app", this); to the onCreate function. This function takes the identifier for the application that has been setup on the OPENi Platform. In this case we are using an application id that is already setup on the Platform, *openi_camera_demo_app*.
+We add the call, PEATAsync.initPEATAsync("peat_camera_demo_app", this); to the onCreate function. This function takes the identifier for the application that has been setup on the PEAT Platform. In this case we are using an application id that is already setup on the Platform, *peat_camera_demo_app*.
 ~~~java
 @Override
     protected void onCreate(Bundle savedInstanceState) {
-        OPENiAsync.initOPENiAsync("openi_camera_demo_app", this);
+        PEATAsync.initPEATAsync("peat_camera_demo_app", this);
         ...
-        openiTest();
+        peatTest();
     }
 ~~~
 
-This function below is called within the onCreate. It shows the use of the OPENiAsync class. In this example We are getting an Object via a call to OPENiAsync.
+This function below is called within the onCreate. It shows the use of the PEATAsync class. In this example We are getting an Object via a call to PEATAsync.
 
 ~~~java
-public void openiTest() {
-        OPENiAsync.getOPENiAsync().getCloudletObject(new ICloudletObjectCall() {
+public void peatTest() {
+        PEATAsync.getPEATAsync().getCloudletObject(new ICloudletObjectCall() {
 
             @Override
             public Object doProcess(String authToken) throws ApiException {
-                return OPENiUtils.getObjectApi().getObjectByAuthToken("0ecc29f0-a6c2-4531-a2b5-5cc27d94caf4", Boolean.FALSE, authToken);
+                return PEATUtils.getObjectApi().getObjectByAuthToken("0ecc29f0-a6c2-4531-a2b5-5cc27d94caf4", Boolean.FALSE, authToken);
             }
             @Override
             public void onSuccess(Object obj) {
-                final OPENiObject oo = (OPENiObject) obj;
+                final PEATObject oo = (PEATObject) obj;
                 Log.d("Get Object", oo.toString());
-                final JSONObject data = OPENiUtils.getObjectData(oo);
+                final JSONObject data = PEATUtils.getObjectData(oo);
                 Log.d("Get Object", data.toString());
                 Toast toast = Toast.makeText(getApplicationContext(),data.toString(),Toast.LENGTH_LONG);
                 toast.show();`
@@ -122,7 +122,7 @@ public void openiTest() {
 ##Permissions
 Add permissions to the **AndroidManifest.xml**
 
-**N.B.** This is needed to allow calls to the OPENi Platform
+**N.B.** This is needed to allow calls to the PEAT Platform
 ~~~xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
@@ -139,4 +139,4 @@ Add permissions to the **AndroidManifest.xml**
 
 When the application is run you will see a login dialog.
 
-Use the login details **openitest**, **openitest** and you should receive a popup showing the data received from OPENi.
+Use the login details **peattest**, **peattest** and you should receive a popup showing the data received from PEAT.

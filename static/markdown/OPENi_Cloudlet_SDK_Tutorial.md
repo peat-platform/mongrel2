@@ -1,30 +1,30 @@
-OPENi Cloudlet SDK Tutorial
+PEAT Cloudlet SDK Tutorial
 =====
 
 ---
 
 ### Generating the SDK
 
-Inside the "openi_android_sdk" folder run the following command.
+Inside the "peat_android_sdk" folder run the following command.
 
-**N.B.** Change the *IP Address* to the adress of your local OPENi Development VM
+**N.B.** Change the *IP Address* to the adress of your local PEAT Development VM
 
 ~~~Shell
 sh build-cloudlet-sdk.sh 192.168.33.10
 ~~~
 
-This will generate the *"openi-cloudlet-android-sdk-1.0.0.jar"* file from the OPENi swagger API definitions. 
+This will generate the *"peat-cloudlet-android-sdk-1.0.0.jar"* file from the PEAT swagger API definitions. 
 
-This jar can be used in OPENi Java projects.
+This jar can be used in PEAT Java projects.
 
 ---
 
-The following function examples will work towards getting a working Java project for interacting with the OPENi system and will cover the following actions.
+The following function examples will work towards getting a working Java project for interacting with the PEAT system and will cover the following actions.
 * Registering a Client
 * Registering a User
 * Loging in as a User to get a Session token
 * Using the Session token to authenticate with a Client
-* Getting a Cloudlet from OPENi once authenticated.
+* Getting a Cloudlet from PEAT once authenticated.
 
 **Note:** Below these examples will be a complete end-to-end example.
 
@@ -33,7 +33,7 @@ The following function examples will work towards getting a working Java project
 
 
 ####Creating a Client
-Clients will be accessing OPENi on behalf of the user and as such must be registered with the OPENi Platform.
+Clients will be accessing PEAT on behalf of the user and as such must be registered with the PEAT Platform.
 
 **N.B.** This request does not return a body only a status code.
 ~~~java
@@ -60,7 +60,7 @@ public static void setupClient(String clientId) {
 
 
 ####Registering a User
-Users currently register with the OPENi system using a *username* and *password*
+Users currently register with the PEAT system using a *username* and *password*
 
 **N.B.** This request does not return a body only a status code.
 ~~~java
@@ -88,7 +88,7 @@ public static void registerUser(String username, String password) {
 
 
 ####Login as User
-When a user logs into OPENi they create a Session token that can then be used by a client to authenticate itself and communicate with OPENi on the users behalf.
+When a user logs into PEAT they create a Session token that can then be used by a client to authenticate itself and communicate with PEAT on the users behalf.
 
 **N.B.** This request returns a Session token.
 ~~~java
@@ -114,7 +114,7 @@ public static Session login(String username, String password) {
 
 
 ####Authenticate Client for User
-The client then uses a Users Session token to authenticate itself before it can begin interactiong with the OPENi Platform.
+The client then uses a Users Session token to authenticate itself before it can begin interactiong with the PEAT Platform.
 
 **N.B.** This request returns an authentication Token.
 ~~~java
@@ -140,16 +140,16 @@ public static Token authorizeClient(String clientId, Session userSession) {
 
 
 ####Using Authorization Token to get Cloudlet
-Once the Token has been received the users cloudletId can be retrieved by passing the Token to the OPENi Platform vie the CloudletsAPI.
+Once the Token has been received the users cloudletId can be retrieved by passing the Token to the PEAT Platform vie the CloudletsAPI.
 
-**N.B.** This request returns an OPENiCloudlet object.
+**N.B.** This request returns an PEATCloudlet object.
 ~~~java
-public static OPENiCloudlet getCloudletData(Token authToken) {
+public static PEATCloudlet getCloudletData(Token authToken) {
     	//Setup CloudletAPI
     	CloudletsApi cloudletapi = new CloudletsApi();
         //Get Cloudlet
     	try {
-    		OPENiCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
+    		PEATCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
     		return cloudletData;
 		} catch (ApiException e) {
 			e.printStackTrace();
@@ -181,23 +181,23 @@ public static void main(String[] args) {
 		throw new Error("Error getting user Session token");
 	}
 	
-	//get Authorization Token to access OPENi platform
+	//get Authorization Token to access PEAT platform
 	Token authToken = authorizeClient("testClient", userSession); 	
 	if (authToken == null) {
 		throw new Error("Error getting Authtoken");
 	}
     // Use AuthToken to get Cloudlet
-    OPENiCloudlet cloudletData = getCloudletData(authToken);
+    PEATCloudlet cloudletData = getCloudletData(authToken);
     System.out.println(cloudletData);
 }
 ~~~
 ---
 
 ####Creating a Type
-The OPENi type consists of multple layers. 
+The PEAT type consists of multple layers. 
 * **The Context** An array of properties within the Type.
 * **Context Entry** The descriptor for a single property within the Type.
-* **Context Value** METADATA about the single property including an *ID* and the OPENi primative type of that property.
+* **Context Value** METADATA about the single property including an *ID* and the PEAT primative type of that property.
 
  
 **N.B.** The two required fields for a type are *context* and *reference*
@@ -207,11 +207,11 @@ public static CreateResponse createExampleType() {
 	//Setup API
 	TypesApi typeApi = new TypesApi();
 	//Create empty Type
-	OPENiType type = new OPENiType();
+	PEATType type = new PEATType();
 	//METADATA for single property within type
 	ContextValue property = new ContextValue();
-	property.setId("openi:name");
-	property.setOpeniType("string");
+	property.setId("peata:name");
+	property.setPEATType("string");
 	//Single Type Property
 	ContextEntry context = new ContextEntry();
 	context.setPropertyName("name");
@@ -240,13 +240,13 @@ public static CreateResponse createExampleType() {
 ####Creating an Object
 This example will create an Object with a Type id of the one created above.
 ~~~java
-public static ObjectResponse createExampleObject(OPENiCloudlet cloudlet, CreateResponse type) {
+public static ObjectResponse createExampleObject(PEATCloudlet cloudlet, CreateResponse type) {
     	//Setup API
     	ObjectsApi objectApi = new ObjectsApi();
     	//Create empty Type
-    	OPENiObject object = new OPENiObject();
+    	PEATObject object = new PEATObject();
     	//Set Object Type
-    	object.setOpeniType(type.getId());
+    	object.setPEATType(type.getId());
     	//Create Map for object Data
     	Map data = new HashMap<>();
     	data.put("name", "TestName");

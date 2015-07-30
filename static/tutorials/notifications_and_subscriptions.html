@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -88,8 +88,8 @@
 <header id="masthead" class="site-header" role="banner">
     <div id="headergroup"  style="width: 700px;">
         <hgroup>
-            <h1 class="site-title"><a href="/" title="OPENi"
-                                      rel="home">OPENi</a></h1>
+            <h1 class="site-title"><a href="/" title="PEAT"
+                                      rel="home">PEAT</a></h1>
             <!--<h2 class="site-description"></h2>-->
         </hgroup>
         <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -113,20 +113,20 @@ Using these 2 objects we will create 2 SSE notifications, one object based and o
 <p><strong>N.B.</strong> Place your recorded IDs into the JSON below.</p>
 <pre><code class="lang-json">{
     "<span class="hljs-attribute">cloudletid</span>"       : <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[OPENiTypeID]</span>,
+    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[PEATTypeID]</span>,
     "<span class="hljs-attribute">objectid</span>"         : <span class="hljs-value">[ObjectID]</span>,
     "<span class="hljs-attribute">notification_type</span>": <span class="hljs-value"><span class="hljs-string">"SSE"</span>
 </span>}
 </code></pre>
-<p>This second subscription is a cloudlet level subscription. If an object of the selected OPENi type within this cloudlet is changed a notification will be sent out.</p>
+<p>This second subscription is a cloudlet level subscription. If an object of the selected PEAT type within this cloudlet is changed a notification will be sent out.</p>
 <pre><code class="lang-json">{
     "<span class="hljs-attribute">cloudletid</span>"       : <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[OPENiTypeID]</span>,
+    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[PEATTypeID]</span>,
     "<span class="hljs-attribute">notification_type</span>": <span class="hljs-value"><span class="hljs-string">"SSE"</span>
 </span>}
 </code></pre>
 <p>Using the Cloudlet API UI create these subscriptions and record the IDs returned.</p>
-<p>Once the Subscriptions are created we can see the notifications in action. The OPENi example page is included in the mongrel2 git project. The url path for the example page is <strong>/sse.html</strong></p>
+<p>Once the Subscriptions are created we can see the notifications in action. The PEAT example page is included in the mongrel2 git project. The url path for the example page is <strong>/sse.html</strong></p>
 <p>This path alone will not show you any notifications, the page needs a url parameter to accomplish this.</p>
 <p>The url parameter is <strong>?sse=</strong> and may look something like this:</p>
 <ul>
@@ -138,7 +138,7 @@ Using these 2 objects we will create 2 SSE notifications, one object based and o
 <p>Subscription for Google Cloud Messaging follow a similar pattern to the previous subscriptions. It allows both object level or cloudlet level subscriptions.</p>
 <pre><code class="lang-json">{
     "<span class="hljs-attribute">cloudletid</span>"       : <span class="hljs-value">[CloudletID]</span>,
-    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[OPENiTypeID]</span>,
+    "<span class="hljs-attribute">typeid</span>"           : <span class="hljs-value">[PEATTypeID]</span>,
     "<span class="hljs-attribute">objectid</span>"         : <span class="hljs-value">[ObjectID]</span>,
     "<span class="hljs-attribute">notification_type</span>": <span class="hljs-value"><span class="hljs-string">"GCM"</span></span>,
     "<span class="hljs-attribute">endpoint</span>"         : <span class="hljs-value">[Android Device Registration ID]

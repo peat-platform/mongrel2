@@ -1,22 +1,22 @@
-#REST calls to the OPENi Graph API
+#REST calls to the PEAT Graph API
 
 Here you can find all the available resources (objects) of our Graph API. Under every resource you can find the available REST calls you can make. 
 
-In order to use the OPENi Graph API Framework you can make simple calls to the base URI  appended by the version of the API, currently v.04, and the object needed.
+In order to use the PEAT Graph API Framework you can make simple calls to the base URI  appended by the version of the API, currently v.04, and the object needed.
 
 So the url should look like this:
 
-https://demo2.openi-ict.eu:443/v.04/[ObjectName]
-e.g. https://demo2.openi-ict.eu:443/v.04/Photo/
+https://demo2.peat-platform.org:443/v.04/[ObjectName]
+e.g. https://demo2.peat-platform.org:443/v.04/Photo/
 
 After this basic url you should append the parameters you need. There are two parameters that are found under almost all available methods.
 * user ( the user for whom you need the info - should be already authenticated to the platform )
 
 * cbs ( an array of CBS applications to which you need the method to be called, for example ["facebook","twitter"] )  
- Through the OPENi Graph API you can make calls to the Cloudlet but also invoke methods of the available 3rd party Cloud Based Services. This is why under almost all methods you can find the parameter cbs which you can use to specify to which Cloud Based Service(s) you want your call to be redirected.  
+ Through the PEAT Graph API you can make calls to the Cloudlet but also invoke methods of the available 3rd party Cloud Based Services. This is why under almost all methods you can find the parameter cbs which you can use to specify to which Cloud Based Service(s) you want your call to be redirected.  
 Valid cbs values are only the following: "twitter","foursquare", "facebook", "instagram", "google", "citygrid", "flickr", "dropbox", "youtube", "vimeo", "windowslive". Using extra spaces or capital letters will return an error message.  
-If you want to invoke a method that only interacts with the OPENi Cloudlet, you should leave this field blank.  
-Note that all method calls are also interacting with the Cloudlet, as this is the default OPENi approach. This essentially means that when invoking a POST method giving for a specific cbs, an object is also created and stored in the OPENi cloudlet as well. 
+If you want to invoke a method that only interacts with the PEAT Cloudlet, you should leave this field blank.  
+Note that all method calls are also interacting with the Cloudlet, as this is the default PEAT approach. This essentially means that when invoking a POST method giving for a specific cbs, an object is also created and stored in the PEAT cloudlet as well. 
 
 The rest of the parameters vary depending on the Object and Method.
 
@@ -24,7 +24,7 @@ The rest of the parameters vary depending on the Object and Method.
 ####GET
 Example to get all Photo objects for the user romdim from his personal Cloudlet:
 ```html
-curl -k https://demo2.openi-ict.eu:443/v.04/Photo/?user=romdim
+curl -k https://demo2.peat-platform.org:443/v.04/Photo/?user=romdim
 ```
 
 And the response:
@@ -53,7 +53,7 @@ And the response:
         "object_type": "",
         "profile": "string",
         "resource_uri": "/v.04/Photo/1/",
-        "service": "OPENi Cloudlet",
+        "service": "PEAT Cloudlet",
         "url": "",
         "width": "string"
       }
@@ -64,7 +64,7 @@ And the response:
 
 Example to get all Photo objects for the user romdim from facebook and from his personal Cloudlet:
 ```html
-curl -k https://demo2.openi-ict.eu:443/v.04/Photo/?cbs=%5B%22facebook%22%5D&user=romdim
+curl -k https://demo2.peat-platform.org:443/v.04/Photo/?cbs=%5B%22facebook%22%5D&user=romdim
 ```
 
 And the response:
@@ -244,7 +244,7 @@ And the response:
         "object_type": "",
         "profile": "string",
         "resource_uri": "/v.04/Photo/1/",
-        "service": "OPENi Cloudlet",
+        "service": "PEAT Cloudlet",
         "url": "",
         "width": "string"
       }
@@ -252,7 +252,7 @@ And the response:
   }
 ]
 ```
-You can see that Photo Objects coming from different sources (facebook, OPENi) are returned in the same JSON response but inside different JSON arrays. The "service" field shows which objects come from which CBS/Cloudlet.  
+You can see that Photo Objects coming from different sources (facebook, PEAT) are returned in the same JSON response but inside different JSON arrays. The "service" field shows which objects come from which CBS/Cloudlet.  
   
   
   
@@ -262,6 +262,6 @@ POst a Photo Object to the user's Cloudlet
 curl -k -X POST 
  -H "Content-Type: application/json" 
  -d '{  "profile": "test",  "width": "2",  "context": {},   "Location":"/v.04/Location/2/",  "height": "3"}'  
- https://demo2.openi-ict.eu:443/v.04/Photo/?user=romdim
+ https://demo2.peat-platformPEAT.eu:443/v.04/Photo/?user=romdim
 ```
 Note that "/v.04/Location/2/" is the URI of a Location Object inside the user's Cloudlet. 

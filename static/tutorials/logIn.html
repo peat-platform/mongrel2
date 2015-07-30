@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -88,8 +88,8 @@
     <header id="masthead" class="site-header" role="banner">
         <div id="headergroup"  style="width: 700px;">
             <hgroup>
-                <h1 class="site-title"><a href="/" title="OPENi"
-                                          rel="home">OPENi</a></h1>
+                <h1 class="site-title"><a href="/" title="PEAT"
+                                          rel="home">PEAT</a></h1>
                 <!--<h2 class="site-description"></h2>-->
             </hgroup>
             <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -104,8 +104,8 @@
 
         <!DOCTYPE html><html><head><meta charset="utf-8"><title>Security</title><style></style></head><body>
     <h1 id="security-api">Security API</h1>
-    <p>The Security API will allow the registration of users and application with the OPENi platform.</p>
-    <p>The registration of applications with OPENi require multiple steps.</p>
+    <p>The Security API will allow the registration of users and application with the PEAT platform.</p>
+    <p>The registration of applications with PEAT require multiple steps.</p>
     <ul>
         <li>The developer must register as a <em>user</em></li>
         <li>The developer must then login to get a sesion token.</li>
@@ -147,14 +147,14 @@
     <p><img src="/tutorials/Auth_Client_Create.png" alt=""></p>
     <p><strong>Example:</strong></p>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"OPENi_Android"</span></span>,
-    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Official OPENi Android application"</span>
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"PEAT_Android"</span></span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Official PEAT Android application"</span>
 </span>}
 </code></pre>
     <p><strong>Response</strong></p>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"OPENi_Android"</span></span>,
-    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Official OPENi Android application"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"PEAT_Android"</span></span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Official PEAT Android application"</span></span>,
     "<span class="hljs-attribute">cloudlet</span>": <span class="hljs-value"><span class="hljs-string">"c_9faf8e67fbbe27b2aa1c00c5f93a80c6"</span></span>,
     "<span class="hljs-attribute">api_key</span>": <span class="hljs-value"><span class="hljs-string">"b3e51db43d630ea349ac0b4b3dc16e6f"</span></span>,
     "<span class="hljs-attribute">secret</span>": <span class="hljs-value"><span class="hljs-string">"761dbc37396338c4e3eb00610d923334d9fc282b4f4466d874ddf9dba1cde791"</span>
@@ -167,10 +167,10 @@
     </ul>
     <p>This endpoint allows a <em>User</em> to authorise a <em>Client</em> to act on its behalf and access their cloudlet. The request requires the username and <em>password</em> of the <em>user</em> and the <em>api_key</em> and <em>secret</em> from the client.</p>
     <p>Upon success this call will return a session object with a token, as seen below and with a 200 status code.</p>
-    <p>This token will then be used when making calls to the OPENi Platform.</p>
+    <p>This token will then be used when making calls to the PEAT Platform.</p>
     <p><strong>Example:</strong></p>
 <pre><code class="lang-json">{
-    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"OPENi_user"</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"PEAT_user"</span></span>,
     "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"passowrd"</span></span>,
     "<span class="hljs-attribute">api_key</span>": <span class="hljs-value"><span class="hljs-string">"b3e51db43d630ea349ac0b4b3dc16e6f"</span></span>,
     "<span class="hljs-attribute">secret</span>": <span class="hljs-value"><span class="hljs-string">"761dbc37396338c4e3eb00610d923334d9fc282b4f4466d874ddf9dba1cde791"</span>

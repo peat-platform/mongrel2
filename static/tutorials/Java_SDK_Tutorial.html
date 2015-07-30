@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>OPENi | a European Union ICT Project</title>
+    <title>PEAT | a European Union ICT Project</title>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="xmlrpc.php"/>
-    <link rel="shortcut icon" href="/wp-content/themes/openi/favicon.ico"/>
+    <link rel="shortcut icon" href="/wp-content/themes/peat/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="/wp-content/themes/openi/js/html5.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/peat/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Feed" href="feed/index.html"/>
-    <link rel="alternate" type="application/rss+xml" title="OPENi &raquo; Comments Feed"
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="PEAT &raquo; Comments Feed"
           href="comments/feed/index.html"/>
 
     <script type="text/javascript">
@@ -45,13 +45,13 @@
     <link rel='stylesheet' id='twentytwelve-fonts-css'
           href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/openi/style1bba.css?ver=3.5'
+    <link rel='stylesheet' id='twentytwelve-style-css' href='/wp-content/themes/peat/style1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='twentytwelve-ie-css'
-          href='/wp-content/themes/openi/css/ie.css?ver=20121010' type='text/css' media='all'/>
+          href='/wp-content/themes/peat/css/ie.css?ver=20121010' type='text/css' media='all'/>
     <![endif]-->
-    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/openi/inc/slider/css/flexslider1bba.css?ver=3.5'
+    <link rel='stylesheet' id='flex-style-css' href='/wp-content/themes/peat/inc/slider/css/flexslider1bba.css?ver=3.5'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='easy_table_style-css'
           href='/wp-content/plugins/easy-table/themes/default/style492f.css?ver=0.9' type='text/css' media='all'/>
@@ -88,8 +88,8 @@
 <header id="masthead" class="site-header" role="banner">
     <div id="headergroup"  style="width: 700px;">
         <hgroup>
-            <h1 class="site-title"><a href="/" title="OPENi"
-                                      rel="home">OPENi</a></h1>
+            <h1 class="site-title"><a href="/" title="PEAT"
+                                      rel="home">PEAT</a></h1>
             <!--<h2 class="site-description"></h2>-->
         </hgroup>
         <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -102,10 +102,10 @@
 
 <div id="main" class="wrapper" style="width: 700px;">
 
-<h1 id="openi-cloudlet-sdk-tutorial">OPENi Cloudlet SDK Tutorial</h1>
+<h1 id="peat-cloudlet-sdk-tutorial">PEAT Cloudlet SDK Tutorial</h1>
 <hr>
 <h2 id="dependencies">Dependencies</h2>
-<p>The following table of dependencies are all required by the OPENi Java SDK.</p>
+<p>The following table of dependencies are all required by the PEAT Java SDK.</p>
 <hr>
 <table>
     <thead>
@@ -144,8 +144,8 @@
     </tbody>
 </table border=1>
 <hr>
-<p>The atrifacts from the <strong>jackson.core</strong> group are required to handle the REST calls to and from the OPENi platform. They handle the serialization and deserialization of the JSON data through the use of annotations within the OPENi SDK Model classes</p>
-<p>The artifacts from the <strong>apache.httpcomponents</strong> group are required to enable the http communications with the OPENi Platform.</p>
+<p>The atrifacts from the <strong>jackson.core</strong> group are required to handle the REST calls to and from the PEAT platform. They handle the serialization and deserialization of the JSON data through the use of annotations within the PEAT SDK Model classes</p>
+<p>The artifacts from the <strong>apache.httpcomponents</strong> group are required to enable the http communications with the PEAT Platform.</p>
 <p>These dependencies can be imported individually or managed using a project management tool like <em>Maven</em>. </p>
 <p>Using Maven the dependancies can be added to the pom.xml file and then installed using &quot;mvn install&quot; command.</p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependencies</span>&gt;</span>
@@ -184,31 +184,31 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">http-version</span>&gt;</span>4.3.2<span class="hljs-tag">&lt;/<span class="hljs-title">http-version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">properties</span>&gt;</span>
 </code></pre>
-<p>Once these dependancies have been installed the OPENi SDK can be generated and imported.</p>
+<p>Once these dependancies have been installed the PEAT SDK can be generated and imported.</p>
 <hr>
 
 
 <h2 id="generating-the-sdk">Generating the SDK</h2>
-<p>Inside the &quot;openi_android_sdk&quot; folder run the following command.</p>
-<p><strong>N.B.</strong> Change the <em>IP Address</em> to the adress of your local OPENi Development VM</p>
+<p>Inside the &quot;peat_android_sdk&quot; folder run the following command.</p>
+<p><strong>N.B.</strong> Change the <em>IP Address</em> to the adress of your local PEAT Development VM</p>
 <pre><code class="lang-Shell">sh build-cloudlet-sdk.sh 192.168.33.10
 </code></pre>
-<p>This will generate the <em>&quot;openi-cloudlet-android-sdk-1.0.0.jar&quot;</em> file from the OPENi swagger API definitions. </p>
-<p>This jar can be used in OPENi Java projects.</p>
+<p>This will generate the <em>&quot;peat-cloudlet-android-sdk-1.0.0.jar&quot;</em> file from the PEAT swagger API definitions. </p>
+<p>This jar can be used in PEAT Java projects.</p>
 <hr>
-<p>The following function examples will work towards getting a working Java project for interacting with the OPENi system and will cover the following actions.</p>
+<p>The following function examples will work towards getting a working Java project for interacting with the PEAT system and will cover the following actions.</p>
 <ul>
     <li>Registering a Client</li>
     <li>Registering a User</li>
     <li>Loging in as a User to get a Session token</li>
     <li>Using the Session token to authenticate with a Client</li>
-    <li>Getting a Cloudlet from OPENi once authenticated.</li>
+    <li>Getting a Cloudlet from PEAT once authenticated.</li>
 </ul>
 <p><strong>Note:</strong> Below these examples will be a complete end-to-end example.</p>
 <hr>
 <h2 id="authentication-steps">Authentication Steps</h2>
 <h4 id="creating-a-client">Creating a Client</h4>
-<p>Clients will be accessing OPENi on behalf of the user and as such must be registered with the OPENi Platform.</p>
+<p>Clients will be accessing PEAT on behalf of the user and as such must be registered with the PEAT Platform.</p>
 <p><strong>N.B.</strong> This request does not return a body only a status code.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupClient</span>(String clientId) {
     <span class="hljs-comment">//Setup Client API</span>
@@ -231,7 +231,7 @@
 </code></pre>
 <hr>
 <h4 id="registering-a-user">Registering a User</h4>
-<p>Users currently register with the OPENi system using a <em>username</em> and <em>password</em></p>
+<p>Users currently register with the PEAT system using a <em>username</em> and <em>password</em></p>
 <p><strong>N.B.</strong> This request does not return a body only a status code.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">registerUser</span>(String username, String password) {
     <span class="hljs-comment">//Setup User API</span>
@@ -255,7 +255,7 @@
 </code></pre>
 <hr>
 <h4 id="login-as-user">Login as User</h4>
-<p>When a user logs into OPENi they create a Session token that can then be used by a client to authenticate itself and communicate with OPENi on the users behalf.</p>
+<p>When a user logs into PEAT they create a Session token that can then be used by a client to authenticate itself and communicate with PEAT on the users behalf.</p>
 <p><strong>N.B.</strong> This request returns a Session token.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Session <span class="hljs-title">login</span>(String username, String password) {
     <span class="hljs-comment">//Setup API</span>
@@ -277,7 +277,7 @@
 </code></pre>
 <hr>
 <h4 id="authenticate-client-for-user">Authenticate Client for User</h4>
-<p>The client then uses a Users Session token to authenticate itself before it can begin interactiong with the OPENi Platform.</p>
+<p>The client then uses a Users Session token to authenticate itself before it can begin interactiong with the PEAT Platform.</p>
 <p><strong>N.B.</strong> This request returns an authentication Token.</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Token <span class="hljs-title">authorizeClient</span>(String clientId, Session userSession) {
     <span class="hljs-comment">//Setup API</span>
@@ -299,14 +299,14 @@
 </code></pre>
 <hr>
 <h4 id="using-authorization-token-to-get-cloudlet">Using Authorization Token to get Cloudlet</h4>
-<p>Once the Token has been received the users cloudletId can be retrieved by passing the Token to the OPENi Platform vie the CloudletsAPI.</p>
-<p><strong>N.B.</strong> This request returns an OPENiCloudlet object.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> OPENiCloudlet <span class="hljs-title">getCloudletData</span>(Token authToken) {
+<p>Once the Token has been received the users cloudletId can be retrieved by passing the Token to the PEAT Platform vie the CloudletsAPI.</p>
+<p><strong>N.B.</strong> This request returns an PEATCloudlet object.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> PEATCloudlet <span class="hljs-title">getCloudletData</span>(Token authToken) {
     <span class="hljs-comment">//Setup CloudletAPI</span>
     CloudletsApi cloudletapi = <span class="hljs-keyword">new</span> CloudletsApi();
     <span class="hljs-comment">//Get Cloudlet</span>
     <span class="hljs-keyword">try</span> {
-        OPENiCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
+        PEATCloudlet cloudletData = cloudletapi.getCloudletId(authToken.getToken());
         <span class="hljs-keyword">return</span> cloudletData;
     } <span class="hljs-keyword">catch</span> (ApiException e) {
         e.printStackTrace();
@@ -336,34 +336,34 @@
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting user Session token"</span>);
     }
 
-    <span class="hljs-comment">//get Authorization Token to access OPENi platform</span>
+    <span class="hljs-comment">//get Authorization Token to access PEAT platform</span>
     Token authToken = authorizeClient(<span class="hljs-string">"testClient"</span>, userSession);
     <span class="hljs-keyword">if</span> (authToken == <span class="hljs-keyword">null</span>) {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Error getting Authtoken"</span>);
     }
     <span class="hljs-comment">// Use AuthToken to get Cloudlet</span>
-    OPENiCloudlet cloudletData = getCloudletData(authToken);
+    PEATCloudlet cloudletData = getCloudletData(authToken);
     System.out.println(cloudletData);
 }
 </code></pre>
 <hr>
 <h4 id="creating-a-type">Creating a Type</h4>
-<p>The OPENi type consists of multple layers. </p>
+<p>The PEAT type consists of multple layers. </p>
 <ul>
     <li><strong>The Context</strong> An array of properties within the Type.</li>
     <li><strong>Context Entry</strong> The descriptor for a single property within the Type.</li>
-    <li><strong>Context Value</strong> METADATA about the single property including an <em>ID</em> and the OPENi primative type of that property.</li>
+    <li><strong>Context Value</strong> METADATA about the single property including an <em>ID</em> and the PEAT primative type of that property.</li>
 </ul>
 <p><strong>N.B.</strong> The two required fields for a type are <em>context</em> and <em>reference</em></p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> CreateResponse <span class="hljs-title">createExampleType</span>() {
     <span class="hljs-comment">//Setup API</span>
     TypesApi typeApi = <span class="hljs-keyword">new</span> TypesApi();
     <span class="hljs-comment">//Create empty Type</span>
-    OPENiType type = <span class="hljs-keyword">new</span> OPENiType();
+    PEATType type = <span class="hljs-keyword">new</span> PEATType();
     <span class="hljs-comment">//METADATA for single property within type</span>
     ContextValue property = <span class="hljs-keyword">new</span> ContextValue();
-    property.setId(<span class="hljs-string">"openi:name"</span>);
-    property.setOpeniType(<span class="hljs-string">"string"</span>);
+    property.setId(<span class="hljs-string">"peat:name"</span>);
+    property.setPEATType(<span class="hljs-string">"string"</span>);
     <span class="hljs-comment">//Single Type Property</span>
     ContextEntry context = <span class="hljs-keyword">new</span> ContextEntry();
     context.setPropertyName(<span class="hljs-string">"name"</span>);
@@ -390,13 +390,13 @@
 <hr>
 <h4 id="creating-an-object">Creating an Object</h4>
 <p>This example will create an Object with a Type id of the one created above.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ObjectResponse <span class="hljs-title">createExampleObject</span>(OPENiCloudlet cloudlet, CreateResponse type) {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ObjectResponse <span class="hljs-title">createExampleObject</span>(PEATCloudlet cloudlet, CreateResponse type) {
     <span class="hljs-comment">//Setup API</span>
     ObjectsApi objectApi = <span class="hljs-keyword">new</span> ObjectsApi();
     <span class="hljs-comment">//Create empty Type</span>
-    OPENiObject object = <span class="hljs-keyword">new</span> OPENiObject();
+    PEATObject object = <span class="hljs-keyword">new</span> PEATObject();
     <span class="hljs-comment">//Set Object Type</span>
-    object.setOpeniType(type.getId());
+    object.setPEATType(type.getId());
     <span class="hljs-comment">//Create Map for object Data</span>
     Map data = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
     data.put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"TestName"</span>);
@@ -432,7 +432,7 @@
 </code></pre>
 <hr>
 <h4>Full Example Download</h4>
-<a href="OPENi_Java_SDK_Tutorial.zip">OPENi SDK Tutorial Eclipse Project</a>
+<a href="PEAT_Java_SDK_Tutorial.zip">PEAT SDK Tutorial Eclipse Project</a>
 
 <hr>
 
